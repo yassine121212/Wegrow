@@ -10,7 +10,6 @@ const Signup = () => {
 		email: "",
 		phone: "",
 		Address: "",
-		date: Date.now,
 		pays: "",
 		password: "",
 	});
