@@ -42,6 +42,8 @@ export const LogoContainer = styled.div`
 `;
 
 export const Menu = styled.ul`
+z-index: 1;
+background-color: white;
 height: 100%;
 display: flex; 
 list-style: none;

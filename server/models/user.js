@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 	phone: { type: String, required: true },
 	Address: { type: String, required: true },
 	pays:{type: String, required: true},
-	date: { type: Date },
+	date: { type: Date, default:Date.Now },
 	password: { type: String, required: true },
 });
 
