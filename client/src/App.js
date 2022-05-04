@@ -9,12 +9,14 @@ import Contact from './pages/contact';
 import SignUp from './components/Singup/index';
 import SignIn from './components/Login/index';
 import Profile from "./components/user/profile/profile"
- 
+import { FooterContainer} from './containers/footer'
+
 
 function App() {
 	
 
   return (
+    <>
     <div>
     <Router>
        <Navbar />
@@ -33,6 +35,8 @@ function App() {
     <div style={{overflowY:"scroll", height:"800px"}}></div> 
     
     </div>
+    <FooterContainer />
+    </>
   );
 }
 
