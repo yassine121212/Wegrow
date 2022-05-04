@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ 
+
+.breadcrumb {
+    background-color: #e4c5c5;
+
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.container {
+     padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.d-flex a {
+    text-decoration: none;
+    color: #686868;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fab.fa-twitter {
+    color: #8ab7f1;
+}
+
+.insta {
+    color: #E1306C;
+}
+
+.fb{
+    color: #5999ec;
+ }

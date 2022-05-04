@@ -1,0 +1,103 @@
+ 
+* {
+    padding: 0;
+    margin: 0
+}
+.llink{
+     text-decoration:none !important ;
+}
+.container {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+   
+    margin-top: 0.2cm;
+
+}
+
+.profile {
+    position: relative;
+    text-align: center;
+ 
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+   
+    cursor: pointer
+}
+
+.dropc {
+    margin-top: 0.05cm;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+ }
+
+.dropc a {
+    color: black;
+    text-decoration: none;
+ }
+
+.dropc a:hover {
+    background-color: rgb(221, 221, 221);
+     color: black;
+}
+
+.dropdown:hover .dropc {
+    display: block
+}
+
+.profile ul {
+    background-color: rgb(57, 168, 75);
+    width: 200px;
+    height: 185px;
+    border-radius: 10px;
+    right: 25px;
+    top: 7px;
+    position: absolute;
+    padding: 8px;
+    transition: all 0.5s;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.profile ul::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(57, 168, 75);
+    height: 10px;
+    width: 10px;
+    top: -5px;
+    left: 3.7cm;
+    transform: rotate(45deg)
+}
+
+.profile ul li {
+    list-style: none;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 4px
+}
+
+.profile ul li:hover {
+    background-color: rgb(204, 29, 29)
+}
+
+.profile ul li i {
+    margin-right: 7px
+}
+.icon_user{
+    height: 0.5cm;
+}

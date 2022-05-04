@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+ 
   height: 55px;
   grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -65,7 +66,7 @@ export const MenuItem = styled.li`
 font-size: 1.8rem;
 display: flex;
 margin-left:-1cm;
- 
+margin-right:0.4cm;
 
   @media screen and (max-width: 960px) {
     width: 100%;
