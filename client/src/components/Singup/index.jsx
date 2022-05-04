@@ -8,6 +8,10 @@ const Signup = () => {
 		firstName: "",
 		lastName: "",
 		email: "",
+		phone: "",
+		Address: "",
+		date: Date.now,
+		pays: "",
 		password: "",
 	});
 	const [error, setError] = useState("");
@@ -71,11 +75,41 @@ const Signup = () => {
 							type="email"
 							placeholder="Email"
 							name="email"
-							onChange={handleChange}
+ 							onChange={handleChange}
 							value={data.email}
 							required
 							className={styles.input}
 						/>
+						<input
+							type="text"
+							placeholder="Address"
+							name="Address"
+							onChange={handleChange}
+							value={data.Address}
+							required
+							className={styles.input}
+						/>
+						
+						<input
+							type="text"
+							placeholder="Pays"
+							name="pays"
+ 							onChange={handleChange}
+							value={data.pays}
+							required
+							className={styles.input}
+						/>
+						<input
+							type="tel"
+							placeholder="phone"
+							name="phone"
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+							onChange={handleChange}
+							value={data.phone}
+							required
+							className={styles.input}
+						/>
+						<p>Format: 123-456-7890</p>
 						<input
 							type="password"
 							placeholder="Password"
@@ -85,6 +119,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
+						
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sing Up
