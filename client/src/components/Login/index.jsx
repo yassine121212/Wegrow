@@ -85,9 +85,13 @@ const Login = () => {
 
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
+			
 			localStorage.setItem("token", res.data);
-            
+			localStorage.setItem("isLoggedIn", 1);
+  			
 			 context.onLogin(email.value, password.value);
+
+			 
 
 		} catch (error) {
 			if (
@@ -103,9 +107,11 @@ const Login = () => {
 		event.preventDefault();
 		if (formIsValid) {
 		await handleSubmit(event);
-		  context.onLogin(email.value, password.value);
-		  window.location = "/";
-
+		const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+		if (storedUserLoggedInInformation === "1") {
+			window.location = "/";
+		  }
+		
 		} else if (!emailIsValid) {
 		  emailInputRef.current.focus();
 		} else {

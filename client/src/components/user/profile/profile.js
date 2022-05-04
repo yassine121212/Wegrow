@@ -2,7 +2,8 @@ import "./profile.css";
 import pic from "../../../images/logo192.png" 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaFacebookF} from "react-icons/fa";
-import {BsInstagram} from "react-icons/bs";
+import {BsInstagram,BsTwitter} from "react-icons/bs";
+import {SiAtom} from "react-icons/si"
 const profile=()=>{
     return( 
         <div className="container">
@@ -25,15 +26,12 @@ const profile=()=>{
                     </div>
                     <div className="col-12 bg-white p-0 px-2 pb-3 mb-3">
                         <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p><span className="fas fa-globe me-2"></span>Website</p>
+                            <p><SiAtom className="browser"/>Website</p>
                             <p>https://bootdey.com</p>
                         </div>
+                        
                         <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p><span className="fab fa-github-alt me-2"></span>Github</p>
-                            <p>bootdey</p>
-                        </div>
-                        <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p><span className="fab fa-twitter me-2"></span>Twitter</p>
+                            <p><BsTwitter className="twitter" />Twitter</p>
                             <p>@bootdey</p>
                         </div>
                         <div className="d-flex justify-content-between border-bottom py-2 px-3">
@@ -78,27 +76,27 @@ const profile=()=>{
                             Status</h6>
                         <small>Web Design</small>
                         <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" value={{style:{width: "80%"}}}
+                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "5cm"}}
                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>One Page</small>
                         <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" value={{style:{width: "80%"}}}
+                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "10cm"}}
                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Mobile Template</small>
                         <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" value={{style:{width: "80%"}}}
+                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "3cm"}}
                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Backend API</small>
                         <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" value={{style:{width: "80%"}}}
+                            <div className="progress-bar bg-primary dododo" role="progressbar" style={{"width": "15cm"}}
                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Website Markup</small>
                         <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" value={{style:{width: "80%"}}}
+                            <div className="progress-bar bg-primary" role="progressbar"  style={{"width": "13cm"}}
                                 aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>

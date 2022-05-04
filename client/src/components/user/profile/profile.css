@@ -30,15 +30,27 @@ img {
     border-radius: 50%;
     object-fit: cover;
 }
-
-.fab.fa-twitter {
-    color: #8ab7f1;
+.browser{
+    color: rgb(0, 0, 0);
+    transform: translateY(-0.03cm);
+    margin-right: 0.2cm;
+}
+.twitter {
+    color: #00d9ff;
+    transform: translateY(-0.03cm);
+    margin-right: 0.2cm;
 }
 
 .insta {
     color: #E1306C;
+    transform: translateY(-0.03cm);
+    margin-right: 0.2cm;
+    
 }
 
 .fb{
-    color: #5999ec;
+    color: #0046a1;
+    transform: translateY(-0.03cm);
+    margin-right: 0.2cm;
  }
+ 

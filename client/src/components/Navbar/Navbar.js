@@ -30,8 +30,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.setItem("isLoggedIn", 0);
-
-    window.location = "/";
+     window.location = "/";
   };
   return (
     <Container>
