@@ -18,6 +18,7 @@ export const AuthContextProvider = (props) => {
       setIsLoggedIn(true);
       setId(id);
     }
+
   }, []);
 
   const logoutHandler = () => {

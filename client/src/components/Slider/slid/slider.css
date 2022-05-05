@@ -4,7 +4,7 @@
 }
 
 :root {
-    --heights:80vh;
+    --heights: 80vh;
     --widths: 100%;
 }
 
@@ -30,24 +30,25 @@
     position: relative;
 }
 
-.slide-image {
+.slide-images {
     width: 100%;
     height: 100%;
-    position: absolute;
+    border-radius: 0%;
     object-fit: cover;
 }
+
 .test_btn {
     font-size: 1.8rem;
     display: flex;
     position: absolute;
 }
+
 .slide-text {
     position: absolute;
     color: white;
     font-size: 50px;
     text-align: center;
     top: 30%;
-
 }
 
 @media screen and (max-width: 660px) {

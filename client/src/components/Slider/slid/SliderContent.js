@@ -1,4 +1,6 @@
 import React from "react";
+import "./slider.css";
+
 
 function SliderContent({ activeIndex, sliderImage }) {
     return (
@@ -8,7 +10,7 @@ function SliderContent({ activeIndex, sliderImage }) {
                     key={index}
                     className={index === activeIndex ? "slides active" : "inactive"}
                 >
-                    <img className="slide-image" src={slide.urls} alt="" />
+                    <img className="slide-images" src={slide.urls} alt="" />
                 </div>
             ))}
         </section>
