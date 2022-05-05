@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Footer from "../components/Footer/footer";
+import Footer from "../components/Footer/index";
 import Slider from "../components/Slider/slid/Slider";
 import Service from "../components/Services/Service";
 
