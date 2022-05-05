@@ -88,8 +88,8 @@ const Login = () => {
 			
 			localStorage.setItem("token", res.data);
 			localStorage.setItem("isLoggedIn", 1);
-  			
-			 context.onLogin(email.value, password.value);
+  		
+			//context.id=4;
 
 			 
 
@@ -109,7 +109,9 @@ const Login = () => {
 		await handleSubmit(event);
 		const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 		if (storedUserLoggedInInformation === "1") {
+			
 			window.location = "/";
+
 		  }
 		
 		} else if (!emailIsValid) {

@@ -1,7 +1,9 @@
 import React from "react";
 import "./style.css";
 import Footer from "../components/Footer/footer";
-import Slider from "../components/Slider/slid/Slider"
+import Slider from "../components/Slider/slid/Slider";
+import Service from "../components/Services/Service";
+
 
 
 const Home = () => {
@@ -9,6 +11,7 @@ const Home = () => {
         <div className="oral">
             <div className="pivc">
                 <Slider />
+                <Service/>
                 <Footer />
             </div>
         </div>
