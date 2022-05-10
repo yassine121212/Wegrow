@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import AuthContext from "../../store/authcontext";
+//import Context from "@mui/base/TabsUnstyled/TabsContext";
 
 const emailReducer = (state, action) => {
 	if (action.type === "USER_INPUT") {
@@ -31,7 +32,7 @@ const Login = () => {
 		value: "",
 		isValid: true,
 	  });
-	
+
 	  const [password, dispatchPassword] = useReducer(passwordReducer, {
 		value: "",
 		isValid: true,
@@ -42,7 +43,7 @@ const Login = () => {
 
 	const [error, setError] = useState("");
     const context = useContext(AuthContext);
-	 
+ 
 	const { isValid: emailIsValid } = email;
 	const { isValid: passwordIsValid } = password;
 	const emailInputRef = useRef();
@@ -77,7 +78,7 @@ const Login = () => {
 	  const validatePasswordHandler = () => {
 		dispatchPassword({ type: "INPUT_BLUR" });
 	  };
-	
+ 
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -85,15 +86,15 @@ const Login = () => {
 
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
-			
-			localStorage.setItem("token", res.data);
-			localStorage.setItem("isLoggedIn", 1);
-  		
-			//context.id=4;
-
+ 			if(localStorage.setItem("token", res.data)) 
 			 
+				 console.log("yes");
+ 			localStorage.setItem("id",res.user._id)
+			 localStorage.setItem("isLoggedIn",1)
 
-		} catch (error) {
+		
+
+  	} catch (error) {
 			if (
 				error.response &&
 				error.response.status >= 400 &&
@@ -108,8 +109,7 @@ const Login = () => {
 		if (formIsValid) {
 		await handleSubmit(event);
 		const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-		if (storedUserLoggedInInformation === "1") {
-			
+		if (storedUserLoggedInInformation === "1") { 	
 			window.location = "/";
 
 		  }

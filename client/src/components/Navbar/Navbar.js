@@ -26,12 +26,7 @@ import { Link  } from "react-router-dom";
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const context = useContext(AuthContext);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.setItem("isLoggedIn", 0);
-     window.location = "/";
-  };
+ 
   return (
     <Container>
       <Wrapper>
@@ -115,7 +110,7 @@ const Navbar = () => {
                             <BiHelpCircle  className="icon_user"></BiHelpCircle>
                             <span>Help</span>
                           </li>
-                          <li onClick={handleLogout}>
+                          <li onClick={context.onLogout}>
                             <CgLogOut  className="icon_user"></CgLogOut>
                             <span>Logout</span>
                           </li>

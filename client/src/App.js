@@ -8,10 +8,10 @@ import Services from './pages/services';
 import Contact from './pages/contact';
 import SignUp from './components/Singup/index';
 import SignIn from './components/Login/index';
-import Profile from "./components/user/profile/profile";
-import Jardin from "./pages/servicespages/jardinage"
-import { FooterContainer} from './containers/footer';
-
+import Profile from "./components/user/profile/profile"
+import FooterContainer from './containers/footer'
+ import Jardin from "./pages/servicespages/jardinage"
+ 
 
 
 function App() {

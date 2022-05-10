@@ -10,7 +10,7 @@ const Signup = () => {
 		email: "",
 		phone: "",
 		Address: "",
-		pays: "",
+ 		pays: "",
 		password: "",
 	});
 	const [error, setError] = useState("");

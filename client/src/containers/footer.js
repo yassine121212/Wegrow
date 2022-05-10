@@ -1,8 +1,7 @@
 import React from "react";
 import Footer from '../components/Footer'
 
-
-export function FooterContainer(){
+function FooterContainer(){
     return(
         <Footer>
             <Footer.Wrapper>
@@ -41,3 +40,4 @@ export function FooterContainer(){
         </Footer>
     )
 }
+export default FooterContainer;

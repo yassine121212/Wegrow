@@ -23,5 +23,14 @@ router.post("/", async (req, res) => {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
 });
-
+router.get("/we/:name", (req, res) => {
+	try {
+		User.findOne({ firstName: req.params.name })
+	  .then(user => res.status(200).json({ user }))
+	  .catch(error => res.status(404).json({ error }))
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+	
+  })
 module.exports = router;
