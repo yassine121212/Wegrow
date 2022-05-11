@@ -9,18 +9,16 @@ import React, { useState, useEffect } from "react";
 
  export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [id, setId] = useState();
+  const [id, setId] = useState(0);
  
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
     if (storedUserLoggedInInformation === "1") {
-      setIsLoggedIn(true);
-      setId(id);
+      setIsLoggedIn("true");
+       
     }
-    const storedUserIdInformation = localStorage.getItem("id");
-     setId(storedUserIdInformation);
-      
+    
    }, []);
 
  
@@ -28,26 +26,20 @@ import React, { useState, useEffect } from "react";
   const logoutHandler = () => {
     localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
-     window.localStorage.clear();
-    localStorage.setItem("isLoggedIn", 0);
+    window.localStorage.clear();
+    localStorage.setItem("isLoggedIn",0)
      window.location = "/";
   };
-  const loginHandler = () => {
-    localStorage.setItem("isLoggedIn", "1");
-    setIsLoggedIn(true);
-    
-  };
-  
+   
 
   
   return (
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
-        id: id,
+         id:id,
         onLogout: logoutHandler,
-        onLogin: loginHandler,
-     }}
+       }}
     >
       {props.children}
     </AuthContext.Provider>

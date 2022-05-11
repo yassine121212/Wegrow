@@ -1,12 +1,87 @@
+import React, {Children, useEffect, useState,useRef,useContext } from 'react';
 import "./profile.css";
+import axios from "axios";
 import pic from "../../../images/logo192.png" 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaFacebookF} from "react-icons/fa";
 import {BsInstagram,BsTwitter} from "react-icons/bs";
-import {SiAtom} from "react-icons/si"
-const profile=()=>{
+import {SiAtom} from "react-icons/si";
+import { AuthContextProvider } from '../../../store/authcontext';
+import AddCompetence from "./addCompetence";
+const Profile = () => {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [data, setData] = useState({
+                                      "firstName":null,"email":null,
+                                      "lastName":null,"phone":null,
+                                      "userName":null,"Address":null,
+                                      "pays":null
+                                       
+                                    });
+
+    const [details, setDetails] = useState([])
+
+    const usePreviousValue = value => {
+        const ref = useRef();
+        useEffect(() => {
+          ref.current = value;
+        });
+        return ref.current;
+      };
+      const prevCount = usePreviousValue(details);
+    
+    const handleSubmit = async () => {
+        setIsLoading(true);
+
+    try {
+        const username=localStorage.getItem("username")
+        const url = "http://localhost:8080/api/users/we/";
+        const  res  = await axios.get(url + username);
+        if(res.status===200)
+        {
+            console.log(res)
+            setData({"firstName":res.data.user.firstName,"email":res.data.user.email,
+                     "lastName":res.data.user.lastName,"phone":res.data.user.phone,
+                     "userName":res.data.user.userName,"Address":res.data.user.Address,
+                     "pays":res.data.user.pays
+                     })
+            
+          
+        }
+     
+
+
+  } catch (error) {
+        if (
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status <= 500
+        ) {
+            setError(error.response.data.message);
+        }
+    }
+    setIsLoading(false);
+
+}
+useEffect(() => {
+    handleSubmit();
+ },[]);
     return( 
         <>
+        {
+            error && (
+                <div style={{"color": "red"}}>
+                    Oop ! Impossible de charger la page,s'il vous plâit contactez nous...
+                </div>
+            )
+        }
+        {isLoading && (
+            <div className='button_loader'>
+     
+            </div>
+        )}
+         {!isLoading && (
         <div className="container">
         <div className="row">
              
@@ -16,9 +91,9 @@ const profile=()=>{
                         <div className="d-flex flex-column align-items-center">
                         <img height="75%" src={pic} alt=""></img>
 
-                            <p className="fw-bold h4 mt-3">John Doe</p>
+                            <p className="fw-bold h4 mt-3">{data.userName}</p>
                             <p className="text-muted">Full Stack Developer</p>
-                            <p className="text-muted mb-3">Soma,San Francisco, CA</p>
+                            <p className="text-muted mb-3">{data.Address}</p>
                             <div className="d-flex ">
                                 <div className="btn btn-primary follow me-2">Follow</div>
                                 <div className="btn btn-outline-primary message">Message</div>
@@ -52,158 +127,52 @@ const profile=()=>{
                     <div className="col-12 bg-white px-3 mb-3 pb-3">
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2">Full Name</p>
-                            <p className="py-2 text-muted">Kenneth valdez</p>
+                            <p className="py-2 text-muted">{data.firstName} {data.lastName} </p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2">Email</p>
-                            <p className="py-2 text-muted">fip@jukmuh.al</p>
+                            <p className="py-2 text-muted">{data.email}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2">Phone</p>
-                            <p className="py-2 text-muted">(239) 816-9029</p>
-                        </div>
-                        <div className="d-flex align-items-center justify-content-between border-bottom">
-                            <p className="py-2">Mobile</p>
-                            <p className="py-2 text-muted">(320) 380-4539</p>
+                            <p className="py-2 text-muted">{data.phone}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between">
                             <p className="py-2">Address</p>
-                            <p className="py-2 text-muted"> Soma,San Francisco,CA</p>
+                            <p className="py-2 text-muted"> {data.Address}</p>
+                        </div>
+                        <div className="d-flex align-items-center justify-content-between">
+                            <p className="py-2">Pays</p>
+                            <p className="py-2 text-muted"> {data.pays}</p>
                         </div>
                     </div>
-                    <div className="col-12 bg-white px-3 pb-2">
+                     <div className="col-12 bg-white px-3 pb-2">
+                    
                         <h6 className="d-flex align-items-center mb-3 fw-bold py-3"><i
                                 className="text-info me-2">assignment</i>Project
                             Status</h6>
-                        <small>Web Design</small>
-                        <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "5cm"}}
-                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>One Page</small>
-                        <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "10cm"}}
-                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar" style={{"width": "3cm"}}
-                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div className="progress mb-3">
-                            <div className="progress-bar bg-primary dododo" role="progressbar" style={{"width": "15cm"}}
-                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Website Markup</small>
-                        <div className="progress mb-3">
-                            <div className="progress-bar bg-primary" role="progressbar"  style={{"width": "13cm"}}
-                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="container">
-    <div className="row">
-         
-        <div className="col-md-5">
-            <div className="row">
-                <div className="col-12 bg-white p-0 px-3 py-3 mb-3">
-                    <div className="d-flex flex-column align-items-center">
-                    <img height="75%" src={pic} alt=""></img>
-
-                        <p className="fw-bold h4 mt-3">John Doe</p>
-                        <p className="text-muted">Full Stack Developer</p>
-                        <p className="text-muted mb-3">Soma,San Francisco, CA</p>
-                        <div className="d-flex ">
-                            <div className="btn btn-primary follow me-2">Follow</div>
-                            <div className="btn btn-outline-primary message">Message</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-12 bg-white p-0 px-2 pb-3 mb-3">
-                    <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                        <p><SiAtom className="browser"/>Website</p>
-                        <p>https://bootdey.com</p>
-                    </div>
-                    
-                    <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                        <p><BsTwitter className="twitter" />Twitter</p>
-                        <p>@bootdey</p>
-                    </div>
-                    <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                        <p> <BsInstagram className="insta"/>Instagram</p>
+                            
+                            <AddCompetence   changeDetails={setDetails}></AddCompetence>
+                            <ul>
+                            {Children.toArray(details.map(child =>
+                               <>
+                                 <small> {child.skill}</small>
+                                 <div className="progress mb-3">
+                                     <div className="progress-bar bg-primary" role="progressbar" style={{"width":child.level}}
+                                         aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                 </div>
+                                 </>
+                            ))}
+                            </ul>
+        
                         
-                        <p>bootdey</p>
-                    </div>
-                    <div className="d-flex justify-content-between py-2 px-3">
-                        <p><FaFacebookF className="fb" />facebook</p>
-                      <p>bootdey</p>  
                     </div>
                 </div>
             </div>
         </div>
-        <div className="col-md-7 ps-md-4">
-            <div className="row">
-                <div className="col-12 bg-white px-3 mb-3 pb-3">
-                    <div className="d-flex align-items-center justify-content-between border-bottom">
-                        <p className="py-2">Full Name</p>
-                        <p className="py-2 text-muted">Kenneth valdez</p>
-                    </div>
-                    <div className="d-flex align-items-center justify-content-between border-bottom">
-                        <p className="py-2">Email</p>
-                        <p className="py-2 text-muted">fip@jukmuh.al</p>
-                    </div>
-                    <div className="d-flex align-items-center justify-content-between border-bottom">
-                        <p className="py-2">Phone</p>
-                        <p className="py-2 text-muted">(239) 816-9029</p>
-                    </div>
-                    <div className="d-flex align-items-center justify-content-between border-bottom">
-                        <p className="py-2">Mobile</p>
-                        <p className="py-2 text-muted">(320) 380-4539</p>
-                    </div>
-                    <div className="d-flex align-items-center justify-content-between">
-                        <p className="py-2">Address</p>
-                        <p className="py-2 text-muted"> Soma,San Francisco,CA</p>
-                    </div>
-                </div>
-                <div className="col-12 bg-white px-3 pb-2">
-                    <h6 className="d-flex align-items-center mb-3 fw-bold py-3"><i
-                            className="text-info me-2">assignment</i>Project
-                        Status</h6>
-                    <small>Web Design</small>
-                    <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" style={{"width": "5cm"}}
-                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <small>One Page</small>
-                    <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" style={{"width": "10cm"}}
-                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <small>Mobile Template</small>
-                    <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" style={{"width": "3cm"}}
-                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <small>Backend API</small>
-                    <div className="progress mb-3">
-                        <div className="progress-bar bg-primary dododo" role="progressbar" style={{"width": "15cm"}}
-                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <small>Website Markup</small>
-                    <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar"  style={{"width": "13cm"}}
-                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</>
+    </div>)}
+   
+    </>
     );
 }
-export default profile;
+export default Profile;

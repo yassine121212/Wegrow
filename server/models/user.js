@@ -2,10 +2,12 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
+const { string } = require("joi");
 
 const userSchema = new mongoose.Schema({
 	firstName: { type: String, required: true },
 	lastName: { type: String, required: true },
+	userName: { type: String, required: true },
 	email: { type: String, required: true },
 	phone: { type: String, required: true },
 	Address: { type: String, required: true },
@@ -22,11 +24,23 @@ userSchema.methods.generateAuthToken = function () {
 };
 
 const User = mongoose.model("user", userSchema);
+const detailsUserSchema = new mongoose.Schema({
+	type: mongoose.Schema.Types.ObjectId,
+
+ 	 detailsCode: { type: String, required: true },
+	 details:{
+		 type:mongoose.Schema.Types.ObjectId,
+		 ref:'user'
+	 },
+	 comp:[]
+});
+const Details = mongoose.model("details", detailsUserSchema);
 
 const validate = (data) => {
 	const schema = Joi.object({
 		firstName: Joi.string().required().label("First Name"),
 		lastName: Joi.string().required().label("Last Name"),
+		userName: Joi.string().required().label("User Name"),
 		email: Joi.string().email().required().label("Email"),
 		phone: Joi.string().required().label("Phone"),
 		Address: Joi.string().required().label("Address"),
@@ -38,4 +52,4 @@ const validate = (data) => {
 	return schema.validate(data);
 };
 
-module.exports = { User, validate };
+module.exports = { User, validate,Details };

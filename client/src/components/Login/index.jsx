@@ -43,7 +43,7 @@ const Login = () => {
 
 	const [error, setError] = useState("");
     const context = useContext(AuthContext);
- 
+    const {setId} = useContext(AuthContext);
 	const { isValid: emailIsValid } = email;
 	const { isValid: passwordIsValid } = password;
 	const emailInputRef = useRef();
@@ -86,12 +86,13 @@ const Login = () => {
 
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
- 			if(localStorage.setItem("token", res.data)) 
-			 
-				 console.log("yes");
- 			localStorage.setItem("id",res.user._id)
-			 localStorage.setItem("isLoggedIn",1)
-
+			if(res){
+ 			localStorage.setItem("token", res.data)
+			localStorage.setItem("username",res.user.userName)
+			localStorage.setItem("id",res.user._id)
+			localStorage.setItem("isLoggedIn",1)
+            
+		}
 		
 
   	} catch (error) {
