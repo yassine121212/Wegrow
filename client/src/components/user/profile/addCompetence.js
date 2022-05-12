@@ -52,7 +52,10 @@ const showdetails= async ()=>{
        {
          console.log(det)
          
-         props.changeDetails(det.data.comp)
+         props.getDetails(det.data.comp)
+         
+         setskillsList(det.data.comp);
+
         }
     } catch (error) {
     if (
@@ -99,7 +102,7 @@ const showdetails= async ()=>{
   };
 
   const handleskillAdd = () => {
-    setskillsList([...skillsList, { skill: "",level: "" }]);
+    setskillsList([...skillsList,{ skill: "",level: "" }]);
  
   };
   

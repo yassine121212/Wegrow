@@ -152,7 +152,7 @@ useEffect(() => {
                                 className="text-info me-2">assignment</i>Project
                             Status</h6>
                             
-                            <AddCompetence   changeDetails={setDetails}></AddCompetence>
+                            <AddCompetence   getDetails={setDetails}></AddCompetence>
                             <ul>
                             {Children.toArray(details.map(child =>
                                <>
