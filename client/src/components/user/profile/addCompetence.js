@@ -117,7 +117,7 @@ const showdetails= async ()=>{
     <span>go</span>
   </button>     
 
-    <form className="App" autoComplete="off">
+   {props.dispo_Modif && ( <form className="App" autoComplete="off">
       <div className="form-field">
         <label htmlFor="skill">skill(s)</label>
          
@@ -185,7 +185,7 @@ const showdetails= async ()=>{
  
          
       </div>
-    </form>
+    </form>)}
     </>
   );
 }

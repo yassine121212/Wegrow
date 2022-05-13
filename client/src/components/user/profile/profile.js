@@ -5,6 +5,7 @@ import pic from "../../../images/logo192.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaFacebookF} from "react-icons/fa";
 import {BsInstagram,BsTwitter} from "react-icons/bs";
+import {AiOutlineEdit} from "react-icons/ai";
 import {SiAtom} from "react-icons/si";
 import { AuthContextProvider } from '../../../store/authcontext';
 import AddCompetence from "./addCompetence";
@@ -21,8 +22,9 @@ const Profile = () => {
                                     });
 
     const [details, setDetails] = useState([])
+    const [modify_details, setmodify_details] = useState(false);
 
-    const usePreviousValue = value => {
+     const usePreviousValue = value => {
         const ref = useRef();
         useEffect(() => {
           ref.current = value;
@@ -64,6 +66,9 @@ const Profile = () => {
     setIsLoading(false);
 
 }
+    function handleModify() {
+        setmodify_details(true)
+    }
 useEffect(() => {
     handleSubmit();
  },[]);
@@ -147,18 +152,19 @@ useEffect(() => {
                         </div>
                     </div>
                      <div className="col-12 bg-white px-3 pb-2">
-                    
-                        <h6 className="d-flex align-items-center mb-3 fw-bold py-3"><i
+                         <div className="modify">
+                        <h6><i
                                 className="text-info me-2">assignment</i>Project
                             Status</h6>
-                            
-                            <AddCompetence   getDetails={setDetails}></AddCompetence>
+                            <AiOutlineEdit className='button_edit_details' onClick={handleModify}/>
+                            </div>
+                         <AddCompetence dispo_Modif={modify_details}  getDetails={setDetails}></AddCompetence>
                             <ul>
                             {Children.toArray(details.map(child =>
                                <>
                                  <small> {child.skill}</small>
                                  <div className="progress mb-3">
-                                     <div className="progress-bar bg-primary" role="progressbar" style={{"width":child.level}}
+                                     <div className="progress-bar bg-primary" role="progressbar" style={{"width":child.level + "%"}}
                                          aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                                  </div>
                                  </>
