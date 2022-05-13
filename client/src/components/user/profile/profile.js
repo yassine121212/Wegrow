@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaFacebookF} from "react-icons/fa";
 import {BsInstagram,BsTwitter} from "react-icons/bs";
 import {SiAtom} from "react-icons/si";
-import { AuthContextProvider } from '../../../store/authcontext';
+import AuthContext from "../../../store/authcontext";
 import AddCompetence from "./addCompetence";
 const Profile = () => {
 
@@ -35,7 +35,6 @@ const Profile = () => {
         setIsLoading(true);
 
     try {
-        const username=localStorage.getItem("username")
         const url = "http://localhost:8080/api/users/we/";
         const  res  = await axios.get(url + username);
         if(res.status===200)

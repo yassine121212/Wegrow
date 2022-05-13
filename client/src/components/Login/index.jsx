@@ -43,8 +43,7 @@ const Login = () => {
 
 	const [error, setError] = useState("");
     const context = useContext(AuthContext);
-    const {setId} = useContext(AuthContext);
-	const { isValid: emailIsValid } = email;
+ 	const { isValid: emailIsValid } = email;
 	const { isValid: passwordIsValid } = password;
 	const emailInputRef = useRef();
 	const passwordInputRef = useRef();
@@ -88,10 +87,10 @@ const Login = () => {
 			const { data: res } = await axios.post(url, data);
 			if(res){
  			localStorage.setItem("token", res.data)
-			localStorage.setItem("username",res.user.userName)
-			localStorage.setItem("id",res.user._id)
-			localStorage.setItem("isLoggedIn",1)
-            
+			 context.setusername(res.user.userName)
+			
+ 			context.setId(res.user._id)
+             context.setIsLoggedIn(true)
 		}
 		
 
