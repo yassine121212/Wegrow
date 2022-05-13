@@ -14,7 +14,7 @@ function valuetext(value) {
  
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  const [tosave, settosave] = useState(false);
   
   
   const senddetails = async () => {
@@ -24,9 +24,9 @@ function valuetext(value) {
     const id = localStorage.getItem("id");
      
     const url = "http://localhost:8080/api/users/det/";
-      await axios.put(url + id,skillsList);
-      
-  
+    const res = await axios.put(url + id,skillsList);
+         if(res)
+             props.setModify(false)
   
   } catch (error) {
     if (
@@ -81,7 +81,7 @@ const showdetails= async ()=>{
  
   useEffect(() => {
     showdetails();
-  },[]);
+  },[props.dispo_Modif]);
   const handleskillChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...skillsList];
@@ -103,21 +103,15 @@ const showdetails= async ()=>{
 
   const handleskillAdd = () => {
     setskillsList([...skillsList,{ skill: "",level: "" }]);
- 
-  };
-  
-   
+  }; 
+  const cancelModify = () => {
+    props.setModify(false)
+  }
   return ( 
     <>
-  <button
-    type="button"
-    onClick={senddetails}
-    className="add-btn"
-  >
-    <span>go</span>
-  </button>     
+    
 
-   {props.dispo_Modif && ( <form className="App" autoComplete="off">
+   {props.dispo_Modif && (<> <form className="App" autoComplete="on">
       <div className="form-field">
         <label htmlFor="skill">skill(s)</label>
          
@@ -173,19 +167,14 @@ const showdetails= async ()=>{
           </div>
         ))}
       </div>
-      <div className="output">
-        <h2>Output</h2>
-        {skillsList &&
-          skillsList.map((singleskill, index) => (
-            <ul key={index}>
-              {singleskill.skill && <li>{singleskill.skill} : {singleskill.level} %</li>}
-            </ul>
-          ))}
-           <h2>Output</h2>
- 
-         
-      </div>
-    </form>)}
+      
+    </form>
+    <div className="btn_display">
+    <div> <button onClick={cancelModify} className="btn-6"><span>Cancel</span></button></div>
+    <div><button onClick={senddetails} className="btn-5"><span>Save</span></button></div>
+    </div>
+    </>)}
+
     </>
   );
 }

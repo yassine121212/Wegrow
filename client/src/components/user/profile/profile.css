@@ -80,9 +80,11 @@ img {
 .modify{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+     align-content: center;
+ 
   }
 .button_edit_details{
-    width: 1cm;
-}
+    font-size: 0.8cm;
+    cursor: pointer;
+  }

@@ -154,11 +154,16 @@ useEffect(() => {
                      <div className="col-12 bg-white px-3 pb-2">
                          <div className="modify">
                         <h6><i
-                                className="text-info me-2">assignment</i>Project
+                                className="text-info ">assignment </i>Project
                             Status</h6>
                             <AiOutlineEdit className='button_edit_details' onClick={handleModify}/>
                             </div>
-                         <AddCompetence dispo_Modif={modify_details}  getDetails={setDetails}></AddCompetence>
+                         <AddCompetence
+                          dispo_Modif={modify_details} 
+                          setModify={setmodify_details}
+                          getDetails={setDetails}
+                          
+                           ></AddCompetence>
                             <ul>
                             {Children.toArray(details.map(child =>
                                <>
