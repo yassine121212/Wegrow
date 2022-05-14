@@ -1,0 +1,12 @@
+
+
+.all{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4cm;
+}
+.disc{
+    margin-left: 12cm;
+    width: 16cm;
+}
