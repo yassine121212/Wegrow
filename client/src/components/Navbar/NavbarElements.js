@@ -7,6 +7,7 @@ export const Container = styled.div`
   grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    z-index:1;
 `;
 
 export const Wrapper = styled.div`
