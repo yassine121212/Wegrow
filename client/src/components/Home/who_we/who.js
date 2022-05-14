@@ -22,7 +22,7 @@ const who = ()=>{
 
            </div>
            <div className="disc">
-              <h1 className="tit1">WseGrow</h1>
+              <h1 className="tit1">WeGrow</h1>
                 <p className="par">
                 New consumption models have emerged thanks to the rise of new 
                 technologies and changing lifestyles. Jobbing allows<b> tens of 
