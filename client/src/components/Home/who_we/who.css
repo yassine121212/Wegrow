@@ -7,10 +7,29 @@
     margin-top: 4cm;
 }
 .disc{
-    margin-left: 12cm;
+    margin-left: 0.5cm;
     width: 16cm;
 }
-.svgwho{
-    width: 8cm;
-    background-color: red;
+.blo{
+    position: absolute;
+    width: 18cm;
+    height: 35cm ;
+    margin-left: 1cm;
+    margin-top: -11cm;
 }
+.svgwho{
+    position: relative;
+     width: 10cm;
+    margin-left: 1cm;
+    margin-right: 5cm;
+ }
+ .tit1{
+     border-bottom: 4px solid #FF0066;
+ }
+ .par{
+     
+     text-align: left;
+ }
+ .work_color{
+     color:#e7005d;
+  }

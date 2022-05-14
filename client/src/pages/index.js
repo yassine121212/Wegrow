@@ -11,9 +11,9 @@ const Home = () => {
         <div className="oral">
             <div className="pivc">
                 <Slider />
-                <Who/>
                 <Service/>
-                 <Footer />
+                <Who/>
+                <Footer />
             </div>
         </div>
     );
