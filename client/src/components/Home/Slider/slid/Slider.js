@@ -19,22 +19,17 @@ function Slider(props) {
     }, [activeIndex]);
 
     return (
-        <div>
+    
         <div className="slider-container">
             <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
             
             <div className="slide-text">
                 <p>De vrais bricoleurs pour vous aider
                     Travaux, déménagements, livraisons & services à domicile</p>
-                <br/> 
+                <br/> <Post></Post>
 
             </div>
-            
-        </div>
-        <div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <Post></Post></div>
-        </div>
+            </div>
     );
 }
 export default Slider;
