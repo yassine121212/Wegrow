@@ -4,6 +4,8 @@ import Stack from "@mui/material/Stack";
 import AuthContext from "../../store/authcontext";
 import logo from "../../images/logo192.png";
 import "./navbar.css";
+import { ThemeProvider, CssBaseline, Switch } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
 import {
   Container,
   LogoContainer,
@@ -15,7 +17,6 @@ import {
 } from "./NavbarElements";
 import { FaBattleNet, FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";
- 
 import { CgLogOut } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineSettings } from "react-icons/md";
@@ -26,9 +27,21 @@ import { Link  } from "react-router-dom";
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const context = useContext(AuthContext);
- 
+  const [darkMode, setDarkMode] = useState(false);
+  
+  const theme = createMuiTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light',
+    }
+  })
+
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
+
   return (
-    <Container>
+    <Container >
+    <ThemeProvider theme={theme}>
       <Wrapper>
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                   <LogoContainer>
@@ -83,6 +96,11 @@ const Navbar = () => {
                         Sign Up
                       </Button>
                     </MenuItemLink >
+                    <MenuItemLink >
+                    <CssBaseline>
+          <Switch onChange={handleDarkMode} value={darkMode}/>
+      </CssBaseline>
+      </MenuItemLink >
                   </Stack>
                 </MenuItem>
               )}
@@ -124,6 +142,7 @@ const Navbar = () => {
           </Menu>
         </IconContext.Provider>
       </Wrapper>
+      </ThemeProvider>
     </Container>
   );
 };
