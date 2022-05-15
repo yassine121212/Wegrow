@@ -3,7 +3,7 @@ const { User } = require("../models/user");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
-router.post("/",async (req, res) => {
+router.post("/", async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
@@ -21,12 +21,7 @@ router.post("/",async (req, res) => {
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
 		  const token = user.generateAuthToken();
-		  const Retoken = user.refreshAuthToken();
-
-		 // res.set("token", token)
-
-		res.status(200).send({ token: token,Retoken: Retoken, message: "logged in successfully",user });
-
+		res.status(200).send({ data: token, message: "logged in successfully",user });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
