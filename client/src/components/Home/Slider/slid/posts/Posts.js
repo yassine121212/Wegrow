@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
+import './Posts.css';
 
-const Posts = (props) => {
- 
+function Post(){
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   const showModal = () => {
-    props.setmodelvidible(true);
+    setIsModalVisible(true);
   };
 
   const handleOk = () => {
-    props.setmodelvidible(false);
+    setIsModalVisible(false);
   };
 
   const handleCancel = () => {
-    props.setmodelvidible(false);
+    setIsModalVisible(false);
   };
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button className="btn" type="primary" onClick={showModal}>
         Open Modal
       </Button>
-      <Modal title="Basic Modal" visible={props.modelVisi} onOk={handleOk} onCancel={handleCancel}>
+      <Modal className="model" title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>
@@ -29,4 +32,4 @@ const Posts = (props) => {
   );
 };
 
-export default Posts;
+export default Post;
