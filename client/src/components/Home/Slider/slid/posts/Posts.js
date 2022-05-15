@@ -20,7 +20,7 @@ function Post(){
 
   return (
     <>
-      <Button className="btn" type="primary" onClick={showModal}>
+      <Button className="page" type="primary" onClick={showModal}>
         Open Modal
       </Button>
       <Modal className="model" title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
