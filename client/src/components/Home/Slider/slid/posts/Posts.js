@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 
-const Posts = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
+const Posts = (props) => {
+ 
   const showModal = () => {
-    setIsModalVisible(true);
+    props.setmodelvidible(true);
   };
 
   const handleOk = () => {
-    setIsModalVisible(false);
+    props.setmodelvidible(false);
   };
 
   const handleCancel = () => {
-    setIsModalVisible(false);
+    props.setmodelvidible(false);
   };
 
   return (
@@ -21,7 +20,7 @@ const Posts = () => {
       <Button type="primary" onClick={showModal}>
         Open Modal
       </Button>
-      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="Basic Modal" visible={props.modelVisi} onOk={handleOk} onCancel={handleCancel}>
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>

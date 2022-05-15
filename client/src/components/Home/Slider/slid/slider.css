@@ -50,6 +50,9 @@
     text-align: center;
     top: 30%;
 }
+.post{
+    z-index: 20;
+}
 
 @media screen and (max-width: 660px) {
     .slide-text {
