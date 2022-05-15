@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { User, validate ,Details } = require("../models/user");
 const bcrypt = require("bcrypt");
+
+const auth = require('../middleware/auth');
+
  router.post("/", async (req, res) => {
 	try {
 		const { error } = validate(req.body);
@@ -29,7 +32,7 @@ const bcrypt = require("bcrypt");
 	}
 
 });
-router.get("/we/:userName", (req, res) => {
+router.get("/we/:userName",auth,(req, res) => {
 	try {
 		User.findOne({ userName: req.params.userName })
 	  .then(user => res.status(200).json({ user }))

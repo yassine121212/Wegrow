@@ -18,10 +18,18 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = function () {
 	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
+		expiresIn: "15s",
+	});
+	return token;
+};
+userSchema.methods.refreshAuthToken = function () {
+	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
 		expiresIn: "7d",
 	});
 	return token;
 };
+
+ 
 
 const User = mongoose.model("user", userSchema);
 const detailsUserSchema = new mongoose.Schema({
