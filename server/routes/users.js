@@ -32,7 +32,7 @@ const auth = require('../middleware/auth');
 	}
 
 });
-router.get("/we/:userName",auth,(req, res) => {
+router.get("/we/:userName",(req, res) => {
 	try {
 		User.findOne({ userName: req.params.userName })
 	  .then(user => res.status(200).json({ user }))
