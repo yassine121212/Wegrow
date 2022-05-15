@@ -1,9 +1,11 @@
 ﻿import React, { useEffect, useState } from "react";
 import SliderContent from "./SliderContent";
 import sliderImage from "./sliderImage";
+import Post from "./posts/Posts";
 import "./slider.css";
 import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 
 const len = sliderImage.length - 1;
 
@@ -24,7 +26,7 @@ function Slider(props) {
             <div className="slide-text">
                 <p>De vrais bricoleurs pour vous aider
                     Travaux, déménagements, livraisons & services à domicile</p>
-                <br/> <Button variant="contained" size="large" startIcon={<AddCircleIcon />} href="/services">Demander un service</Button>
+                <br/> <Post></Post>
 
             </div>
         </div>
