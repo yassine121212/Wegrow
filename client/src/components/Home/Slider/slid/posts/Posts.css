@@ -1,0 +1,13 @@
+.btn {
+   width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: rgb(255,27,0);
+background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+font-size:15px;
+  }
+  .model {
+
+  }
