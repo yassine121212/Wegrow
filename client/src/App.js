@@ -9,6 +9,7 @@ import Contact from './pages/contact';
 import SignUp from './components/Singup/index';
 import SignIn from './components/Login/index';
 import Profile from "./components/user/profile/profile"
+import Help from "./components/user/help/help"
 import FooterContainer from './containers/footer'
  import Jardin from "./pages/servicespages/jardinage"
  
@@ -31,6 +32,7 @@ function App() {
        <Route path='/login' element= {<SignIn/>} />
        <Route path='/login' element= {<SignIn/>} />
        <Route path='/profile' element= {<Profile/>} />
+       <Route path='/help' element= {<Help/>} />
        <Route path='/jardinage' element= {<Jardin/>} />
       
       </Routes>

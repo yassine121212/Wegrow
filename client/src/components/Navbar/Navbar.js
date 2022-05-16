@@ -101,15 +101,18 @@ const Navbar = () => {
                             <span>Profile</span>
                           </li>
                           </Link >
+                          
                           <li>
                             <MdOutlineSettings  className="icon_user"></MdOutlineSettings>
                              <span>Settings</span>
                           </li>
-                          
+                          <Link className="llink" to="/help" >
                           <li>
                             <BiHelpCircle  className="icon_user"></BiHelpCircle>
                             <span>Help</span>
                           </li>
+                          </Link>
+                          
                           <li onClick={context.onLogout}>
                             <CgLogOut  className="icon_user"></CgLogOut>
                             <span>Logout</span>
