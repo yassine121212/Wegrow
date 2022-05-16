@@ -58,13 +58,7 @@ const Navbar = () => {
               </MenuItemLink >
               </Link >              
             </MenuItem>
-            <MenuItem className="sec">
-            <Link className="llink" to="/contact-us" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-              <MenuItemLink >
-                <div>Contact Us</div>
-              </MenuItemLink >
-              </Link >  
-            </MenuItem>
+             
             <div className="dio">
               {!context.isLoggedIn && (
                 <MenuItem className="sec ">
