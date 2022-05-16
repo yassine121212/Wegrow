@@ -54,7 +54,7 @@ const Navbar = () => {
             <MenuItem className="sec">
             <Link className="llink" to="/services" onClick={() => setShowMobileMenu(!showMobileMenu)} >
               <MenuItemLink  >
-                <div>become a ervice provider</div>
+                <div>become a service provider</div>
               </MenuItemLink >
               </Link >              
             </MenuItem>
