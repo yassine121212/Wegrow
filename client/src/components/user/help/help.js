@@ -11,7 +11,7 @@ const Help = () =>{
         });
         }
     return (
-        <div class="container">  
+        <div class="help">  
         <form id="contact"onSubmit={sendEmail}>
         <fieldset>
           <h3>Contact Form</h3>
