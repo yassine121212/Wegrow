@@ -30,7 +30,6 @@ function App() {
         <Route path='/contact-us' element= {<Contact/>} />
        <Route path='/register' element= {<SignUp/>} />
        <Route path='/login' element= {<SignIn/>} />
-       <Route path='/login' element= {<SignIn/>} />
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
        <Route path='/jardinage' element= {<Jardin/>} />

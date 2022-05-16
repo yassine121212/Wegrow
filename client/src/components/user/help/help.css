@@ -1,10 +1,10 @@
 
-.container {
+.help {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  top: -6em;
+
 }
 
 #contact input[type="text"],
@@ -17,7 +17,7 @@
 #contact {
   background: #F9F9F9;
   width:600px;
-  height:500px;
+  height:450px;
   padding: 25px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
