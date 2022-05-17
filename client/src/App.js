@@ -10,8 +10,9 @@ import SignIn from './components/Login/index';
 import Profile from "./components/user/profile/profile"
 import Help from "./components/user/help/help"
 import FooterContainer from './containers/footer'
- import Jardin from "./pages/servicespages/jardinage"
- 
+import Jardin from "./pages/servicespages/jardinage"
+import Messenger from "./pages/messenger/Messenger";
+
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
        <Route path='/jardinage' element= {<Jardin/>} />
+       <Route path='/messenger' element= {<Messenger/>} />
+
       
       </Routes>
     </Router>
