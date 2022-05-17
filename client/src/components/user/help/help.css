@@ -55,7 +55,9 @@ fieldset {
   max-width: 100%;
   resize: none;
 }
-
+#contact textarea::-webkit-scrollbar{
+  width:0px;
+}
 #contact button[type="submit"] {
   cursor: pointer;
   width: 100%;
