@@ -11,10 +11,25 @@ const userSchema = new mongoose.Schema({
 	email: { type: String, required: true },
 	phone: { type: String, required: true },
 	Address: { type: String, required: true },
-	pays:{type: String, required: true},
-	date: { type: Date, default:Date.now() },
-	password: { type: String, required: true },
-});
+	city:{type: String, required: true},
+ 	password: { type: String, required: true },
+	profilePicture: {
+		type: String,
+		default: "",
+	  },
+	  followers: {
+		type: Array,
+		default: [],
+	  },
+	  followings: {
+		type: Array,
+		default: [],
+	  },
+	  isAdmin: {
+		type: Boolean,
+		default: false,
+	  },
+},{timestamps:true });
 
 userSchema.methods.generateAuthToken = function () {
 	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
@@ -52,9 +67,7 @@ const validate = (data) => {
 		email: Joi.string().email().required().label("Email"),
 		phone: Joi.string().required().label("Phone"),
 		Address: Joi.string().required().label("Address"),
-		pays: Joi.string().required().label("Pays"),
-		date: Joi.string().label("date"),
-
+		city: Joi.string().required().label("city"),
 		password: passwordComplexity().required().label("Password"),
 	});
 	return schema.validate(data);

@@ -9,13 +9,15 @@ import React, { useState, useEffect } from "react";
 
  export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(null);
  
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+    const storedUserId = localStorage.getItem("id");
 
     if (storedUserLoggedInInformation === "1") {
       setIsLoggedIn("true");
+      setId(storedUserId);
        
     }
     
@@ -37,7 +39,7 @@ import React, { useState, useEffect } from "react";
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
-         id:id,
+        id:id,
         onLogout: logoutHandler,
        }}
     >

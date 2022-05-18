@@ -17,7 +17,7 @@ const Profile = () => {
                                       "firstName":null,"email":null,
                                       "lastName":null,"phone":null,
                                       "userName":null,"Address":null,
-                                      "pays":null
+                                      "city":null
                                        
                                     });
 
@@ -46,7 +46,7 @@ const Profile = () => {
             setData({"firstName":res.data.user.firstName,"email":res.data.user.email,
                      "lastName":res.data.user.lastName,"phone":res.data.user.phone,
                      "userName":res.data.user.userName,"Address":res.data.user.Address,
-                     "pays":res.data.user.pays
+                     "city":res.data.user.city
                      })
             
           
@@ -147,8 +147,8 @@ useEffect(() => {
                             <p className="py-2 text-muted"> {data.Address}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between">
-                            <p className="py-2">Pays</p>
-                            <p className="py-2 text-muted"> {data.pays}</p>
+                            <p className="py-2">city</p>
+                            <p className="py-2 text-muted"> {data.city}</p>
                         </div>
                     </div>
                      <div className="col-12 bg-white px-3 pb-2">

@@ -14,7 +14,7 @@ const Signup = () => {
 		email: "",
 		phone: "",
 		Address: "",
- 		pays: "",
+ 		city: "",
 		password: "",
 	});
 	const [error, setError] = useState("");
@@ -98,9 +98,9 @@ const Signup = () => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
 		  type="text"
- 							name="pays"
+ 							name="city"
  							onChange={handleChange}
-							value={data.pays}
+							value={data.city}
 							required
          >  
 	    { states.map(state => <option value={state}>{state}</option> )};
