@@ -9,8 +9,8 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
   useEffect(() => {
     const getFriends = async () => {
-      const res = await axios.get("/users/friends/" + currentId);
-      setFriends(res.data);
+      const res = await axios.get("http://localhost:8080/api/users/friends/" + currentId);
+      if(res) setFriends(res.data);
     };
 
     getFriends();
@@ -47,7 +47,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
             />
             <div className="chatOnlineBadge"></div>
           </div>
-          <span className="chatOnlineName">{o?.username}</span>
+          <span className="chatOnlineName">{o?.userName}</span>
         </div>
       ))}
     </div>

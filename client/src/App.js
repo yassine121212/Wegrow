@@ -37,11 +37,9 @@ function App() {
       
       </Routes>
     </Router>
-    <div style={{overflowY:"scroll", height:"800px"}}></div> 
-    
+     
     </div>
-    <FooterContainer />
-    </>
+     </>
   );
 }
 
