@@ -6,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai';
 const Signup = () => {
 	const [data, setData] = useState({
 		firstName: "",
@@ -23,6 +24,11 @@ const Signup = () => {
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+	// eye
+	const [StateEye,SetStateEye] = useState(false)
+	const toggleBtn = () =>{
+		SetStateEye(prevState =>!prevState);
+	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -129,8 +135,9 @@ const Signup = () => {
 							className={styles.input}
 						/>
 						<p>Format: 123-456-7890</p>
+						<div>
 						<input
-							type="password"
+						type={StateEye ? "text" : "password"}
 							placeholder="Password"
 							name="password"
 							onChange={handleChange}
@@ -138,7 +145,12 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						
+						<button className={styles.eye} onClick={ toggleBtn}>
+						{
+					        StateEye ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>
+						}
+						</button>
+						</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sing Up

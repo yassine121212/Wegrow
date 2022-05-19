@@ -37,6 +37,16 @@
 	font-size: 40px;
 	margin-top: 0;
 }
+.eye{
+	font-size:1.2rem;
+   outline:none;
+   margin-left: -2.2rem;
+   border:none;
+   position: absolute;
+   margin-bottom:4cm;
+   cursor:pointer;
+
+}
 
 .input {
 	outline: none;
