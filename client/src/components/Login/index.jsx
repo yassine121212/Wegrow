@@ -3,7 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import AuthContext from "../../store/authcontext";
+import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai';
 //import Context from "@mui/base/TabsUnstyled/TabsContext";
+	// eye
+	
+
 
 const emailReducer = (state, action) => {
 	if (action.type === "USER_INPUT") {
@@ -28,6 +32,10 @@ const passwordReducer = (state, action) => {
 	return { value: "", isValid: true };
   };
 const Login = () => {
+	const [StateEye,SetStateEye] = useState(false)
+	const toggleBtn = () =>{
+		SetStateEye(prevState =>!prevState);
+	}
 	const [email, dispatchEmail] = useReducer(emailReducer, {
 		value: "",
 		isValid: true,
@@ -139,9 +147,10 @@ const Login = () => {
 							required
 							className={`${styles.input} ${!email.isValid && styles.eroremail}`}
 						/>
+						<div>
  						<input
 						    ref={passwordInputRef}
-							type="password"
+							type={StateEye ? "text" : "password"}
 							placeholder="Password"
 							name="password"
 							onChange={passwordChangeHandler}
@@ -150,6 +159,12 @@ const Login = () => {
 							required
 							className={`${styles.input} ${!password.isValid && styles.eroremail}`}
 						/>
+						<button className={styles.eye} onClick={ toggleBtn}>
+						{
+					        StateEye ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>
+						}
+						</button>
+						</div>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sing In
