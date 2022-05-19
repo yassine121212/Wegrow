@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import AuthContext from "../../store/authcontext";
 import logo from "../../images/logo192.png";
+import { BsChatDots } from "react-icons/bs";
+
 import "./navbar.css";
 import {
   Container,
@@ -44,13 +46,18 @@ const Navbar = () => {
 
           <Menu open={showMobileMenu}>
             <MenuItem className="sec">
-            <Link className="llink"  to="/about" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-              <MenuItemLink 
-              >
+               <MenuItemLink>
                 <div>About</div>
               </MenuItemLink >
-              </Link >
-            </MenuItem>
+             </MenuItem>
+             <MenuItem className="sec">
+             <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
+               <MenuItemLink>
+                <BsChatDots style={{ "fontSize":"0.6cm" }}></BsChatDots>
+              </MenuItemLink >
+              </Link >              
+
+             </MenuItem>
             <MenuItem className="sec">
             <Link className="llink" to="/services" onClick={() => setShowMobileMenu(!showMobileMenu)} >
               <MenuItemLink  >
