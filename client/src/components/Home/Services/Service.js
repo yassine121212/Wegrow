@@ -1,13 +1,13 @@
 import React from 'react'
 import First from "../../../images/jard.png"
 import Second from "../../../images/brico.png"
-
+import { BiCategoryAlt } from "react-icons/bi";
 import './Service.css'
 import { Link} from 'react-router-dom';
 const Service = () => {
     return (
         <div className='best'>
-           <h2 >Nos services</h2>
+          <div ><h1 className='title_services' > <BiCategoryAlt></BiCategoryAlt> Nos services</h1></div> 
             <div className='container'>
                 <div className='image'>
                 <Link to="/jardinage">
