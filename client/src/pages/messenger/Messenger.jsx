@@ -39,12 +39,12 @@ export default function Messenger() {
     socket.current.emit("addUser", user.id);
     socket.current.on("getUsers", (users) => {
       setOnlineUsers(
-        user.followings?.filter((f) => users.some((u) => u.userId === f))
+        [user.followings?.filter((f) => users.some((u) => u.userId === f))]
       );
     });
   }, [user]);
-
- 
+    console.log(user.followings)
+  
     const getConversations = async () => {
       try {
         const res = await axios.get("http://localhost:8080/api/conversations/" + user.id);
@@ -55,7 +55,7 @@ export default function Messenger() {
     };
    useEffect(() => {
     getConversations();
-  });
+  },[]);
   
   useEffect(() => {
     const getMessages = async () => {
