@@ -8,7 +8,6 @@ import SignUp from './components/Singup/index';
 import SignIn from './components/Login/index';
 import Profile from "./components/user/profile/profile"
 import Help from "./components/user/help/help"
-import FooterContainer from './containers/footer'
 import Jardin from "./pages/servicespages/jardinage"
 import Messenger from "./pages/messenger/Messenger";
 
@@ -35,7 +34,7 @@ function App() {
       
       </Routes>
     </Router>
-     
+    
     </div>
      </>
   );
