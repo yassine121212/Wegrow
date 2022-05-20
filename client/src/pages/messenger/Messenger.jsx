@@ -6,7 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../store/authcontext";
 import axios from "axios";
 import { io } from "socket.io-client";
-
+ 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -38,12 +38,20 @@ export default function Messenger() {
   useEffect(() => {
     socket.current.emit("addUser", user.id);
     socket.current.on("getUsers", (users) => {
-      setOnlineUsers(
-        [user.followings?.filter((f) => users.some((u) => u.userId === f))]
+      console.log("**********************")
+      console.log(user)
+     setOnlineUsers(
+       [ user.followings?.filter((f) => users.some((u) => u.userId === f))]
       );
-    });
+     });
   }, [user]);
-    console.log(user.followings)
+ 
+  
+  console.log("online users")
+
+  console.log(onlineUsers)
+  console.log("user followings")
+  console.log(user.followings)
   
     const getConversations = async () => {
       try {
@@ -55,7 +63,7 @@ export default function Messenger() {
     };
    useEffect(() => {
     getConversations();
-  },[]);
+  });
   
   useEffect(() => {
     const getMessages = async () => {
