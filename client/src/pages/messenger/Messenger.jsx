@@ -14,6 +14,7 @@ export default function Messenger() {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [followings, setfollowings] = useState([])
   const socket = useRef();
   const user= useContext(AuthContext);
   const scrollRef = useRef();
@@ -28,7 +29,34 @@ export default function Messenger() {
       });
     });
   }, []);
+  const hanluser=async ()=>{
+    try {
+      const username=localStorage.getItem("username")
+      const url = "http://localhost:8080/api/users/we/";
+      const  res  = await axios.get(url + username);
+      if(res.status===200)
+      {
+          console.log(res)
+          setfollowings(res.data.user.followings)
+          
+        
+      }
+   
 
+
+} catch (error) {
+      if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+      ) {
+        console.log("error following")
+      }
+  }
+  }
+  useEffect(() => {
+    hanluser()
+  }, []);
   useEffect(() => {
     arrivalMessage &&
       currentChat?.members.includes(arrivalMessage.sender) &&
@@ -39,19 +67,18 @@ export default function Messenger() {
     socket.current.emit("addUser", user.id);
     socket.current.on("getUsers", (users) => {
       console.log("**********************")
-      console.log(user)
+      console.log(users)
      setOnlineUsers(
-       [ user.followings?.filter((f) => users.some((u) => u.userId === f))]
+       followings?.filter((f) => users.some((u) => u.userId === f))
       );
      });
-  }, [user]);
+  }, [user,followings]);
  
-  
   console.log("online users")
 
   console.log(onlineUsers)
   console.log("user followings")
-  console.log(user.followings)
+  console.log(followings)
   
     const getConversations = async () => {
       try {
