@@ -20,7 +20,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/bricolage">
-                <img className='service_img' style={{ "background-image":"none" }} src={Second} alt='' />
+                <img className='service_img' style={{ "backgroundImage":"none" }} src={Second} alt='' />
                 <div className='content'>
                 <h2>Bricolage</h2>
                 <p> pose de cadres, de tringles, changer une ampoule, monter et démonter un meuble.</p>

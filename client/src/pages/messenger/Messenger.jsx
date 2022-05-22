@@ -6,7 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../store/authcontext";
 import axios from "axios";
 import { io } from "socket.io-client";
-
+ 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -14,6 +14,7 @@ export default function Messenger() {
   const [newMessage, setNewMessage] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [followings, setfollowings] = useState([])
   const socket = useRef();
   const user= useContext(AuthContext);
   const scrollRef = useRef();
@@ -28,7 +29,34 @@ export default function Messenger() {
       });
     });
   }, []);
+  const hanluser=async ()=>{
+    try {
+      const username=localStorage.getItem("username")
+      const url = "http://localhost:8080/api/users/we/";
+      const  res  = await axios.get(url + username);
+      if(res.status===200)
+      {
+          console.log(res)
+          setfollowings(res.data.user.followings)
+          
+        
+      }
+   
 
+
+} catch (error) {
+      if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+      ) {
+        console.log("error following")
+      }
+  }
+  }
+  useEffect(() => {
+    hanluser()
+  }, []);
   useEffect(() => {
     arrivalMessage &&
       currentChat?.members.includes(arrivalMessage.sender) &&
@@ -38,24 +66,32 @@ export default function Messenger() {
   useEffect(() => {
     socket.current.emit("addUser", user.id);
     socket.current.on("getUsers", (users) => {
-      setOnlineUsers(
-        user.followings.filter((f) => users.some((u) => u.userId === f))
+      console.log("**********************")
+      console.log(users)
+     setOnlineUsers(
+       followings?.filter((f) => users.some((u) => u.userId === f))
       );
-    });
-  }, [user]);
+     });
+  }, [user,followings]);
+ 
+  console.log("online users")
 
-  useEffect(() => {
+  console.log(onlineUsers)
+  console.log("user followings")
+  console.log(followings)
+  
     const getConversations = async () => {
       try {
         const res = await axios.get("http://localhost:8080/api/conversations/" + user.id);
-        setConversations(res.data);
+        if(res) setConversations(res.data);
       } catch (err) {
         console.log(err);
       }
     };
+   useEffect(() => {
     getConversations();
-  }, [user.id]);
-
+  });
+  
   useEffect(() => {
     const getMessages = async () => {
       try {
@@ -107,7 +143,7 @@ export default function Messenger() {
           <div className="chatMenuWrapper">
             <input placeholder="Search for friends"/* onChange={changeListFriends}*/  className="chatMenuInput" />
             {conversations.map((c) => (
-              <div onClick={() => setCurrentChat(c)}>
+              <div key={c} onClick={() => setCurrentChat(c)}>
                 <Conversation conversation={c} currentUser={user} />
               </div>
             ))}
@@ -119,7 +155,7 @@ export default function Messenger() {
               <>
                 <div className="chatBoxTop">
                   {messages.map((m) => (
-                    <div ref={scrollRef}>
+                    <div key={m} ref={scrollRef}>
                       <Message message={m} own={m.sender === user.id} />
                     </div>
                   ))}
