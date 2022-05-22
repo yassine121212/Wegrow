@@ -5,6 +5,7 @@ import Slider from "../components/Home/Slider/slid/Slider";
 import Service from "../components/Home/Services/Service";
 import Who from "../components/Home/who_we/who";
 import How from "../components/Home/How_to_use/How";
+import Feedback from "../components/feedback/feedback";
 
 const Home = () => {
      
@@ -15,6 +16,7 @@ const Home = () => {
                 <Service/>
                 <Who/>
                 <How/>
+                <Feedback/>
                 <Footer />
             </div>
         </div>
