@@ -1,4 +1,4 @@
-import React, {Children, useEffect, useState,useRef,useContext } from 'react';
+import React, {Children, useEffect, useState} from 'react';
 import "./profile.css";
 import axios from "axios";
 import pic from "../../../images/logo192.png" 
@@ -7,7 +7,6 @@ import {FaFacebookF} from "react-icons/fa";
 import {BsInstagram,BsTwitter} from "react-icons/bs";
 import {AiOutlineEdit} from "react-icons/ai";
 import {SiAtom} from "react-icons/si";
-import { AuthContextProvider } from '../../../store/authcontext';
 import AddCompetence from "./addCompetence";
 const Profile = () => {
 
@@ -23,23 +22,19 @@ const Profile = () => {
 
     const [details, setDetails] = useState([])
     const [modify_details, setmodify_details] = useState(false);
+    const [modify_detailsuser, setmodify_detailsuser] = useState(false);
+    const [modify_detailsdata, setmodify_detailsdata] = useState(false);
+    const [modify_detailslinks, setmodify_detailslinks] = useState(false);
 
-     const usePreviousValue = value => {
-        const ref = useRef();
-        useEffect(() => {
-          ref.current = value;
-        });
-        return ref.current;
-      };
-      const prevCount = usePreviousValue(details);
-    
+     
+     
     const handleSubmit = async () => {
         setIsLoading(true);
 
     try {
-        const username=localStorage.getItem("username")
+        const id=localStorage.getItem("id")
         const url = "http://localhost:8080/api/users/we/";
-        const  res  = await axios.get(url + username);
+        const  res  = await axios.get(url + id);
         if(res.status===200)
         {
             console.log(res)
@@ -66,8 +61,40 @@ const Profile = () => {
     setIsLoading(false);
 
 }
+
+  const sendnewdet = async () => {
+    setIsLoading(true);
+
+ try {
+   const id = localStorage.getItem("id");
+    
+   const url = "http://localhost:8080/api/users/";
+   const res = await axios.put(url + id,data);
+        if(res)
+             console.log("user updated")
+ } catch (error) {
+   if (
+       error.response &&
+       error.response.status >= 400 &&
+       error.response.status <= 500
+   ) {
+       setError(error.response.data.message);
+   }
+ }
+ setIsLoading(false);
+ 
+ }
     function handleModify() {
         setmodify_details(true)
+    }
+    function handleModifyuser() {
+        setmodify_detailsuser(true)
+    }
+    function handleModifydata() {
+        setmodify_detailsdata(true)
+    }
+    function handleModifylinks() {
+        setmodify_detailslinks(true)
     }
 useEffect(() => {
     handleSubmit();
@@ -91,9 +118,12 @@ useEffect(() => {
         <div className="row">
              
             <div className="col-md-5">
+            <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={handleModifyuser}/>
+
                 <div className="row">
                     <div className="col-12 bg-white p-0 px-3 py-3 mb-3">
                         <div className="d-flex flex-column align-items-center">
+                        
                         <img height="75%" src={pic} alt=""></img>
 
                             <p className="fw-bold h4 mt-3">{data.userName}</p>
@@ -106,6 +136,8 @@ useEffect(() => {
                         </div>
                     </div>
                     <div className="col-12 bg-white p-0 px-2 pb-3 mb-3">
+                    <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={handleModifylinks}/>
+
                         <div className="d-flex justify-content-between border-bottom py-2 px-3">
                             <p><SiAtom className="browser"/>Website</p>
                             <p>https://bootdey.com</p>
@@ -128,6 +160,7 @@ useEffect(() => {
                 </div>
             </div>
             <div className="col-md-7 ps-md-4">
+            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details' onClick={handleModifydata}/>
                 <div className="row">
                     <div className="col-12 bg-white px-3 mb-3 pb-3">
                         <div className="d-flex align-items-center justify-content-between border-bottom">

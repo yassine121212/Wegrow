@@ -34,9 +34,17 @@ const multer = require('../middleware/multer-config');
 	}
 
 });
-router.get("/we/:userName",(req, res) => {
+router.put("/:username", async (req, res) => {
 	try {
-		User.findOne({ userName: req.params.userName })
+		User.updateOne({username: req.params.username},{...req.body	})
+		.then( res.status(201).send({ message: "user update successfully" }));
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
+router.get("/we/:id",(req, res) => {
+	try {
+		User.findOne({ id: req.params.id })
 	  .then(user => res.status(200).json({ user }))
 	  .catch(error => res.status(404).json({ error }))
 	} catch (error) {
