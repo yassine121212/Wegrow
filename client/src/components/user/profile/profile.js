@@ -136,9 +136,7 @@ useEffect(() => {
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2">Email</p>
-                            <p className="py-2 text-muted">
-                            <span style={{"color":"red"}}>{data.email}</span>
- </p>
+                            <p className="py-2 text-muted">{data.email}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2">Phone</p>
