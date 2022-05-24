@@ -2,9 +2,8 @@ const router = require("express").Router();
 const { User, validate ,Details } = require("../models/user");
 const bcrypt = require("bcrypt");
 
-const multer = require('../middleware/multer-config');
-
- router.post("/",multer, async (req, res) => {
+ 
+ router.post("/", async (req, res) => {
 	const url = req.protocol + '://' + req.get('localhost:3000');
 
 	try {
@@ -21,7 +20,7 @@ const multer = require('../middleware/multer-config');
 		const salt = await bcrypt.genSalt(Number(process.env.SALT));
 		const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-		const pom=await new User({ ...req.body,profilePicture:url + '/images/' + req.file.filename, password: hashPassword }).save();
+		const pom=await new User({ ...req.body, password: hashPassword }).save();
  		await new Details({ 
 			detailsCode:pom._id,
 			comp:{
