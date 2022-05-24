@@ -50,18 +50,10 @@ const Navbar = () => {
                 <div>About</div>
               </MenuItemLink >
              </MenuItem>
-             <MenuItem className="sec">
-             <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-               <MenuItemLink>
-                <BsChatDots style={{ "fontSize":"0.6cm" }}></BsChatDots>
-              </MenuItemLink >
-              </Link >              
-
-             </MenuItem>
             <MenuItem className="sec">
             <Link className="llink" to="/services" onClick={() => setShowMobileMenu(!showMobileMenu)} >
               <MenuItemLink  >
-                <div>become a service provider</div>
+                <div>Services</div>
               </MenuItemLink >
               </Link >              
             </MenuItem>
@@ -91,6 +83,11 @@ const Navbar = () => {
             {context.isLoggedIn && (
               <MenuItem className="sec ">
                 <div className="container">
+                <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
+               <MenuItemLink>
+                <BsChatDots style={{ "fontSize":"0.6cm" }}></BsChatDots>
+              </MenuItemLink >
+              </Link >   
                   <div className="dropdown">
                     <div className="profile">
                       <img height="75%" src={logo} alt=""></img>
@@ -124,6 +121,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </MenuItem>
+
             )}
           </Menu>
         </IconContext.Provider>
