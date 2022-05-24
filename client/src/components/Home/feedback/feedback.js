@@ -1,5 +1,5 @@
-import * as React from 'react';
-import {useState}  from 'react';
+
+import React,{useState,useContext,useEffect}  from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,9 @@ import Modal from '@mui/material/Modal';
 import axios from "axios";
 import "./feedback.css"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import Swal from 'sweetalert2';
+import AuthContext from "../../../store/authcontext";
+import { Link, useNavigate } from "react-router-dom";
 
 const style = {
     position: 'absolute',
@@ -21,8 +24,23 @@ const style = {
   };
   
 const Feedback = () => {
-  const [data, setData] = useState({});
+  const context = useContext(AuthContext);
+  console.log(context.id)
   const [error, setError] = useState("");
+  const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const [data, setData] = useState({});
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [number, setNumber] = useState();
+  const [hoverStar, setHoverStar] = useState(undefined);
+  useEffect(() => { 
+    setData({ ...data,"userId":context.id  });
+  }, [context.id]);
+  const showAlert = () =>{
+  
+  }
      const handleChange = ({ currentTarget: input }) => {
       setData({ ...data, [input.name]: input.value });
     };
@@ -41,16 +59,21 @@ const Feedback = () => {
           setError(error.response.data.message);
         }
       }
+      setOpen(false);
+      setData({});
+      setNumber(0);
+      Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      );
+
     };
 
     function handleKeyDown(e){
         const value = e.target.value;
     }
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-    const [number, setNumber] = useState();
-    const [hoverStar, setHoverStar] = useState(undefined);
+   
   
     const handleText = () => {
       switch (number || hoverStar) {
@@ -72,8 +95,11 @@ const Feedback = () => {
     };
   
   return (
+    
+
     <div>
     <Button onClick={handleOpen}>Open modal</Button>
+    {context.isLoggedIn && (
     <Modal
       open={open}
       onClose={handleClose}
@@ -109,14 +135,19 @@ const Feedback = () => {
                   )
                 )}
                    <textarea name="comment"	onChange={handleChange}	value={data.comment} onKeyDown={handleKeyDown}></textarea>
-                 
+                   <input type="hidden" value={context.id} name="userId"/>
+              
             <button className={` ${!number && "disabled"} `} id="avis" onClick={handleSubmit}>Submit</button>
             
         </Typography>
       </Box>
     </Modal>
+       )}
+       
   </div>
+ 
   )
 }
+
 
 export default Feedback;

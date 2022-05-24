@@ -7,10 +7,9 @@ import {FaFacebookF} from "react-icons/fa";
 import {BsInstagram,BsTwitter} from "react-icons/bs";
 import {AiOutlineEdit} from "react-icons/ai";
 import {SiAtom} from "react-icons/si";
-import { AuthContextProvider } from '../../../store/authcontext';
-import AddCompetence from "./addCompetence";
+ import AddCompetence from "./addCompetence";
 const Profile = () => {
-
+        
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [data, setData] = useState({
@@ -49,7 +48,7 @@ const Profile = () => {
                      "city":res.data.user.city
                      })
             
-          
+           
         }
      
 
