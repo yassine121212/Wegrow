@@ -4,8 +4,8 @@ import Footer from "../components/Footer/index";
 import Slider from "../components/Home/Slider/slid/Slider";
 import Service from "../components/Home/Services/Service";
 import Who from "../components/Home/who_we/who";
-import How from "../components/Home/How_to_use/How";
-import Feedback from "../components/feedback/feedback";
+ import Feedback from "../components/Home/feedback/feedback";
+ import AfficherFeed from "../components/Home/feedback/AfficherFeedback"
 
 const Home = () => {
      
@@ -14,9 +14,9 @@ const Home = () => {
             <div className="pivc">
                 <Slider />
                 <Service/>
-                <Who/>
-                <How/>
                 <Feedback/>
+                <AfficherFeed/>
+                 <Who/>
                 <Footer />
             </div>
         </div>
