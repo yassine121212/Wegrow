@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
    {
      rating: { type: Number },
      comment: { type: String, required: true },
+       userId: {
+      type: String
+    },
     },
    {
      timestamps: true,
