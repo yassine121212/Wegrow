@@ -31,7 +31,7 @@ const Feedback = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({});
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {if(context.isLoggedIn) setOpen(true);else navigate("/login");}
   const handleClose = () => setOpen(false);
   const [number, setNumber] = useState();
   const [hoverStar, setHoverStar] = useState(undefined);
