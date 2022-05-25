@@ -6,14 +6,17 @@ import Service from "../components/Home/Services/Service";
 import Who from "../components/Home/who_we/who";
  import Feedback from "../components/Home/feedback/feedback";
  import AfficherFeed from "../components/Home/feedback/AfficherFeedback"
-
-const Home = () => {
+ import FormComponent from "../components/EvaluationConsommation/FormComponent";
+ const Home = () => {
      
     return (
         <div className="oral">
             <div className="pivc">
+
+            <FormComponent/>
                 <Slider />
                 <Service/>
+                <FormComponent/>
                 <Feedback/>
                 <AfficherFeed/>
                  <Who/>
