@@ -103,4 +103,20 @@ router.get("/friend", async (req, res) => {
 	  res.status(500).json(err);
 	}
   });
+router.get('/getdata/:city/:categorie', async (req, res) => {
+    const Users = await User.find({city: req.params.city,categorie: req.params.categorie})
+    try {
+        res.status(200).json({
+            status: 'Success',
+            data: {
+                Users
+            }
+        })
+    } catch (err) {
+        res.status(500).json({
+            status: 'Failed',
+            message: err
+        })
+    }
+});
 module.exports = router;
