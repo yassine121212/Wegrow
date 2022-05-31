@@ -27,6 +27,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
         `http://localhost:8080/api/conversations/find/${currentId}/${user._id}`
       );
       setCurrentChat(res.data);
+ 
     } catch (err) {
       console.log(err);
     }
@@ -36,7 +37,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
     <div className="chatOnline">
       online
       {onlineFriends.map((o) => (
-        <div className="chatOnlineFriend" onClick={() => handleClick(o)}>
+        <div key={o._id} className="chatOnlineFriend" onClick={() => handleClick(o)}>
           <div className="chatOnlineImgContainer">
             <img
               className="chatOnlineImg"

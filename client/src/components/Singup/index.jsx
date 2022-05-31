@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -22,6 +22,7 @@ const Signup = () => {
 	});
 	const [error, setError] = useState("");
 
+	const navigate = useNavigate();
 
   const [checked, setChecked] = useState(false);
 const handleChanges = () => { 
@@ -33,7 +34,6 @@ const handleChanges = () => {
  }
 	
   };
-	const navigate = useNavigate();
 
 	const [msg, setMsg] = useState("");
 
@@ -53,7 +53,7 @@ const handleChanges = () => {
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
 			setMsg(res.message);
-	
+	        navigate("/login")
 		} catch (error) {
 			if (
 				error.response &&
