@@ -12,6 +12,8 @@ const userSchema = new mongoose.Schema({
 	phone: { type: String, required: true },
 	Address: { type: String, required: true },
 	city:{type: String, required: true},
+	categorie:{type: String, default: " "},
+	isprovider:{type: Boolean,default: false},
  	password: { type: String, required: true },
 	profilePicture: {
 		type: String,
@@ -68,6 +70,8 @@ const validate = (data) => {
 		phone: Joi.string().required().label("Phone"),
 		Address: Joi.string().required().label("Address"),
 		city: Joi.string().required().label("city"),
+		categorie: Joi.string().required().label("categorie"),
+		isprovider:Joi.boolean(),
 		password: passwordComplexity().required().label("Password"),
 	});
 	return schema.validate(data);
