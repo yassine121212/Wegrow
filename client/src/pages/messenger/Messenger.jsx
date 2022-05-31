@@ -28,7 +28,11 @@ export default function Messenger() {
         createdAt: Date.now(),
       });
     });
+
   }, []);
+  console.log("notif")
+
+  console.log(arrivalMessage)
   const hanluser=async ()=>{
     try {
       const username=localStorage.getItem("username")
@@ -90,7 +94,7 @@ export default function Messenger() {
     };
    useEffect(() => {
     getConversations();
-  });
+  },[]);
   
   useEffect(() => {
     const getMessages = async () => {

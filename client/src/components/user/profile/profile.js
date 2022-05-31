@@ -32,9 +32,9 @@ const Profile = () => {
         setIsLoading(true);
 
     try {
-        const id=localStorage.getItem("id")
+        const username=localStorage.getItem("username")
         const url = "http://localhost:8080/api/users/we/";
-        const  res  = await axios.get(url + id);
+        const  res  = await axios.get(url + username);
         if(res.status===200)
         {
             console.log(res)
