@@ -9,6 +9,7 @@ import {AiOutlineEdit} from "react-icons/ai";
 import {SiAtom} from "react-icons/si";
 import AddCompetence from "./addCompetence";
 import EditProfile from './EditProfile'
+import EditPicture from './EditPicture'
 const Profile = () => {
 
     const [isLoading, setIsLoading] = useState(false);
@@ -26,9 +27,22 @@ const Profile = () => {
     const [modify_detailsuser, setmodify_detailsuser] = useState(false);
     const [modify_detailsdata, setmodify_detailsdata] = useState(false);
     const [modify_detailslinks, setmodify_detailslinks] = useState(false);
-
-    const [onEdit, setOnEdit] = useState(false)
-     
+    const [onEdit, setOnEdit] = useState(false);
+    const [onEditPicture, setOnEditPicture] = useState(false);
+    const [image,setImage] = useState({});
+    const fileOnChange = (event) =>{
+       setImage(event.target.files[0]);
+    }
+     const sendImage = (event) =>{
+         let formData = new FormData();
+         formData.append("avatar",image);
+         fetch("http://localhost:8080/uploadFile",{
+             method:"post",
+             body:formData
+         }).then(res=>res.text()).then(resBody=>{
+             console.log(resBody);
+                     })
+     }
      
     const handleSubmit = async () => {
         setIsLoading(true);
@@ -120,7 +134,7 @@ useEffect(() => {
         <div className="row">
              
             <div className="col-md-5">
-            <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={handleModifyuser}/>
+            <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={() => setOnEditPicture(true)}/>
 
                 <div className="row">
                     <div className="col-12 bg-white p-0 px-3 py-3 mb-3">
@@ -134,6 +148,11 @@ useEffect(() => {
                             <div className="d-flex ">
                                 <div className="btn btn-primary follow me-2">Follow</div>
                                 <div className="btn btn-outline-primary message">Message</div>
+                                <div className="info">
+                        {
+                            onEditPicture && <EditPicture  setOnEditPicture={setOnEditPicture} />
+                        }
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -199,6 +218,7 @@ useEffect(() => {
                           getDetails={setDetails}
                           
                            ></AddCompetence>
+                          
                              <div className="info">
                         {
                             onEdit && <EditProfile datauser={data} setOnEdit={setOnEdit} />
@@ -216,7 +236,8 @@ useEffect(() => {
                             ))}
                             </ul>
         
-                      
+                            <input type="file" onChange={fileOnChange}/>
+                            <button onClick={sendImage}>Upload</button>
                       
 
                     </div>
