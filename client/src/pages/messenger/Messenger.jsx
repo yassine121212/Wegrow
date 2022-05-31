@@ -11,7 +11,7 @@ export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = ("");
+  const [newMessage, setNewMessage] = useState("");
   const [notif, setnotif] = useState(null);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
@@ -34,7 +34,7 @@ export default function Messenger() {
   console.log("notif")
 
   console.log(arrivalMessage)
-  const hanluser=async ()=>{
+  const hanluser = async ()=>{
     try {
       const username=localStorage.getItem("username")
       const url = "http://localhost:8080/api/users/we/";
