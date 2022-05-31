@@ -21,7 +21,7 @@ const Signup = () => {
 		password: "",
 	});
 	const [error, setError] = useState("");
-<<<<<<< HEAD
+
 
   const [checked, setChecked] = useState(false);
 const handleChanges = () => { 
@@ -34,9 +34,9 @@ const handleChanges = () => {
 	
   };
 	const navigate = useNavigate();
-=======
+
 	const [msg, setMsg] = useState("");
->>>>>>> 5b84c933830a6446073f26f44de28a72009aed68
+
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
