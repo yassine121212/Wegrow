@@ -5,6 +5,7 @@ import "./slider.css";
 import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
+
 const len = sliderImage.length - 1;
 
 function Slider(props) {

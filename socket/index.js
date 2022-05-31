@@ -4,20 +4,12 @@ const io = require("socket.io")(8900, {
   },
 });
 let users = [];
-console.log("table users in socket")
-console.log(users[0])
+ 
 const addUser = (userId, socketId) => {
-  console.log("add")
-
-
-  console.log("socket")
-   console.log(socketId)
-   console.log("userId")
-   console.log(userId)
+   
   !users.some((user) => user.userId === userId && (user.userId!==null)) && 
     users.push({ userId, socketId } );
-    console.log(users)
-
+ 
 };
 
 const removeUser = (socketId) => {

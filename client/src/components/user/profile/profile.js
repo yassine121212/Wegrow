@@ -8,6 +8,7 @@ import {BsInstagram,BsTwitter} from "react-icons/bs";
 import {AiOutlineEdit} from "react-icons/ai";
 import {SiAtom} from "react-icons/si";
 import AddCompetence from "./addCompetence";
+import EditProfile from './EditProfile'
 const Profile = () => {
 
     const [isLoading, setIsLoading] = useState(false);
@@ -26,15 +27,16 @@ const Profile = () => {
     const [modify_detailsdata, setmodify_detailsdata] = useState(false);
     const [modify_detailslinks, setmodify_detailslinks] = useState(false);
 
+    const [onEdit, setOnEdit] = useState(false)
      
      
     const handleSubmit = async () => {
         setIsLoading(true);
 
     try {
-        const id=localStorage.getItem("id")
+        const username=localStorage.getItem("username")
         const url = "http://localhost:8080/api/users/we/";
-        const  res  = await axios.get(url + id);
+        const  res  = await axios.get(url + username);
         if(res.status===200)
         {
             console.log(res)
@@ -160,7 +162,7 @@ useEffect(() => {
                 </div>
             </div>
             <div className="col-md-7 ps-md-4">
-            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details' onClick={handleModifydata}/>
+            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details'   onClick={() => setOnEdit(true)}/>
                 <div className="row">
                     <div className="col-12 bg-white px-3 mb-3 pb-3">
                         <div className="d-flex align-items-center justify-content-between border-bottom">
@@ -197,6 +199,11 @@ useEffect(() => {
                           getDetails={setDetails}
                           
                            ></AddCompetence>
+                             <div className="info">
+                        {
+                            onEdit && <EditProfile datauser={data} setOnEdit={setOnEdit} />
+                        }
+                        </div>
                             <ul>
                             {Children.toArray(details.map(child =>
                                <>
@@ -209,7 +216,9 @@ useEffect(() => {
                             ))}
                             </ul>
         
-                        
+                      
+                      
+
                     </div>
                 </div>
             </div>

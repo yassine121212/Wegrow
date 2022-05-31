@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -21,6 +21,7 @@ const Signup = () => {
 		password: "",
 	});
 	const [error, setError] = useState("");
+<<<<<<< HEAD
 
   const [checked, setChecked] = useState(false);
 const handleChanges = () => { 
@@ -33,6 +34,9 @@ const handleChanges = () => {
 	
   };
 	const navigate = useNavigate();
+=======
+	const [msg, setMsg] = useState("");
+>>>>>>> 5b84c933830a6446073f26f44de28a72009aed68
 
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
@@ -48,8 +52,8 @@ const handleChanges = () => {
 		try {
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
-			navigate("/login");
-			console.log(res.message);
+			setMsg(res.message);
+	
 		} catch (error) {
 			if (
 				error.response &&
@@ -190,6 +194,7 @@ className={styles.check}
         </select>
       }
 						{error && <div className={styles.error_msg}>{error}</div>}
+						{msg && <div className={styles.success_msg}>{msg}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sing Up
 						</button>

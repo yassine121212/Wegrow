@@ -6,12 +6,13 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../store/authcontext";
 import axios from "axios";
 import { io } from "socket.io-client";
- 
+
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
+  const [newMessage, setNewMessage] = ("");
+  const [notif, setnotif] = useState(null);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [followings, setfollowings] = useState([])
@@ -28,7 +29,11 @@ export default function Messenger() {
         createdAt: Date.now(),
       });
     });
+
   }, []);
+  console.log("notif")
+
+  console.log(arrivalMessage)
   const hanluser=async ()=>{
     try {
       const username=localStorage.getItem("username")
@@ -90,7 +95,7 @@ export default function Messenger() {
     };
    useEffect(() => {
     getConversations();
-  });
+  },[]);
   
   useEffect(() => {
     const getMessages = async () => {

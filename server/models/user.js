@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
 	categorie:{type: String, default: " "},
 	isprovider:{type: Boolean,default: false},
  	password: { type: String, required: true },
+	 verified:{type:Boolean,default:false},
 	profilePicture: {
 		type: String,
 		default: "",

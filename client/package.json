@@ -19,6 +19,7 @@
     "boxicons": "^2.1.2",
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
+    "framer-motion": "^6.3.5",
     "jquery": "^3.6.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",
@@ -30,6 +31,8 @@
     "socket.io-client": "^4.5.0",
     "styled-components": "^5.3.5",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.17",
+    "swiper": "^8.1.6",
     "timeago-react": "^3.0.4",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"

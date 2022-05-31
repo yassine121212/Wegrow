@@ -19,7 +19,7 @@
     position:relative;
     overflow: hidden;
     margin :10px 0;
-    box-shadow: 7.7px 15.4px 15.4px hsl(0deg 0% 0% / 0.26);
+
 }
 
 
@@ -54,8 +54,10 @@
     padding:2px ;
 }
 .service_img{
-    width: 5cm;
+    width: 5
+    cm;
     height: 5cm;
+    border-radius:0;
 }
 .title_services{
     border:none;

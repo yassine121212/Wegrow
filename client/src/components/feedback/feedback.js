@@ -8,6 +8,7 @@ import axios from "axios";
 import "./feedback.css"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -108,7 +109,9 @@ const Feedback = () => {
                     />
                   )
                 )}
+              
                    <textarea name="comment"	onChange={handleChange}	value={data.comment} onKeyDown={handleKeyDown}></textarea>
+             
                  
             <button className={` ${!number && "disabled"} `} id="avis" onClick={handleSubmit}>Submit</button>
             
