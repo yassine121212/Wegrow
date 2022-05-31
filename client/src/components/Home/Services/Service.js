@@ -1,6 +1,7 @@
 import React from 'react'
 import First from "../../../images/jard.png"
 import Second from "../../../images/brico.png"
+import Demenagement from "../../../images/demenagement.jpg"
 import { BiCategoryAlt } from "react-icons/bi";
 import './Service.css'
 import { Link} from 'react-router-dom';
@@ -20,7 +21,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/bricolage">
-                <img className='service_img' style={{ "backgroundImage":"none" }} src={Second} alt='' />
+                <img className='service_img' src={Second} alt='' />
                 <div className='content'>
                 <h2>Bricolage</h2>
                 <p> pose de cadres, de tringles, changer une ampoule, monter et démonter un meuble.</p>
@@ -29,7 +30,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/demenegamet">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Demenagement} alt='' />
                 <div className='content'>
                 <h2 className="erty">Déménegament</h2>
                 <p> démonte, emballe, charge, transporte, déballe et remonte les meubles et objets du foyer.</p>
