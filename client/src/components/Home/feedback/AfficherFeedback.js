@@ -1,8 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import axios from "axios";
+import './AfficherFeedback.css';
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import {motion} from "framer-motion";
+
  
 const AfficherFeedback = () => {
-  
+
   const [data, setData] = useState([]);
   const [datauser, setDatauser] = useState({
     "firstName":null,
@@ -11,6 +15,7 @@ const AfficherFeedback = () => {
   });
   const [error, setError] = useState("");
   const username=localStorage.getItem("username");
+  
 
   const recupererData = async () => {
 
@@ -24,6 +29,7 @@ try {
         console.log(res)
         setDatauser({"firstName":res.data.user.firstName,
                  "lastName":res.data.user.lastName,
+                 "userName":res.data.user.userName,
                  })
         
        
@@ -71,17 +77,41 @@ try {
  });
   return (
     
-    <div>
+    <div className='section'>
+     
+       {data.map(( det ) =>
+          <motion.div drag="x" className='feed' key={det._id}>
+              <motion.div className="name-review">{datauser.firstName}  {datauser.lastName}</motion.div>
+              <motion.div className="first-review">@{datauser.userName}</motion.div>
+           <motion.div className='raiting'   >
+         { Array(det.rating).fill()
+       .map(() =>
+                   
+                    <AiFillStar
+                      
+                      style={{ color: "orange" }}
+                       
+                    />
+                  )
+                }
+                 { Array(5 - det.rating).fill()
+       .map(() =>
+       <AiOutlineStar
       
-       {data.map( det  =>
-          <div key={det._id}>
-              <p >{det.comment}</p>
-              <p >{det.rating}</p>
-              <p>{username}</p>
-              <p>{datauser.firstName}</p>
-              <p>{datauser.lastName}</p>
-            </div>   )}
+       style={{ color: "orange" }}
+     
+       
+     />
+                  )
+                }
+                </motion.div>
+              <div class="desc-review">{det.comment}</div>
+            
+           
+            </motion.div>  )}
+    
     </div>
+  
   )
   
 }
