@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
 
   //take userId and socketId from user
   socket.on("addUser", (userId) => {
-    addUser(userId, socket.id);
+    addUser(userId,socket.id);
     io.emit("getUsers", users);
   });
 
