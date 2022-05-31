@@ -109,7 +109,9 @@ const Feedback = () => {
                     />
                   )
                 )}
+              
                    <textarea name="comment"	onChange={handleChange}	value={data.comment} onKeyDown={handleKeyDown}></textarea>
+             
                  
             <button className={` ${!number && "disabled"} `} id="avis" onClick={handleSubmit}>Submit</button>
             
