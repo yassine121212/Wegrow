@@ -35,7 +35,7 @@ const bcrypt = require("bcrypt");
 });
 router.put("/:username", async (req, res) => {
 	try {
-		User.updateOne({username: req.params.username},{...req.body	})
+		User.updateOne({userName: req.params.username},{...req.body	})
 		.then( res.status(201).send({ message: "user update successfully" }));
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
