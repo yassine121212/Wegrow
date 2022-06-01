@@ -3,11 +3,8 @@ import axios from "axios";
 import './AfficherFeedback.css';
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import {motion} from "framer-motion";
-import{Swiper,SwiperSlide}from'swiper/react';
-import{FreeMode}from"swiper";
-import'swiper/css';
-import"swiper/css/free-mode";
-  
+
+ 
 const AfficherFeedback = () => {
 
   const [data, setData] = useState([]);
@@ -81,21 +78,11 @@ try {
   return (
     
     <div className='pmop'>
-    <div> 
-         <h1 className="tit3">Nos Clients</h1></div>
-         
+      <div>
+         <h1 className="tit3">Nos Clients</h1></div> 
          <div className='section'>
-         
-       
+          
        {data.map(( det ) =>
-       <Swiper
-       freeMode={true}
-       grabCursor={true}
-       modules={[FreeMode]}
-       className="mySwiper"
-      spaceBetween={200}
-    >
-          <SwiperSlide>
           <motion.div drag="x" className='feed' key={det._id}>
               <motion.div className="name-review">{datauser.firstName}  {datauser.lastName}</motion.div>
               <motion.div className="first-review">@{datauser.userName}</motion.div>
@@ -124,16 +111,10 @@ try {
               <div class="desc-review">{det.comment}</div>
             
            
-            </motion.div> 
-             </SwiperSlide> 
-             </Swiper>
-             )
-           
-            }
-            
-    </div>
+            </motion.div>  )}
     
-    </div> 
+            </div>  </div>
+  
   )
   
 }
