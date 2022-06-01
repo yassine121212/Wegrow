@@ -27,8 +27,7 @@ export default function Messenger() {
         text: data.text,
         createdAt: Date.now(),
       });
-      notif=Object.entries(arrivalMessage);
-    });
+     });
     
   }, []);
   console.log("notif")

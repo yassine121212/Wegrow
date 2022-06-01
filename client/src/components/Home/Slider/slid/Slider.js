@@ -19,7 +19,7 @@ function Slider(props) {
     }, [activeIndex]);
 
     return (
-        <div className="slider-container">
+        <div className="  slider-container">
             <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
             
             <div className="slide-text">

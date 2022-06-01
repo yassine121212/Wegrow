@@ -1,8 +1,8 @@
 
 .best {
     width: 100%;
-    margin: 4rem 0;
-    text-align: center;
+     text-align: center;
+    background-color: black;
 }
 
 .best > div {
@@ -54,14 +54,14 @@
     padding:2px ;
 }
 .service_img{
-    width: 5
-    cm;
-    height: 5cm;
+    width: 10cm;
+     height: 5cm;
     border-radius:0;
 }
 .title_services{
     border:none;
     padding-bottom:0.5cm ;
+    color: white;
     border-bottom: 5px solid #F84B65;
 }
 

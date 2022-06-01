@@ -19,6 +19,7 @@ import {
     FaTwitter,
     FaLinkedin
 } from 'react-icons/fa'
+import Feedback from "../Home/feedback/feedback";
 
 const Footer = () => {
   return (
@@ -52,7 +53,8 @@ const Footer = () => {
                         <FooterLinkTitle> Informations utiles </FooterLinkTitle>
                             <FooterLink to="/signin"> Contactez-nous </FooterLink>
                             <FooterLink to="/signin"> Centre d'aide</FooterLink>
-                            <FooterLink to="/signin"> Votre Avis</FooterLink>
+                            <Feedback/>
+
 
                     </FooterLinkItems>
                     <FooterLinkItems>

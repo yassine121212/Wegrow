@@ -9,6 +9,7 @@
 .disc{
     margin-left: 0.5cm;
     width: 16cm;
+    color: white;
 }
 .blo{
     position: absolute;
@@ -40,4 +41,6 @@
        display: flex;
        flex-direction: column;
         align-items: center;
+        background-color: black;
    }
+    

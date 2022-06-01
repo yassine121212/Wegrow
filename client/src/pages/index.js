@@ -5,10 +5,9 @@ import Slider from "../components/Home/Slider/slid/Slider";
 import Service from "../components/Home/Services/Service";
 import Who from "../components/Home/who_we/who";
 import How from "../components/Home/How_to_use/How";
- import Feedback from "../components/Home/feedback/feedback";
- import AfficherFeed from "../components/Home/feedback/AfficherFeedback"
-
-
+  import AfficherFeed from "../components/Home/feedback/AfficherFeedback"
+ import Bar from "../components/Home/Bar/bar"
+ 
 const Home = () => {
      
     return (
@@ -16,9 +15,9 @@ const Home = () => {
             <div className="pivc">
             
                 <Slider />
+                <Bar/>
                 <Service/>
-                <Feedback/>
-                <AfficherFeed/>
+                 <AfficherFeed/>
                  <Who/>
                  <How/>
                 <Footer />
