@@ -98,7 +98,7 @@ const Feedback = () => {
     
 
     <div>
-    <Button onClick={handleOpen}>Open modal</Button>
+    <div className='aviss' onClick={handleOpen}>Votre Avis</div>
     {context.isLoggedIn && (
     <Modal
       open={open}

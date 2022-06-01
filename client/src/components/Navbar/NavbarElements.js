@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
- 
+  background-color:black;
   height: 55px;
   grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+ 
   max-width: 1300px;
   height: 100%;
   display: flex;
@@ -43,7 +44,7 @@ export const LogoContainer = styled.div`
 
 export const Menu = styled.ul`
 z-index: 1;
-background-color: white;
+background-color:black;
 height: 100%;
 display: flex; 
 list-style: none;
@@ -85,7 +86,7 @@ export const MenuItemLink = styled.a`
   align-items: center;
   height: 100%;
   padding: 0.5rem 2.5rem;
-  color: rgba(0, 0, 3, 0.8);
+  color: white;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2rem;
   cursor: pointer;
@@ -93,7 +94,7 @@ export const MenuItemLink = styled.a`
   text-decoration:none;
   &:hover {
    transform-origin: left;
-  color: rgba(0, 0, 3, 1);
+  color: #FFB875;
   transition: 0.5s;
     }
   }

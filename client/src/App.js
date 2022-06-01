@@ -21,7 +21,7 @@ function App() {
     <>
     <div>
     <Router>
-       <Navbar />
+       <Navbar className="popppo" />
       <Routes>
         <Route path='/'  exact element={<Home/>} />
         <Route path='/services' element= {<Services/>} />
