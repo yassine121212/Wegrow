@@ -67,7 +67,6 @@ list-style: none;
 
 export const MenuItem = styled.li`
 font-size: 1.8rem;
-display: flex;
 margin-left:-1cm;
 margin-right:0.4cm;
 
@@ -79,7 +78,6 @@ margin-right:0.4cm;
     align-items: center;
   }
 `;
-
 export const MenuItemLink = styled.a`
   display: flex;
   justify-content: center;
