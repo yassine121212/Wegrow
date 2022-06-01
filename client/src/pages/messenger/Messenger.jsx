@@ -12,14 +12,13 @@ export default function Messenger() {
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const [notif, setnotif] = useState(null);
-  const [arrivalMessage, setArrivalMessage] = useState(null);
+   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [followings, setfollowings] = useState([])
   const socket = useRef();
   const user= useContext(AuthContext);
   const scrollRef = useRef();
-
+  const notif=[];
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
@@ -28,11 +27,13 @@ export default function Messenger() {
         text: data.text,
         createdAt: Date.now(),
       });
+      notif=Object.entries(arrivalMessage);
     });
-
+    
   }, []);
   console.log("notif")
-
+   
+  console.log(notif)
   console.log(arrivalMessage)
   const hanluser = async ()=>{
     try {
@@ -95,7 +96,7 @@ export default function Messenger() {
     };
    useEffect(() => {
     getConversations();
-  },[]);
+  },[user._id]);
   
   useEffect(() => {
     const getMessages = async () => {
@@ -107,7 +108,7 @@ export default function Messenger() {
       }
     };
     getMessages();
-  }, [currentChat]);
+  }, [currentChat,arrivalMessage]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -126,7 +127,7 @@ export default function Messenger() {
       receiverId,
       text: newMessage,
     });
-
+   console.log("eeeeeeeeeee")
     try {
       const res = await axios.post("http://localhost:8080/api/messages", message);
       setMessages([...messages, res.data]);
