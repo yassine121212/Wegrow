@@ -24,10 +24,10 @@ const EditProfile = ({datauser,setOnEdit}) => {
         setIsLoading(true);
 
     try {
-        const id = localStorage.getItem("id");
+        const username = localStorage.getItem("username");
     
         const url = "http://localhost:8080/api/users/";
-        const res = await axios.put(url + id,userData);
+        const res = await axios.put(url + username,userData);
              if(res)
                   console.log("user updated")
 
