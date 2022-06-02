@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import AuthContext from "../../store/authcontext";
 import logo from "../../images/logo192.png";
 import logoimg from "../../images/Group 1.png";
-
+ 
 import { BsChatDots } from "react-icons/bs";
 
 import "./navbar.css";
@@ -37,6 +37,7 @@ const Navbar = () => {
                   <LogoContainer>
                       <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
                       <img className="logoimg"  src={logoimg} alt=""></img>
+                      <span className="egrow">e<span className="egrowl">g</span>r<span className="egrowl">o</span>w</span>
                        </Link >
           </LogoContainer>
 
