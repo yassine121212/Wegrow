@@ -18,6 +18,10 @@
     background: #FFB875;
    
 }
+.logo{
+    display: flex;
+}
+
 .llink{
      text-decoration:none !important ;
      

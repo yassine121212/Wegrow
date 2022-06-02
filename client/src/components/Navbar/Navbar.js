@@ -35,8 +35,11 @@ const Navbar = () => {
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                   <LogoContainer>
                       <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
+                        <div className="logo">
             <FaBattleNet />
-                       </Link >
+          
+            </div>
+   </Link>
           </LogoContainer>
 
           <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
