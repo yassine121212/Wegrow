@@ -2,6 +2,7 @@
 
 .all{
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 2cm;
@@ -12,27 +13,21 @@
     color: white;
 }
 .blo{
-    position: absolute;
-    width: 18cm;
+     width: 18cm;
     height: 35cm ;
-    margin-left: 1cm;
-    margin-top: -11cm;
-}
-.svgwho{
-    position: relative;
-     width: 10cm;
-    margin-left: 1cm;
-    margin-right: 5cm;
- }
+     margin-top: -11cm;
+     left: 0;
+   }
+ 
  .tit1{
-     border-bottom: 4px solid #FF0066;
+     border-bottom: 4px solid orange !important;
  }
  .par{
      
      text-align: left;
  }
  .work_color{
-     color:#e7005d;
+     color:orange !important;
   }
   .title_services{
        
@@ -43,4 +38,11 @@
         align-items: center;
         background-color: black;
    }
+
+.whoimage{
+    position: relative;
+    height: 10cm;
+    width: 15cm;
+
+  }
     

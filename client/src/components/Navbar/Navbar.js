@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import AuthContext from "../../store/authcontext";
 import logo from "../../images/logo192.png";
+import logoimg from "../../images/Group 1.png";
+ 
 import { BsChatDots } from "react-icons/bs";
 
 import "./navbar.css";
@@ -23,8 +25,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineSettings } from "react-icons/md";
 import { BiHelpCircle } from "react-icons/bi";
 import { Link  } from "react-router-dom";
- 
-
+  
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const context = useContext(AuthContext);
@@ -35,7 +36,8 @@ const Navbar = () => {
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                   <LogoContainer>
                       <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-            <FaBattleNet />
+                      <img className="logoimg"  src={logoimg} alt=""></img>
+                      <span className="egrow">e<span className="egrowl">g</span>r<span className="egrowl">o</span>w</span>
                        </Link >
           </LogoContainer>
 
