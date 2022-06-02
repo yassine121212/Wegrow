@@ -36,17 +36,13 @@ const Navbar = () => {
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                   <LogoContainer>
                       <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-<<<<<<< HEAD
                         <div className="logo">
             <FaBattleNet />
           
             </div>
-   </Link>
-=======
                       <img className="logoimg"  src={logoimg} alt=""></img>
                       <span className="egrow">e<span className="egrowl">g</span>r<span className="egrowl">o</span>w</span>
                        </Link >
->>>>>>> b751b65a06d3a521c806031d925fe6ceec914e73
           </LogoContainer>
 
           <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
