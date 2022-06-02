@@ -61,7 +61,7 @@ const Navbar = () => {
              
             <div className="dio">
               {!context.isLoggedIn && (
-                <MenuItem className="sec ">
+                <MenuItem >
                   <Stack spacing={-8} direction="row">
                     <MenuItemLink 
                       href="/login"
@@ -82,7 +82,7 @@ const Navbar = () => {
               )}
             </div>
             {context.isLoggedIn && (
-              <MenuItem className="sec ">
+              <MenuItem >
                 <div className="container">
                 <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
                <MenuItemLink>

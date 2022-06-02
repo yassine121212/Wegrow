@@ -1,5 +1,24 @@
  
  
+* {
+    padding: 0;
+    margin: 0
+}
+.sec:after{
+    content: '';
+    display: flex;
+    margin: auto;
+    height: 1.5px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    margin-top:-17px;
+}
+.sec:hover:after{
+    width: 70%;
+    background: #FFB875;
+   
+}
 .llink{
      text-decoration:none !important ;
       
