@@ -9,7 +9,7 @@
     padding-top: 5cm;
 }
 .disc1{
-    margin-top: 1cm;
+    margin-top: -7cm;
     margin-left: 0.5cm;
     width: 16cm;
  }
@@ -18,34 +18,37 @@
     width: 18cm;
     height: 35cm ;
     margin-left: 1cm;
-    
+    margin-top: -11cm;
+}
+.svgwho{
+    position: relative;
+     width: 10cm;
+    margin-left: 1cm;
+    margin-right: 5cm;
  }
- 
  .tit2{
      padding-bottom: 0.3cm;
-     border-bottom: 4px solid #4bcc00;
+     border-bottom: 4px solid #FF0066;
  }
- 
+ .par1{
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.7cm;
+ }
  .lign{
      padding: 0.25cm;
  }
  .work_color{
-     color:#4bcc00;
+     color:#e7005d;
   }
-  
+  .title_services{
+       
+   }
    .lmp{
        display: flex;
        flex-direction: column;
         align-items: center;
    }
 
-   .howimage{
-    position: relative !important;
-    height: 10cm;
-    width: 15cm;
-    z-index: 20;
- }
-   .gogo{
-       transform: translateY(-10cm);
-   }
- 
+  

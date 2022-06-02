@@ -17,9 +17,9 @@ const Home = () => {
                 <Slider />
                 <Bar/>
                 <Service/>
-                  <Who/>
-                 <How/>
                  <AfficherFeed/>
+                 <Who/>
+                 <How/>
                 <Footer />
         
             </div>

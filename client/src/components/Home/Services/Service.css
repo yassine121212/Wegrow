@@ -26,7 +26,7 @@
   .best .container h2{
   font-size: 1.7rem;
   padding: 0;
-  color: orange;
+  color: #F84B65;
 }
 .erty{
     font-size: 0.6cm!important;
@@ -50,7 +50,7 @@
 }
 
 .content p{
-    border-top:2px solid orange6c ;
+    border-top:2px solid #f84b656c ;
     padding:2px ;
 }
 .service_img{
@@ -62,7 +62,7 @@
     border:none;
     padding-bottom:0.5cm ;
     color: white;
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid #F84B65;
 }
 
 

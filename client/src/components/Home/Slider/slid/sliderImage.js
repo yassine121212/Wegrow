@@ -1,9 +1,9 @@
-import First from "../images/slider_1.jpg"
-import Second from "../images/slider_2.jpg";
-import Third from "../images/slider_3.jpg";
-import fourth   from "../images/slider_4.jpg";
-import fifth from "../images/slider_5.jpg";
-import six from "../images/slider_6.jpg";
+import First from "../images/slide_1.jpg"
+import Second from "../images/slide_2.jpg";
+import Third from "../images/slide_3.jpg";
+import fourth   from "../images/slide_4.jpg";
+import fifth from "../images/slide_5.jpg";
+
 export default [
     {
         urls: First
@@ -18,8 +18,6 @@ export default [
         urls: fourth
     }, {
         urls: fifth
-    }, {
-        urls: six
     }
 
 ];
