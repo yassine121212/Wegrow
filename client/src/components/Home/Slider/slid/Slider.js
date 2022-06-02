@@ -23,9 +23,9 @@ function Slider(props) {
             <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
             
             <div className="slide-text">
-                <p>De vrais bricoleurs pour vous aider
-                    Travaux, déménagements, livraisons & services à domicile</p>
-                <br/> <Button variant="contained" size="large" startIcon={<AddCircleIcon />} href="/services">Demander un service</Button>
+                <p>De vrais <span className="ter">bricoleurs</span> pour vous <span className="ter">aider </span>
+                    Travaux, déménagements, livraisons <span className="ter">&</span> services à domicile</p>
+                <br/> <button  className="buttslid" href="/services">Demander un service</button>
 
             </div>
         </div>

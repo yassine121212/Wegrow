@@ -1,4 +1,5 @@
  
+ 
 * {
     padding: 0;
     margin: 0
@@ -24,9 +25,22 @@
 
 .llink{
      text-decoration:none !important ;
-     
+      
 }
- 
+ .logoimg{
+    width: 70px;
+    height: 70px;
+    transform: translateX(0);
+  }
+.egrow{
+    text-decoration: none;
+    color: white;
+    font-size: 0.7cm;
+    font-family: monospace
+}
+.egrowl{
+    color:orange;
+}
 .container {
     height: 80%;
     display: flex;

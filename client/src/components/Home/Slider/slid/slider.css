@@ -4,7 +4,7 @@
 }
 
 :root {
-    --heights: 78.5vh;
+    --heights: 99.5vh;
     --widths: 100%;
 }
 
@@ -46,10 +46,28 @@
 .slide-text {
     position: absolute;
     color: white;
-    font-size: 50px;
-    text-align: center;
+    font-size: 40px;
+    text-align: left;
     top: 30%;
+    transform: translate(1cm,2cm);
+    width: 25cm;
 }
+.ter{
+    color: orange;
+}
+.buttslid{
+    padding: 0.3cm;
+    color: orange;
+    font-size: medium;
+    border: 2px solid orange;
+    font-weight: 800;
+    transform: translateY(-1cm);
+    transition: s;
+ }
+ .buttslid:hover{
+     background-color: rgba(255, 166, 0, 0.521);
+     color: white;
+ }
 
 @media screen and (max-width: 660px) {
     .slide-text {
