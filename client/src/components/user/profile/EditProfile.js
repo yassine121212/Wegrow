@@ -8,6 +8,7 @@ const EditProfile = ({datauser,setOnEdit}) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    
     const initState = {
         lastName: datauser.lastName,firstName:datauser.firstName, email: datauser.email, phone: datauser.phone, Address: datauser.Address, city: datauser.city
 
