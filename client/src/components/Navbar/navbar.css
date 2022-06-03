@@ -82,6 +82,9 @@
      color: black;
 }
 
+.dropdown{
+    margin-top: 19px;
+}
 .dropdown:hover .dropc {
     display: block
 }
@@ -133,4 +136,7 @@
 }
 .icon_user{
     height: 0.5cm;
+}
+.chat{
+margin-top: 19px;
 }

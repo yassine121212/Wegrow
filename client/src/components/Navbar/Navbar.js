@@ -34,17 +34,12 @@ const Navbar = () => {
     <Container>
       <Wrapper >
         <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
-                  <LogoContainer>
-                      <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-                        <div className="logo">
-            <FaBattleNet />
-          
-            </div>
+                       <Link className="llink" to="/" onClick={() => setShowMobileMenu(!showMobileMenu)} >
+                       
                       <img className="logoimg"  src={logoimg} alt=""></img>
                       <span className="egrow">e<span className="egrowl">g</span>r<span className="egrowl">o</span>w</span>
                        </Link >
-          </LogoContainer>
-
+ 
           <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
             {showMobileMenu ? <FaTimes /> : <FaBars />}
           </MobileIcon>
@@ -89,8 +84,8 @@ const Navbar = () => {
               <MenuItem >
                 <div className="container">
                 <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
-               <MenuItemLink>
-                <BsChatDots style={{ "fontSize":"0.6cm" }}></BsChatDots>
+               <MenuItemLink className="chat">
+                <BsChatDots  style={{ "fontSize":"0.6cm" }}></BsChatDots>
               </MenuItemLink >
               </Link >   
                   <div className="dropdown">
