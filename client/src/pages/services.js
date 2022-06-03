@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from "react";
 import axios from "axios";
-import "./style.css";
+import "./services.css";
+import pic from "../images/renovation.png"
 const Services = () => {
 
   const [data, setData] = useState({
@@ -40,31 +41,87 @@ var states = new Array("Agadir", "Al Hoceima", "Azilal", "Beni Mellal", "Sidi Sl
 var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardinage","Menage","Peinture");
         return (
             <>
-                <select name="city"  onChange={handleChange} value={data.city} required>
+               <section class="credit-card">
+     <div class="container_p">
+      
+      <div class="card-holder">
+        <div class="card-box bg-news">
+           <div class="row">
+        <div class="col-lg-6">
+         <div class="img-box">
+           <img src={pic} class="img-fluid" />
+         </div>
+        </div>
+        <div class="col-lg-6"> 
+        
+        <form>
+          <div class="card-details">
+          <h3 class="title">Trouver un prestataire</h3>
+          <div class="row">
+            <div class="form-group col-sm-8">
+             <div class="inner-addon right-addon">
+            <label for="card-holder">Sélectionner une catégorie</label>
+                        
+  <select name="categorie" onChange={handleChange} value={data.categorie} required>
+      { cat.map(state => <option value={state}>{state}</option> )};
+        </select>             </div> 
+            </div>
+           
+            <div class="form-group col-sm-8">
+             <div class="inner-addon right-addon">
+            <label for="card-number">Sélectionner une ville</label>
+                      
+             <select      name="city"  onChange={handleChange} value={data.city} required>
       { states.map(state => <option value={state}>{state}</option> )};
         </select>
-                
-                <br/>
-         <select name="categorie" onChange={handleChange} value={data.categorie} required>
-      { cat.map(state => <option value={state}>{state}</option> )};
-        </select>
-                <br/>
-                <button onClick={handleSubmit} >Chercher</button>
+             </div> 
+            </div>
 
-<div >
+               <div class="form-group col-sm-8">
+             <div class="inner-addon right-addon">
+           
+            <button type="button" class="btn btn-primary btn-block" onClick={handleSubmit} >Chercher</button>
+            </div>
+             </div>
+          </div>
+          </div>
+        </form>       
+       
+        </div>
+      
+           </div>
+        </div>
+      </div>   
+      
+     </div>
+    </section>
+
+<div class="container">
+        <div class="row">
 
      
       {
         datauser.map((val,key) => {
-          return <div key={key} className="phone" >
-             <h1>{val.lastName} {val.firstName}</h1>
-
-    
+           return <div class="col-lg-4">
+         
+                <div class="card p-0">
+                    <div class="card-image">
+          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
           </div>
+           <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2"> {val.lastName} {val.firstName}</h4>
+                        <h5>Service {val.categorie}</h5>
+                    </div>
+    </div>
+    <br/>
+    </div>
+ 
+          
         })
       }
+
 </div>
-   
+   </div>
 
             </>
         );

@@ -1,0 +1,214 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom,black,#373a3e, #f8f8f8);
+   
+}
+
+
+.container {
+  margin-top: -15px;
+  position: relative;
+}
+.container .row .col-lg-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width:777px;
+    max-height: 340px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.card .card-image ,.card .card-image img{
+     width: 7cm;
+     height: 5cm;
+    border-radius:0;
+  
+}
+
+.card .card-content {
+    position: absolute;
+    bottom: -180px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    min-height: 140px;
+    width: 100%;
+    transition: bottom .4s ease-in;
+    box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover .card-content {
+    bottom: 0px;
+}
+
+.card:hover .card-content h4,
+.card:hover .card-content h5 {
+    transform: translateY(10px);
+    opacity: 1;
+}
+
+.card .card-content h4,
+.card .card-content h5 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: 0.8s;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition-delay: 0.2s;
+}
+
+.card .card-content h5 {
+    transition: 0.5s;
+    font-weight: 200;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+.card .card-content h4 {
+  color: orange;
+}
+section {
+        margin-top: -75px;
+         position: relative;
+}
+.credit-card{
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.card-holder {
+  margin: 2em 0;
+}
+.img-box img{
+    border-radius:0;
+ padding-top: 20px;  
+margin-left: 50px; 
+  height: 50%;
+  width: 50%; 
+ display: flex;
+ justify-content: center;
+}
+.card-box {
+  font-weight: 800;
+  padding: 1em 1em;
+  border-radius: 0.25em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.bg-news {
+  background: -webkit-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
+  background: -o-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
+  background: -moz-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
+  background: linear-gradient(70deg, orange 40%,#f8f8f8 40%);
+}
+.btn{
+    width: 320px;
+    margin-top:20px; 
+ background-image: -webkit-linear-gradient(315deg, orange 0%, orange 100%);
+background-image: -moz- oldlinear-gradient(315deg, orange 0%, orange 100%);
+background-image: -o-linear-gradient(315deg, orange 0%, #fd8965 100%);
+background-image: linear-gradient(135deg, orange 0%, #fd8965 100%);
+-webkit-filter: hue-rotate(0deg);
+filter: hue-rotate(0deg);
+border: none !important;
+}
+
+.credit-card form{
+    background-color: #f8f8f8;
+    padding: 0;
+    max-width: 400px;
+    margin: auto;
+}
+
+.credit-card .title{
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.4em;margin-left: 50 px;
+    color: #2C3E50;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 0.8em;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+.credit-card .card-details{
+    padding: 25px 25px 15px;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon .fas, .inner-addon .far {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #bcbdbd !important;
+}
+
+
+
+.credit-card .card-details label{
+    font-family: 'Abhaya Libre', serif;
+    font-size: 11px;
+    font-weight:700px ;
+    margin-bottom: 7px;
+    color: #79818a;
+    text-transform: uppercase;
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .credit-card{
+      height: 250vh;
+      width: 100%;
+    }
+    .credit-card .title {
+        font-size: 1.2em; 
+    }
+
+    .credit-card .row .col-lg-6 {
+        margin-bottom: 40px;
+
+    }
+    .credit-card .card-details {
+        padding: 40px 40px 30px; 
+    }
+
+    .credit-card .card-details button {
+        margin-top: 2em; 
+    } 
+}
+
+select{ width: 320px;}
