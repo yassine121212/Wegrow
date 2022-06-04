@@ -236,8 +236,6 @@ useEffect(() => {
                             ))}
                             </ul>
         
-                            <input type="file" onChange={fileOnChange}/>
-                            <button onClick={sendImage}>Upload</button>
                       
 
                     </div>
