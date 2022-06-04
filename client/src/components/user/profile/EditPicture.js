@@ -1,24 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import "./EditPicture.css"
+import axios from "axios";
+import "./EditPicture.css";
 
 
-const EditPicture = ({setOnEditPicture}) => {
+
+const EditPicture = ({datauser,setOnEditPicture}) => {
    
     const [image,setImage] = useState({});
+    const [error, setError] = useState(null);
     const fileOnChange = (event) =>{
        setImage(event.target.files[0]);
     }
-    const sendImage = () =>{
+    const sendImage =async () => {
+      try {
       let formData = new FormData();
       formData.append("avatar",image);
-      fetch("http://localhost:8080/uploadFile",{
-          method:"post",
-          body:formData
-      }).then(res=>res.text()).then(resBody=>{
-          console.log(resBody);
-                  })
+                 
+                    const username = localStorage.getItem("username");
+                     
+                    const url = "http://localhost:8080/api/users/";
+                    const res = await axios.put(url + username,formData);
+                         if(res)
+                              console.log("user updated")
+                  } catch (error) {
+                    if (
+                        error.response &&
+                        error.response.status >= 400 &&
+                        error.response.status <= 500
+                    ) {
+                        setError(error.response.data.message);
+                    }
+                  } 
   }
   return (
     <div className="edit_profile">
