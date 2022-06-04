@@ -82,7 +82,7 @@ const Navbar = () => {
             </div>
             {context.isLoggedIn && (
               <MenuItem >
-                <div className="container">
+                <div className="container_profile">
                 <Link className="llink" to="/messenger" onClick={() => setShowMobileMenu(!showMobileMenu)} >
                <MenuItemLink className="chat">
                 <BsChatDots  style={{ "fontSize":"0.6cm" }}></BsChatDots>

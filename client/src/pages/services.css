@@ -2,36 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Reseting */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
-body {
-    min-height: 100vh;
+
+.cont_srv {
+   
     background: linear-gradient(to bottom,black,#373a3e, #f8f8f8);
    
 }
 
 
-.container {
+.serv_container {
   margin-top: -15px;
   position: relative;
+ justify-content: center;
+margin-bottom : 20px;
+margin-left: 20px;
+margin-right: 20px;
 }
-.container .row .col-lg-4 {
+.serv_container .row .col-lg-4 {
     display: flex;
     justify-content: center;
+    width: 240px;
+    height: 240px;
+
 }
 
-.card {
+.serv_container .row .col-lg-4 .card {
     position: relative;
     padding: 0;
     margin: 0 !important;
     border-radius: 20px;
     overflow: hidden;
-    max-width:777px;
+    max-width: 340px;
     max-height: 340px;
     cursor: pointer;
     border: none;
@@ -40,14 +42,14 @@ body {
 }
 
 
-.card .card-image ,.card .card-image img{
+.serv_container .row .col-lg-4 .card  .card-image ,.serv_container .row .col-lg-4 .card  .card-image img{
      width: 7cm;
-     height: 5cm;
+     height: 7cm;
     border-radius:0;
   
 }
 
-.card .card-content {
+.serv_container .row .col-lg-4 .card .card-content {
     position: absolute;
     bottom: -180px;
     color: #fff;
@@ -60,7 +62,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.card:hover .card-content {
+.serv_container .row .col-lg-4 .card:hover .card-content {
     bottom: 0px;
 }
 
@@ -92,22 +94,16 @@ body {
 .card .card-content h4 {
   color: orange;
 }
-section {
-        margin-top: -75px;
-         position: relative;
-}
-.credit-card{
 
+.credit-card{
+position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
 
-}
-.card-holder {
-  margin: 2em 0;
 }
 .img-box img{
     border-radius:0;
@@ -125,12 +121,13 @@ margin-left: 50px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .bg-news {
+    margin-top: -100px;
   background: -webkit-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
   background: -o-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
   background: -moz-linear-gradient(70deg, orange 40%, #f8f8f8 40%);
   background: linear-gradient(70deg, orange 40%,#f8f8f8 40%);
 }
-.btn{
+.btn1{
     width: 320px;
     margin-top:20px; 
  background-image: -webkit-linear-gradient(315deg, orange 0%, orange 100%);

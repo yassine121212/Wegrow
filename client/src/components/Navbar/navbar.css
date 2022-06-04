@@ -41,11 +41,11 @@
 .egrowl{
     color:orange;
 }
-.container {
+.container_profile {
     height: 80%;
     display: flex;
     justify-content: center;
-    margin-top: 0.2cm;
+   margin-top: -14.5px;
 }
 
 .profile {

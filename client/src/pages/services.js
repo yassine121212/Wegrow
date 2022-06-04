@@ -39,9 +39,9 @@ const Services = () => {
 var states = new Array("Agadir", "Al Hoceima", "Azilal", "Beni Mellal", "Sidi Slimane", "Boulemane", "Casablanca", "Chaouen", "El Jadida", "El Kelaa des Sraghna", "Er Rachidia", "Essaouira", "Fes", "Figuig", "Guelmim", "Ifrane", "Kenitra", "Khemisset", "Khenifra", "Khouribga", "Laayoune", "Larache", "Marrakech", "Meknes", "Nador", "Ouarzazate", "Oujda", "Rabat-Sale", "Safi", "Settat", "Sidi Kacem", "Tangier", "Tan-Tan", "Taounate", "Taroudannt", "Tata", "Taza", "Tetouan", "Tiznit");
 
 var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardinage","Menage","Peinture");
-        return (
-            <>
-               <section class="credit-card">
+        return ( 
+ <div class="cont_srv">
+               <div class="credit-card">
      <div class="container_p">
       
       <div class="card-holder">
@@ -80,7 +80,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
                <div class="form-group col-sm-8">
              <div class="inner-addon right-addon">
            
-            <button type="button" class="btn btn-primary btn-block" onClick={handleSubmit} >Chercher</button>
+            <button type="button" class="btn1 btn-primary btn-block" onClick={handleSubmit} >Chercher</button>
             </div>
              </div>
           </div>
@@ -94,9 +94,10 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
       </div>   
       
      </div>
-    </section>
+    </div>
 
-<div class="container">
+<div class="serv_container">
+
         <div class="row">
 
      
@@ -123,7 +124,9 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
 </div>
    </div>
 
-            </>
+         
+</div>
+
         );
     };
 
