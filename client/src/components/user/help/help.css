@@ -25,10 +25,10 @@
 
 #contact h3 {
   display: block;
-  font-size: 28px;
-  font-weight: 300;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.4em;margin-left: 50 px;
+  color: #2C3E50;
   margin-bottom: 10px;
-  font-family: bold;
   text-align: center;
 }
 
@@ -62,7 +62,10 @@ fieldset {
   cursor: pointer;
   width: 100%;
   border: none;
-  background: #4CAF50;
+  background-image: -webkit-linear-gradient(315deg, orange 0%, orange 100%);
+  background-image: -moz- oldlinear-gradient(315deg, orange 0%, orange 100%);
+  background-image: -o-linear-gradient(315deg, orange 0%, #fd8965 100%);
+  background-image: linear-gradient(135deg, orange 0%, #fd8965 100%);
   color: #FFF;
   margin: 0 0 5px;
   padding: 10px;

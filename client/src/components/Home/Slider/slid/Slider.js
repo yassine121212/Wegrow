@@ -4,6 +4,8 @@ import sliderImage from "./sliderImage";
 import "./slider.css";
 import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Link  } from "react-router-dom";
+  
 
 
 const len = sliderImage.length - 1;
@@ -25,7 +27,7 @@ function Slider(props) {
             <div className="slide-text">
                 <p>De vrais <span className="ter">bricoleurs</span> pour vous <span className="ter">aider </span>
                     Travaux, déménagements, livraisons <span className="ter">&</span> services à domicile</p>
-                <br/> <button  className="buttslid" href="/services">Demander un service</button>
+                <br/><Link to="/services" > <button  className="buttslid">Demander un service</button></Link>
 
             </div>
         </div>
