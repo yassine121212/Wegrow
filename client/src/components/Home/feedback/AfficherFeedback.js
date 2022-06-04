@@ -80,8 +80,8 @@ try {
     <div className='pmop'>
       <div>
          <h1 className="tit3">Nos Clients</h1></div> 
+         <marquee direction="scroll">
          <div className='section'>
-          
        {data.map(( det ) =>
           <motion.div drag="x" className='feed' key={det._id}>
               <motion.div className="name-review">{datauser.firstName}  {datauser.lastName}</motion.div>
@@ -112,8 +112,7 @@ try {
             
            
             </motion.div>  )}
-    
-            </div>  </div>
+            </div>  </marquee></div>
   
   )
   

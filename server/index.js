@@ -16,15 +16,7 @@ const avisRoutes = require("./routes/avi");
 // database connection
 connection();
 
-app.post('/uploadFile', upload.single('avatar'), (req, res) =>{
-    let fileType = req.file.mimetype.split("/")[1];
-    let newFileName = req.file.filename +"." +fileType;
-    fs.rename(`./uploads/${req.file.filename}`,`./uploads/${newFileName}`, function(){
-       console.log("callback");
-       res.send("200");
-   });
 
-});
 
 // middlewares
 app.use(express.json());
