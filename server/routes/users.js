@@ -1,8 +1,26 @@
 const router = require("express").Router();
 const { User, validate ,Details } = require("../models/user");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
+const upload = multer({ dest: './uploads' })
+const path = require('path');
+const fs = require("fs");
 
- 
+
+router.put("/:username", upload.single('avatar'), async (req, res) => {
+	let fileType = req.file.mimetype.split("/")[1];
+    let newFileName = req.file.filename +"." +fileType;
+    fs.rename(`./uploads/${req.file.filename}`,`./uploads/${newFileName}`, function(){
+       console.log("callback");
+       res.send("200");
+   });
+	try {
+		User.updateOne({userName: req.params.username},{profilePicture:newFileName	})
+		.then( res.status(201).send({ message: "user update successfully" }));
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
  router.post("/", async (req, res) => {
 	const url = req.protocol + '://' + req.get('localhost:3000');
 

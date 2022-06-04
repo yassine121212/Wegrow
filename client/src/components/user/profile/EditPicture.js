@@ -10,7 +10,7 @@ const EditPicture = ({setOnEditPicture}) => {
     const fileOnChange = (event) =>{
        setImage(event.target.files[0]);
     }
-    const sendImage = (event) =>{
+    const sendImage = () =>{
       let formData = new FormData();
       formData.append("avatar",image);
       fetch("http://localhost:8080/uploadFile",{
