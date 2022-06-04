@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require("fs");
 
 
-router.put("/:username", upload.single('avatar'), async (req, res) => {
+router.put("/image/:username", upload.single('avatar'), async (req, res) => {
 	let fileType = req.file.mimetype.split("/")[1];
     let newFileName = req.file.filename +"." +fileType;
     fs.rename(`./uploads/${req.file.filename}`,`./uploads/${newFileName}`, function(){
