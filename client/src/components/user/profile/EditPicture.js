@@ -20,7 +20,7 @@ const EditPicture = ({datauser,setOnEditPicture}) => {
                  
                     const username = localStorage.getItem("username");
                      
-                    const url = "http://localhost:8080/api/users/";
+                    const url = "http://localhost:8080/api/users/image/";
                     const res = await axios.put(url + username,formData);
                          if(res)
                               console.log("user updated")

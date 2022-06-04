@@ -24,7 +24,8 @@ const Help = () =>{
         }
     return (
         <div class="help">  
-        <form id="contact"onSubmit={sendEmail}>
+            <div class="wrapper">
+        <form id="contact" onSubmit={sendEmail}>
         <fieldset>
           <h3>Contact Form</h3>
           </fieldset>
@@ -41,6 +42,7 @@ const Help = () =>{
             <button name="submit" type="submit" id="contact-submit">Send</button>
           </fieldset>
         </form>
+        </div>
       </div>
     );
 }
