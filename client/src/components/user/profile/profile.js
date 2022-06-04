@@ -18,7 +18,7 @@ const Profile = () => {
                                       "firstName":null,"email":null,
                                       "lastName":null,"phone":null,
                                       "userName":null,"Address":null,
-                                      "city":null
+                                      "city":null,"profilePicture":null
                                        
                                     });
 
@@ -57,7 +57,7 @@ const Profile = () => {
             setData({"firstName":res.data.user.firstName,"email":res.data.user.email,
                      "lastName":res.data.user.lastName,"phone":res.data.user.phone,
                      "userName":res.data.user.userName,"Address":res.data.user.Address,
-                     "city":res.data.user.city
+                     "city":res.data.user.city,"profilePicture":res.data.user.profilePicture
                      })
             
           
@@ -140,7 +140,7 @@ useEffect(() => {
                     <div className="col-12 bg-white p-0 px-3 py-3 mb-3">
                         <div className="d-flex flex-column align-items-center">
                         
-                        <img height="75%" src={pic} alt=""></img>
+                        <img height="75%" src={"http://localhost:8080/static/"+data.profilePicture} alt=""></img>
 
                             <p className="fw-bold h4 mt-3">{data.userName}</p>
                             <p className="text-muted">Full Stack Developer</p>
@@ -236,8 +236,6 @@ useEffect(() => {
                             ))}
                             </ul>
         
-                            <input type="file" onChange={fileOnChange}/>
-                            <button onClick={sendImage}>Upload</button>
                       
 
                     </div>
