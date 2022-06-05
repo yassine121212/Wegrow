@@ -10,8 +10,7 @@ import React, { useState, useEffect } from "react";
  export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [id, setId] = useState(null);
- 
-  useEffect(() => {
+   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     const storedUserId = localStorage.getItem("id");
 
@@ -41,6 +40,7 @@ import React, { useState, useEffect } from "react";
         isLoggedIn: isLoggedIn,
         id:id,
         onLogout: logoutHandler,
+      
        }}
     >
       {props.children}

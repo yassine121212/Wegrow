@@ -1,17 +1,18 @@
 .feed{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
     padding: 2.5rem;
-    box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
-    margin: auto;
+     margin: auto;
     padding: 0.8 2rem;
-   height:200px;
+   height:350px;
    min-width: 20rem;
     max-width: 1100px;
 	cursor:grab;
 	overflow: hidden;
 	pointer-events: none;
+	overflow:  visible;
  
-}
+ }
+ 
 .section{
 	display: flex;
 	pointer-events: none;
@@ -30,24 +31,58 @@
 		font-size: 1.5rem;
 		color: rgb(50, 50, 50);
 		margin-bottom: .25rem;
-		text-align: center;
-	  }
+		margin-left: 1.1cm;
+  		text-align: center;
+		width: 6cm;
+ 		border-bottom: 2px solid #FF0066;
+ 		 transform: translateY(-1.7cm);
+ 
+ 
+
+
+ 	  }
 	  .first-review{
 		color: red;
 		font-style: italic;
 		text-align: center;
+		transform: translateY(-1.4cm);
 	  }
 	  .raiting{
 		text-align: center;
-		
+		transform: translateY(-1cm);
+
 	  }
 	  .desc-review{
 		line-height: 1.5rem;
 		letter-spacing: 1px;
 		color: rgb(150, 150, 150);
+		transform: translateY(-0.7cm);
+
 	  }
 .tit3{
 	padding-bottom: 0.3cm;
 	border-bottom: 4px solid #FF0066;
 	color: white;
 }
+.zozoz{
+	height: 3cm !important;
+	width: 3cm !important;
+	margin-left: 1.2cm;
+	transform: translateY(-2cm);
+   }
+.fontquo{
+	font-size: 1.4cm;
+	color: #ff5100 ;
+}
+.quo1{
+	transform: translate(-1cm,-2.5cm);
+ 
+}
+.quo2{
+	position: absolute;
+	 margin-top:1.44cm;
+	 margin-left: 7.67cm;
+}
+.quo2{	transform: rotate(180deg);
+}
+

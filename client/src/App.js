@@ -10,7 +10,6 @@ import Profile from "./components/user/profile/profile"
 import Help from "./components/user/help/help"
 import Jardin from "./pages/servicespages/jardinage"
 import Messenger from "./pages/messenger/Messenger";
-import Feedback from "./components/feedback/feedback";
 
 
 
@@ -30,7 +29,6 @@ function App() {
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
        <Route path='/jardinage' element= {<Jardin/>} />
-       <Route path='/feedback' element= {<Feedback/>} />
        <Route path='/messenger' element= {<Messenger/>} />
  
 
