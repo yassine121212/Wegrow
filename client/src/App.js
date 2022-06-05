@@ -16,7 +16,7 @@ import Bricolage from "./pages/servicespages/bricolage"
 import Jardinage from "./pages/servicespages/jardinage"
 import Animaux from "./pages/servicespages/animaux"
 import Messenger from "./pages/messenger/Messenger";
-import Feedback from "./components/feedback/feedback";
+import Feedback from "./components/Home/feedback/feedback";
 
 
 

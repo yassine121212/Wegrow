@@ -25,13 +25,11 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-<<<<<<< HEAD
+
                 <Link to="/Bricolage">
-                <img className='service_img' src={Second} alt='' />
-=======
-                <Link to="/bricolage">
+               
                 <img className='service_img' src={ Bricoleur} alt='' />
->>>>>>> e848f0c7184d88498842e23c7983aea824828ef2
+
                 <div className='content'>
                 <h2>Bricolage</h2>
                 <p> pose de cadres, de tringles, changer une ampoule, monter et démonter un meuble.</p>
@@ -48,13 +46,11 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-<<<<<<< HEAD
+
                 <Link to="/Menage">
-                <img className='service_img' src={First} alt='' />
-=======
-                <Link to="/menage">
+               
                 <img className='service_img' src={Menage} alt='' />
->>>>>>> e848f0c7184d88498842e23c7983aea824828ef2
+
                 <div className='content'>
                 <h2>Ménage</h2>
                 <p> Épousseter, ranger, nettoyer, laver, faire briller, détartrer, dégraisser.</p>
@@ -62,13 +58,11 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-<<<<<<< HEAD
+
                 <Link to="/Peinture">
-                <img className='service_img' src={First} alt='' />
-=======
-                <Link to="/peinture">
+               
                 <img className='service_img' src={Peinture} alt='' />
->>>>>>> e848f0c7184d88498842e23c7983aea824828ef2
+
                 <div className='content'>
                 <h2>Peinture</h2>
                 <p>Enlever une tache de peinture glycéro sur le mur.</p>
@@ -76,13 +70,11 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-<<<<<<< HEAD
+
                 <Link to="/Animaux">
-                <img className='service_img' src={First} alt='' />
-=======
-                <Link to="/animaux">
+               
                 <img className='service_img' src={Animaux} alt='' />
->>>>>>> e848f0c7184d88498842e23c7983aea824828ef2
+
                 <div className='content'>
                 <h2>Animaux</h2>
                 <p> Crée, aménage et entretient parcs, jardins et terrains de sport.</p>
@@ -90,13 +82,11 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-<<<<<<< HEAD
+
                 <Link to="/Informatique">
-                <img className='service_img' src={First} alt='' />
-=======
-                <Link to="/informatque">
+                
                 <img className='service_img' src={Informatique} alt='' />
->>>>>>> e848f0c7184d88498842e23c7983aea824828ef2
+
                 <div className='content'>
                 <h2>Informatique</h2>
                 <p> Brancher et installer le matériel, les périphériques et les dispositifs.</p>
