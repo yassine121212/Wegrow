@@ -1,9 +1,11 @@
 import React from 'react'
 import First from "../../../images/jard.jpg"
-import Second from "../../../images/brico.png"
+import Second from "../../../images/sol.jpg"
 import Menage from "../../../images/menage.jpg"
 import Demenagement from "../../../images/demenagement.jpg"
 import Informatique from "../../../images/informatique.jpg"
+import Animaux from "../../../images/animaux.jpg"
+import Bricoleur from "../../../images/bricoleur.jpg"
 import { BiCategoryAlt } from "react-icons/bi";
 import './Service.css'
 import { Link} from 'react-router-dom';
@@ -23,7 +25,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/bricolage">
-                <img className='service_img' src={Second} alt='' />
+                <img className='service_img' src={ Bricoleur} alt='' />
                 <div className='content'>
                 <h2>Bricolage</h2>
                 <p> pose de cadres, de tringles, changer une ampoule, monter et démonter un meuble.</p>
@@ -59,7 +61,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/animaux">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Animaux} alt='' />
                 <div className='content'>
                 <h2>Animaux</h2>
                 <p> Crée, aménage et entretient parcs, jardins et terrains de sport.</p>
@@ -77,7 +79,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/revements">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Second} alt='' />
                 <div className='content'>
                 <h2>Revêtement Sol</h2>
                 <p> Poser, remplacer ou réparer des moquettes, des tapis d'escalier...</p>
