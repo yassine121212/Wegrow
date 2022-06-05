@@ -11,7 +11,7 @@ const Service = () => {
           <div ><h1 className='title_services' > <BiCategoryAlt></BiCategoryAlt> Nos services</h1></div> 
             <div className='container'>
                 <div className='image'>
-                <Link to="/jardinage">
+                <Link to="/Jardinage">
                 <img className='service_img' src={First} alt='' />
                 <div className='content'>
                 <h2>Jardinage</h2>
@@ -20,7 +20,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/bricolage">
+                <Link to="/Bricolage">
                 <img className='service_img' src={Second} alt='' />
                 <div className='content'>
                 <h2>Bricolage</h2>
@@ -29,7 +29,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/demenegamet">
+                <Link to="/Demenagement">
                 <img className='service_img' src={Demenagement} alt='' />
                 <div className='content'>
                 <h2 className="erty">Déménegament</h2>
@@ -38,7 +38,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/menage">
+                <Link to="/Menage">
                 <img className='service_img' src={First} alt='' />
                 <div className='content'>
                 <h2>Ménage</h2>
@@ -47,7 +47,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/peinture">
+                <Link to="/Peinture">
                 <img className='service_img' src={First} alt='' />
                 <div className='content'>
                 <h2>Peinture</h2>
@@ -56,7 +56,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/animaux">
+                <Link to="/Animaux">
                 <img className='service_img' src={First} alt='' />
                 <div className='content'>
                 <h2>Animaux</h2>
@@ -65,7 +65,7 @@ const Service = () => {
                 </Link>
                 </div>
                 <div className='image'>
-                <Link to="/informatque">
+                <Link to="/Informatique">
                 <img className='service_img' src={First} alt='' />
                 <div className='content'>
                 <h2>Informatique</h2>

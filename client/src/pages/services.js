@@ -45,16 +45,16 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
      <div class="container_p">
       
       <div class="card-holder">
-        <div class="card-box bg-news">
+        <div class="crd-box bg-news">
            <div class="row">
         <div class="col-lg-6">
-         <div class="img-box">
+         <div class="imag-box">
            <img src={pic} class="img-fluid" />
          </div>
         </div>
         <div class="col-lg-6"> 
         
-        <form>
+        <form class="fr">
           <div class="card-details">
           <h3 class="title">Trouver un prestataire</h3>
           <div class="row">

@@ -1,10 +1,19 @@
-import { BsTypeH2 } from "react-icons/bs";
-
-
-
-const jardinage=()=>{
+import {React} from "react";
+import Service from "../../components/Services/service.js";
+ 
+const Jardinage = () => {
+     
     return (
-        <h1>Hello jardin</h1>
+        <div className="oral">
+            <div className="pivc">
+           
+                <Service cate="Jardinage" />
+               
+            </div>
+        </div>
     );
-}
-export default jardinage;
+ 
+};
+
+
+export default Jardinage;
