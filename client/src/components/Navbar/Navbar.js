@@ -46,9 +46,11 @@ const Navbar = () => {
 
           <Menu open={showMobileMenu}>
             <MenuItem className="sec">
+            <a className="llink" href="#about">
                <MenuItemLink>
                 <div>About</div>
               </MenuItemLink >
+              </a>
              </MenuItem>
             <MenuItem className="sec">
             <Link className="llink" to="/services" onClick={() => setShowMobileMenu(!showMobileMenu)} >
