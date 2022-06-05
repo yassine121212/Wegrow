@@ -5,6 +5,7 @@ import Menage from "../../../images/menage.jpg"
 import Demenagement from "../../../images/demenagement.jpg"
 import Informatique from "../../../images/informatique.jpg"
 import Animaux from "../../../images/animaux.jpg"
+import Peinture from "../../../images/peinture.jpg"
 import Bricoleur from "../../../images/bricoleur.jpg"
 import { BiCategoryAlt } from "react-icons/bi";
 import './Service.css'
@@ -52,7 +53,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/peinture">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Peinture} alt='' />
                 <div className='content'>
                 <h2>Peinture</h2>
                 <p>Enlever une tache de peinture glycéro sur le mur.</p>
