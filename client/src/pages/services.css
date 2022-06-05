@@ -1,7 +1,6 @@
-/* Importing fonts from Google */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Reseting */
 
 
 .cont_srv {
@@ -10,9 +9,13 @@
    
 }
 
+.serv_container .row{
 
+     justify-content: center;  
+
+}
 .serv_container {
-  margin-top: -15px;
+   
   position: relative;
  justify-content: center;
 margin-bottom : 20px;
@@ -95,7 +98,7 @@ margin-right: 20px;
   color: orange;
 }
 
-.credit-card{
+.cont_srv .credit-card{
 position: relative;
   height: 100vh;
   width: 100%;
@@ -105,7 +108,7 @@ position: relative;
   align-items: center;
 
 }
-.img-box img{
+.imag-box img{
     border-radius:0;
  padding-top: 20px;  
 margin-left: 50px; 
@@ -114,7 +117,7 @@ margin-left: 50px;
  display: flex;
  justify-content: center;
 }
-.card-box {
+.crd-box {
   font-weight: 800;
   padding: 1em 1em;
   border-radius: 0.25em;
@@ -139,7 +142,7 @@ filter: hue-rotate(0deg);
 border: none !important;
 }
 
-.credit-card form{
+.credit-card .fr{
     background-color: #f8f8f8;
     padding: 0;
     max-width: 400px;
@@ -182,7 +185,12 @@ border: none !important;
 
 }
 
-
+.desc{  font-family: 'Abhaya Libre', serif;
+    
+    color: #2C3E50;
+   
+  
+}
 
 
 

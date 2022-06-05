@@ -2,7 +2,13 @@ import React from 'react';
 import { useState } from "react";
 import axios from "axios";
 import "./services.css";
-import pic from "../images/renovation.png"
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import pic from "../images/renovation.png";
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from "@material-ui/core/IconButton";
 const Services = () => {
 
   const [data, setData] = useState({
@@ -11,6 +17,20 @@ const Services = () => {
 
   });
   const [datauser, setDatauser]=useState([]);
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -45,16 +65,16 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
      <div class="container_p">
       
       <div class="card-holder">
-        <div class="card-box bg-news">
+        <div class="crd-box bg-news">
            <div class="row">
         <div class="col-lg-6">
-         <div class="img-box">
+         <div class="imag-box">
            <img src={pic} class="img-fluid" />
          </div>
         </div>
         <div class="col-lg-6"> 
         
-        <form>
+        <form class="fr">
           <div class="card-details">
           <h3 class="title">Trouver un prestataire</h3>
           <div class="row">
@@ -106,12 +126,27 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
            return <div class="col-lg-4">
          
                 <div class="card p-0">
-                    <div class="card-image">
-          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
+                    <div class="card-image" >
+          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
           </div>
-           <div class="card-content d-flex flex-column align-items-center">
+           <div class="card-content d-flex flex-column align-items-center" onClick={handleOpenModal}>
                         <h4 class="pt-2"> {val.lastName} {val.firstName}</h4>
                         <h5>Service {val.categorie}</h5>
+                        
+    <Modal
+      open={openModal}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+        
+      <Box sx={style}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+          <h2>Bonjour</h2>
+          </Typography>
+        
+    
+          </Box>
+          </Modal>
                     </div>
     </div>
     <br/>

@@ -8,7 +8,13 @@ import SignUp from './components/Singup/index';
 import SignIn from './components/Login/index';
 import Profile from "./components/user/profile/profile"
 import Help from "./components/user/help/help"
-import Jardin from "./pages/servicespages/jardinage"
+import Menage from "./pages/servicespages/menage"
+import Peinture from "./pages/servicespages/peinture"
+import Informatique from "./pages/servicespages/informatque"
+import Demenagement from "./pages/servicespages/demenagement"
+import Bricolage from "./pages/servicespages/bricolage"
+import Jardinage from "./pages/servicespages/jardinage"
+import Animaux from "./pages/servicespages/animaux"
 import Messenger from "./pages/messenger/Messenger";
 
 
@@ -28,7 +34,7 @@ function App() {
        <Route path='/login' element= {<SignIn/>} />
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
-       <Route path='/jardinage' element= {<Jardin/>} />
+       <Route path='/jardinage' element= {<Jardinage/>} />
        <Route path='/messenger' element= {<Messenger/>} />
  
 
