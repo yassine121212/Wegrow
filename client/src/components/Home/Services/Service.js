@@ -1,7 +1,9 @@
 import React from 'react'
-import First from "../../../images/jard.png"
+import First from "../../../images/jard.jpg"
 import Second from "../../../images/brico.png"
+import Menage from "../../../images/menage.jpg"
 import Demenagement from "../../../images/demenagement.jpg"
+import Informatique from "../../../images/informatique.jpg"
 import { BiCategoryAlt } from "react-icons/bi";
 import './Service.css'
 import { Link} from 'react-router-dom';
@@ -39,7 +41,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/menage">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Menage} alt='' />
                 <div className='content'>
                 <h2>Ménage</h2>
                 <p> Épousseter, ranger, nettoyer, laver, faire briller, détartrer, dégraisser.</p>
@@ -66,7 +68,7 @@ const Service = () => {
                 </div>
                 <div className='image'>
                 <Link to="/informatque">
-                <img className='service_img' src={First} alt='' />
+                <img className='service_img' src={Informatique} alt='' />
                 <div className='content'>
                 <h2>Informatique</h2>
                 <p> Brancher et installer le matériel, les périphériques et les dispositifs.</p>
