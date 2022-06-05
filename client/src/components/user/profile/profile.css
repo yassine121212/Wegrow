@@ -3,7 +3,7 @@
  
 
 .breadcrumb {
-    background-color: #e4c5c5;
+    background-color: #161414;
 
 }
 
@@ -21,38 +21,16 @@ p {
 
 .d-flex a {
     text-decoration: none;
-    color: #686868;
+    color: black;
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
     object-fit: cover;
-}
-.browser{
-    color: rgb(0, 0, 0);
-    transform: translateY(-0.03cm);
-    margin-right: 0.2cm;
-}
-.twitter {
-    color: #00d9ff;
-    transform: translateY(-0.03cm);
-    margin-right: 0.2cm;
-}
 
-.insta {
-    color: #E1306C;
-    transform: translateY(-0.03cm);
-    margin-right: 0.2cm;
-    
 }
-
-.fb{
-    color: #0046a1;
-    transform: translateY(-0.03cm);
-    margin-right: 0.2cm;
- }
  .button_loader {
     
     margin: auto;
@@ -66,7 +44,9 @@ img {
     height: 50px;
     -webkit-animation: spin 0.8s linear infinite;
     animation: spin 0.8s linear infinite;
+
   }
+
   @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     99% { -webkit-transform: rotate(360deg); }
@@ -88,3 +68,55 @@ img {
     font-size: 0.8cm;
     cursor: pointer;
   }
+
+  .py-1{
+      background-color: #F0F0F0;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 100px;
+    background-color: white;
+    padding: 5px;
+  }
+
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .item111{
+    text-align: left;
+    color: rgb(91, 91, 231);
+    margin: auto;
+
+  }
+
+  .item112{
+    text-align: left;
+    color: rgb(134, 237, 134);
+    margin: auto;
+  }
+
+  .item113{
+    text-align: left;
+    color: rgb(246, 150, 150);
+    margin: auto;
+
+  }
+
+ .item11{
+    font-size: 15px;
+    text-align: left;
+    justify-content: space-between;
+    margin: auto;
+ }
+
+.row{
+    background-color: #ffffff;
+}
+
+

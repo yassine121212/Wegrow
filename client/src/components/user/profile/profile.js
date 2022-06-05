@@ -1,16 +1,30 @@
 import React, {Children, useEffect, useState} from 'react';
 import "./profile.css";
 import axios from "axios";
-import pic from "../../../images/logo192.png" 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {FaFacebookF} from "react-icons/fa";
-import {BsInstagram,BsTwitter} from "react-icons/bs";
 import {AiOutlineEdit} from "react-icons/ai";
-import {SiAtom} from "react-icons/si";
 import AddCompetence from "./addCompetence";
 import EditProfile from './EditProfile'
 import EditPicture from './EditPicture'
+import { GoKey } from "react-icons/go";
+import { BiMessageDetail } from "react-icons/bi";
+import { RiUserFollowLine } from "react-icons/ri";
+import { SiNamecheap } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
+import { AiTwotonePhone } from "react-icons/ai";
+import { FaAddressCard } from "react-icons/fa";
+import { FaCity } from "react-icons/fa";
+import { RiMessageFill } from "react-icons/ri";
+
+
+
+
 const Profile = () => {
+    <script>
+function myFunction() {
+  document.body.style.background = "#E8E8E8 "
+}
+</script>
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -130,6 +144,7 @@ useEffect(() => {
             </div>
         )}
          {!isLoading && (
+                         
         <div className="container">
         <div className="row">
              
@@ -146,8 +161,7 @@ useEffect(() => {
                             <p className="text-muted">Full Stack Developer</p>
                             <p className="text-muted mb-3">{data.Address}</p>
                             <div className="d-flex ">
-                                <div className="btn btn-primary follow me-2">Follow</div>
-                                <div className="btn btn-outline-primary message">Message</div>
+                            <button type="button" class="btn btn-success"> <RiUserFollowLine /> Follow</button>                        <button type="button" class="btn btn-info"> <BiMessageDetail /> Message </button>
                                 <div className="info">
                         {
                             onEditPicture && <EditPicture  setOnEditPicture={setOnEditPicture} />
@@ -158,50 +172,26 @@ useEffect(() => {
                     </div>
                     <div className="col-12 bg-white p-0 px-2 pb-3 mb-3">
                     <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={handleModifylinks}/>
-
-                        <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p><SiAtom className="browser"/>Website</p>
-                            <p>https://bootdey.com</p>
-                        </div>
-                        
-                        <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p><BsTwitter className="twitter" />Twitter</p>
-                            <p>@bootdey</p>
-                        </div>
-                        <div className="d-flex justify-content-between border-bottom py-2 px-3">
-                            <p> <BsInstagram className="insta"/>Instagram</p>
-                            
-                            <p>bootdey</p>
-                        </div>
-                        <div className="d-flex justify-content-between py-2 px-3">
-                            <p><FaFacebookF className="fb" />facebook</p>
-                          <p>bootdey</p>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-7 ps-md-4">
-            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details'   onClick={() => setOnEdit(true)}/>
-                <div className="row">
+                    <div className="row">
                     <div className="col-12 bg-white px-3 mb-3 pb-3">
                         <div className="d-flex align-items-center justify-content-between border-bottom">
-                            <p className="py-2">Full Name</p>
+                            <p className="py-2"> <SiNamecheap />    Full Name</p>
                             <p className="py-2 text-muted">{data.firstName} {data.lastName} </p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
-                            <p className="py-2">Email</p>
+                            <p className="py-2"> <MdEmail />      Email</p>
                             <p className="py-2 text-muted">{data.email}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between border-bottom">
-                            <p className="py-2">Phone</p>
+                            <p className="py-2"><AiTwotonePhone />      Phone</p>
                             <p className="py-2 text-muted">{data.phone}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between">
-                            <p className="py-2">Address</p>
+                            <p className="py-2"><FaAddressCard />      Address</p>
                             <p className="py-2 text-muted"> {data.Address}</p>
                         </div>
                         <div className="d-flex align-items-center justify-content-between">
-                            <p className="py-2">city</p>
+                            <p className="py-2"><FaCity  />      city</p>
                             <p className="py-2 text-muted"> {data.city}</p>
                         </div>
                     </div>
@@ -235,14 +225,70 @@ useEffect(() => {
                                  </>
                             ))}
                             </ul>
-        
-                      
-
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>
+            <div className="col-md-7 ps-md-4">
+            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details'   onClick={() => setOnEdit(true)}/>
+            <div className="row">
+                    <div className="Title">
+                        <div className='title1'>
+                            <p className="py-1"> <GoKey /> Ses univers de Bricolage </p>
+                        </div>
+                        <div className='grid-container'>
+                            <div className='item1'>
+                                <h6 className='item111'> Bricolage Maison</h6>
+                                     <div className='item11'>
+                                    Serrurerie <br />
+                                    pose ou réparation store <br />
+                                    Tapisserie <br />
+                                    Accroche murale <br />
+                                    Détecteur de fumée
+                                    </div>                      
+                           </div>
+                           <div className='item1'>
+                           <h6 className='item112'> Peinture</h6>
+                                     <div className='item11'>
+                                    Peinture de meubles <br />
+                                    Peinture de sol / plafond<br />
+                                    Peinture mur<br />
+                                    Rénovation de sol<br />
+                                    Rénovation mur<br />
+                                    </div>     
+                           </div>
+                           <div className='item1'>
+                           <h6 className='item113'> Jardinage</h6>
+                                     <div className='item11'>
+                                    Portail, grillage et occultation<br />
+                                    Serre, abri et garage<br />
+                                    Sol pour terrasse et jardin<br />
+                                    Entretien jardin<br />
+                                    Aménagement jardin<br />
+                                    Aménagement extérieur<br />
+                                    Remise en état du sol<br />
+                                    Tonte de pelouse
+                                    </div>     
+                           </div>
+                        </div> <br />
+                        <div className='title2'>
+                            <p className="py-1"> <RiMessageFill /> pourquoi choisir XXXX </p>
+                            <div className='row'>
+                            <p> J'ai travaillé dans le domaine de la maintenance des trains pendant 10 ans. Actuellement formateur , j'ai toujours bricolé. J'aide souvent mes proches à réaliser leurs petits travaux ; le bricolage est un plaisir avant tout ! Il existe toujours une solution à un problème technique, j'aime me confronter à cette réflexion .
+                                J'ai un CAP Mécanicien d'entretien (mécanique, hydraulique et électricité) et un BPT Maintenance. 
+                                Je suis précis et ponctuel lors des RDV, j'aime le contact et je suis relativement disponible et arrangeant. 
+                                Je suis titulaire du diplôme suivant : BEP - Industrie/Maintenance.</p>
+                                </div>
+                        </div>
+                    </div>         
+           </div>
+            </div>
+           
         </div>
-    </div>)}
+    </div>
+    
+)}
    
     </>
     );
