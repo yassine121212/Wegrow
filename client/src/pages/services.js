@@ -14,8 +14,10 @@ const Services = () => {
   const [data, setData] = useState({
     city: "",
     categorie: "",
+  
 
   });
+  const [image,setImage]=useState("renovation");
   const [datauser, setDatauser]=useState([]);
   const style = {
     position: 'absolute',
@@ -33,7 +35,9 @@ const Services = () => {
 
 
   const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
+    setData({ ...data,[input.name]: input.value});
+    if (input.name=="categorie") {
+    setImage(input.value);}
 
     };
     const [error, setError] = useState("");
@@ -69,7 +73,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
            <div class="row">
         <div class="col-lg-6">
          <div class="imag-box">
-           <img src={pic} class="img-fluid" />
+           <img src={require("../images/"+image+".png")} class="img-fluid" />
          </div>
         </div>
         <div class="col-lg-6"> 
