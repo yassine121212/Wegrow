@@ -13,7 +13,7 @@ import { Link} from 'react-router-dom';
 const Service = () => {
     return (
         <div className='best'>
-          <div ><h1 className='title_services' > <BiCategoryAlt></BiCategoryAlt> Nos services</h1></div> 
+          <div ><h1 className='title_services' > <BiCategoryAlt></BiCategoryAlt> <span>Nos </span>services</h1></div> 
             <div className='container'>
                 <div className='image'>
                 <Link to="/jardinage">

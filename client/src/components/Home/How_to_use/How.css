@@ -23,14 +23,13 @@
  
  .tit2{
      padding-bottom: 0.3cm;
-     border-bottom: 4px solid #4bcc00;
  }
  
  .lign{
      padding: 0.25cm;
  }
  .work_color{
-     color:#4bcc00;
+    color:orange !important;
   }
   
    .lmp{
@@ -49,5 +48,5 @@
        transform: translateY(-10cm);
    }
  .erp{
-     color: #4bcc00;
+       color:orange !important;
  }
