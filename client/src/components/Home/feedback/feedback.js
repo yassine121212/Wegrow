@@ -25,22 +25,64 @@ const style = {
   
 const Feedback = () => {
   const context = useContext(AuthContext);
-  console.log(context.id)
-  const [error, setError] = useState("");
+   const [error, setError] = useState("");
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState({});
+  const [datauser, setDatauser] = useState({});
 
   const handleOpen = () => {if(context.isLoggedIn) setOpen(true);else navigate("/login");}
   const handleClose = () => setOpen(false);
   const [number, setNumber] = useState();
   const [hoverStar, setHoverStar] = useState(undefined);
-  useEffect(() => { 
-    setData({ ...data,"userId":context.id  });
-  }, [context.id]);
-  const showAlert = () =>{
+
+
+
+  const handleuser = async () => {
+ 
+try {
+    const username=localStorage.getItem("username")
+    const url = "http://localhost:8080/api/users/we/";
+    const  res  = await axios.get(url + username);
+    if(res.status===200)
+    {
+        console.log(res)
+        setDatauser({"firstName":res.data.user.firstName,
+        "lastName":res.data.user.lastName,
+        "userName":res.data.user.userName,
+        "profilePicture":res.data.user.profilePicture
+      })
+      
+      
+    }
+ 
+
+
+} catch (error) {
+    if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+    ) {
+        setError(error.response.data.message);
+    }
+}
+ 
+}
+ useEffect(() => {
+  handleuser();
+ }, []);
+ useEffect(() => {
+  setData({ ...data,...datauser });
+}, [datauser]);
+
+setTimeout(() => {
+  localStorage.setItem("profilepic",datauser.profilePicture)
+}, 5000);
+
+
+ 
   
-  }
      const handleChange = ({ currentTarget: input }) => {
       setData({ ...data, [input.name]: input.value });
     };
@@ -70,9 +112,6 @@ const Feedback = () => {
 
     };
 
-    function handleKeyDown(e){
-        const value = e.target.value;
-    }
    
   
     const handleText = () => {
@@ -134,9 +173,8 @@ const Feedback = () => {
                     />
                   )
                 )}
-                   <textarea name="comment"	onChange={handleChange}	value={data.comment} onKeyDown={handleKeyDown}></textarea>
-                   <input type="hidden" value={context.id} name="userId"/>
-              
+                   <textarea name="comment"	onChange={handleChange}	value={data.comment} ></textarea>
+               
             <button className={` ${!number && "disabled"} `} id="avis" onClick={handleSubmit}>Submit</button>
             
         </Typography>
