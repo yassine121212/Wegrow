@@ -34,7 +34,13 @@ function App() {
        <Route path='/login' element= {<SignIn/>} />
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
-       <Route path='/jardinage' element= {<Jardinage/>} />
+        <Route path='/Menage' element= {<Menage/>} />
+         <Route path='/Peinture' element= {<Peinture/>} />
+           <Route path='/Informatique' element= {<Informatique/>} />
+             <Route path='/Demenagement' element= {<Demenagement/>} />
+               <Route path='/Bricolage' element= {<Bricolage/>} />
+                 <Route path='/Jardinage' element= {<Jardinage/>} />
+                   <Route path='/Animaux' element= {<Animaux/>} />
        <Route path='/messenger' element= {<Messenger/>} />
  
 
