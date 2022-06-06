@@ -44,7 +44,7 @@
     position: absolute;
 }
 
-.slide-text {
+.slide-text p{
     position: absolute;
     color: white;
     font-size: 40px;
@@ -62,7 +62,7 @@
     font-size: medium;
     border: 2px solid orange;
     font-weight: 800;
-    transform: translateY(-1cm);
+    transform: translate(1cm,-7cm);
     transition: s;
  }
  .buttslid:hover{

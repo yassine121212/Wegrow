@@ -29,7 +29,8 @@ import React, { useState, useEffect } from "react";
     setIsLoggedIn(false);
     window.localStorage.clear();
     localStorage.setItem("isLoggedIn",0)
-   };
+     window.location = "/";
+  };
    
 
   
