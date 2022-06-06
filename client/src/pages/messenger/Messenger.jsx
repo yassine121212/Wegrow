@@ -138,7 +138,7 @@ export default function Messenger() {
   };
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth",backgroundColor :"red" });
+    scrollRef.current?.scrollIntoView({ behavior: "smooth",color :"red" });
   }, [messages]);
   const changeListFriends=(e)=>{
    }
