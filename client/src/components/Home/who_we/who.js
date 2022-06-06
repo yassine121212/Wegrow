@@ -15,7 +15,7 @@ function ReadMore({children}) {
   }
 
   return(
-      <p>
+      <p className="par2">
           {result}
           <span className="non" onClick={toggleIsShow}>
               {isShow ? "Read More" : "Read Less"}
