@@ -46,8 +46,11 @@ const AfficherFeedback = () => {
     <div className='pmop'>
       <div>
          <h1 className="tit3">Nos Clients</h1></div> 
+         <marquee LOOP="0">
           <div className='section'>
+           
        {data.map(( det ) =>
+        
           <div  className='feed' key={det._id}>
                             <RiDoubleQuotesL className='fontquo quo1'/>
 
@@ -55,8 +58,8 @@ const AfficherFeedback = () => {
 
               <div className="name-review">{det.lastName} {det.firstName} </div>
               <div className="first-review">@{det.userName} </div>
-           <div className='raiting'   >
-         { Array(det.rating).fill()
+           <div className='raiting'>
+         {Array(det.rating).fill()
        .map(() =>
                    
                     <AiFillStar
@@ -83,7 +86,7 @@ const AfficherFeedback = () => {
 
 
             </div>  )}
-            </div>   </div>
+            </div> </marquee>   </div>
   
   )
   
