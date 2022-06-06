@@ -16,7 +16,6 @@ import Bricolage from "./pages/servicespages/bricolage"
 import Jardinage from "./pages/servicespages/jardinage"
 import Animaux from "./pages/servicespages/animaux"
 import Messenger from "./pages/messenger/Messenger";
-import Feedback from "./components/Home/feedback/feedback";
 
 
 
@@ -35,14 +34,7 @@ function App() {
        <Route path='/login' element= {<SignIn/>} />
        <Route path='/profile' element= {<Profile/>} />
        <Route path='/help' element= {<Help/>} />
-       <Route path='/Menage' element= {<Menage/>} />
-         <Route path='/Peinture' element= {<Peinture/>} />
-           <Route path='/Informatique' element= {<Informatique/>} />
-             <Route path='/Demenagement' element= {<Demenagement/>} />
-               <Route path='/Bricolage' element= {<Bricolage/>} />
-                 <Route path='/Jardinage' element= {<Jardinage/>} />
-                   <Route path='/Animaux' element= {<Animaux/>} />
-       <Route path='/feedback' element= {<Feedback/>} />
+       <Route path='/jardinage' element= {<Jardinage/>} />
        <Route path='/messenger' element= {<Messenger/>} />
  
 

@@ -43,20 +43,7 @@ function myFunction() {
     const [modify_detailslinks, setmodify_detailslinks] = useState(false);
     const [onEdit, setOnEdit] = useState(false);
     const [onEditPicture, setOnEditPicture] = useState(false);
-    const [image,setImage] = useState({});
-    const fileOnChange = (event) =>{
-       setImage(event.target.files[0]);
-    }
-     const sendImage = (event) =>{
-         let formData = new FormData();
-         formData.append("avatar",image);
-         fetch("http://localhost:8080/uploadFile",{
-             method:"post",
-             body:formData
-         }).then(res=>res.text()).then(resBody=>{
-             console.log(resBody);
-                     })
-     }
+     
      
     const handleSubmit = async () => {
         setIsLoading(true);
