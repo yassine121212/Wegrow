@@ -1,6 +1,7 @@
 .messenger {
   height: calc(100vh - 70px);
   display: flex;
+  background-color: black;
  }
 
 .chatMenu {
@@ -73,7 +74,11 @@
   color: rgb(224, 220, 220);
   cursor: default;
 }
+.logochat{
+ margin-left: 4cm;
+ margin-top: 2cm;
 
+ }
 @media screen and (max-width: 768px) {
   .chatMenu {
     flex: 1;

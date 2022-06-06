@@ -28,8 +28,8 @@
       
 }
  .logoimg{
-    width: 70px;
-    height: 70px;
+    width: 70px !important;
+    height: 70px !important;
     transform: translateX(0);
   }
 .egrow{

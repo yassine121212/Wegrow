@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../store/authcontext";
 import axios from "axios";
 import { io } from "socket.io-client";
+import logoimg from "../../images/W.svg";
 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
@@ -137,7 +138,7 @@ export default function Messenger() {
   };
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current?.scrollIntoView({ behavior: "smooth",backgroundColor :"red" });
   }, [messages]);
   const changeListFriends=(e)=>{
    }
@@ -178,9 +179,9 @@ export default function Messenger() {
                 </div>
               </>
             ) : (
-              <span className="noConversationText">
-                Open a conversation to start a chat.
-              </span>
+              <div>
+               <img  className="logochat"  src={logoimg} alt=""></img>
+               </div>
             )}
           </div>
         </div>
@@ -188,7 +189,7 @@ export default function Messenger() {
           <div className="chatOnlineWrapper">
             <ChatOnline
               onlineUsers={onlineUsers}
-              currentId={localStorage.getItem('id')} //{user.id}
+              currentId={user.id}
               setCurrentChat={setCurrentChat}
             />
           </div>
