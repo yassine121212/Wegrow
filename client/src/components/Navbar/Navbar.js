@@ -19,7 +19,7 @@ import {
 } from "./NavbarElements";
 import { FaBattleNet, FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons";
- 
+import { FiLogIn } from "react-icons/fi";
 import { CgLogOut } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineSettings } from "react-icons/md";
@@ -67,17 +67,10 @@ const Navbar = () => {
                     <MenuItemLink 
                       href="/login"
                       onClick={() => setShowMobileMenu(!showMobileMenu)}
-                    >
-                      <Button variant="contained">Sign In</Button>
+                    > 
+                      <button className="custom-btn btn-5"> <FiLogIn /> Se Connecter</button>
                     </MenuItemLink >
-                    <MenuItemLink 
-                      href="/register"
-                      onClick={() => setShowMobileMenu(!showMobileMenu)}
-                    >
-                      <Button variant="contained" color="success">
-                        Sign Up
-                      </Button>
-                    </MenuItemLink >
+                    
                   </Stack>
                 </MenuItem>
               )}
@@ -112,11 +105,12 @@ const Navbar = () => {
                             <span>Help</span>
                           </li>
                           </Link>
-                          
+                          <Link className="llink" to="/login" >
                           <li onClick={context.onLogout}>
                             <CgLogOut  className="icon_user"></CgLogOut>
                             <span>Logout</span>
                           </li>
+                          </Link>
                         </ul>
                       </div>
                     </div>

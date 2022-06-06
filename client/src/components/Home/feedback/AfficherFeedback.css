@@ -1,5 +1,5 @@
 .feed{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(209, 189, 162);
     padding: 2.5rem;
      margin: auto;
     padding: 0.8 2rem;
@@ -53,14 +53,14 @@
 	  .raiting{
 		text-align: center;
 		transform: translateY(-1cm);
-
+          font-size: 0.7cm;
 	  }
 	  .desc-review{
  		line-height: 1.5rem;
 		letter-spacing: 1px;
 		color: rgb(150, 150, 150);
 		transform: translateY(-0.7cm);
-		 
+		 color: beige;
  	  }
 .tit3{
 	padding-bottom: 0.3cm;

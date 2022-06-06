@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import AuthContext from "../../store/authcontext";
 import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai';
+import Svgs from "../UI/logbg"
 //import Context from "@mui/base/TabsUnstyled/TabsContext";
 	// eye
 	
@@ -130,6 +131,12 @@ const Login = () => {
 		}
 	  };
  	return (
+		 <>
+		 <div>
+           <Svgs/>
+		 </div>
+		 <div className={styles.uplog}>
+			 
 		<div className={styles.login_container}>
 			<div className={styles.login_form_container}>
 				<div className={styles.left}>
@@ -181,6 +188,8 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
+		</div>
+		</>
 	);
 };
 
