@@ -105,7 +105,7 @@ const Navbar = () => {
                             <span>Help</span>
                           </li>
                           </Link>
-                          <Link className="llink" to="/login" >
+                          <Link className="llink" to="/" >
                           <li onClick={context.onLogout}>
                             <CgLogOut  className="icon_user"></CgLogOut>
                             <span>Logout</span>
