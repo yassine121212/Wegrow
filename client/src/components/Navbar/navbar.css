@@ -198,4 +198,8 @@ margin-top: 19px;
     width:100%;
     transition:800ms ease all;
   }
-  
+  .zozoz{
+    height: 5px !important;
+	width: 5px!important;
+    border-radius: 50%;
+  }
