@@ -6,6 +6,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Svgs from "../UI/logbg"
+
 import {AiOutlineEyeInvisible, AiOutlineEye} from 'react-icons/ai';
 const Signup = () => {
 	const [data, setData] = useState({
@@ -69,6 +71,12 @@ const handleChanges = () => {
 	var states = new Array("Agadir", "Al Hoceima", "Azilal", "Beni Mellal", "Sidi Slimane", "Boulemane", "Casablanca", "Chaouen", "El Jadida", "El Kelaa des Sraghna", "Er Rachidia", "Essaouira", "Fes", "Figuig", "Guelmim", "Ifrane", "Kenitra", "Khemisset", "Khenifra", "Khouribga", "Laayoune", "Larache", "Marrakech", "Meknes", "Nador", "Ouarzazate", "Oujda", "Rabat-Sale", "Safi", "Settat", "Sidi Kacem", "Tangier", "Tan-Tan", "Taounate", "Taroudannt", "Tata", "Taza", "Tetouan", "Tiznit");
 	var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardinage","Menage","Peinture");
 	return (
+		<>
+		 <div>
+           <Svgs/>
+		 </div>
+		 <div className={styles.uplog}>
+			 
 		<div className={styles.signup_container}>
 			<div className={styles.signup_form_container}>
 				<div className={styles.left}>
@@ -205,6 +213,8 @@ className={styles.check}
 				</div>
 			</div>
 		</div>
+		</div>
+		</>
 	);
 };
 
