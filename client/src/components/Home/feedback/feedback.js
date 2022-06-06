@@ -52,7 +52,7 @@ try {
         "userName":res.data.user.userName,
         "profilePicture":res.data.user.profilePicture
       })
-        
+      
       
     }
  
@@ -76,7 +76,9 @@ try {
   setData({ ...data,...datauser });
 }, [datauser]);
 
-
+setTimeout(() => {
+  localStorage.setItem("profilepic",datauser.profilePicture)
+}, 5000);
 
 
  
