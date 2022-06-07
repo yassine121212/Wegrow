@@ -72,9 +72,7 @@ const handleChanges = () => {
 	var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardinage","Menage","Peinture");
 	return (
 		<>
-		 <div>
-           <Svgs/>
-		 </div>
+			 
 		 <div className={styles.uplog}>
 			 
 		<div className={styles.signup_container}>
@@ -182,7 +180,7 @@ const handleChanges = () => {
 						/>
 						<button className={styles.eye} onClick={ toggleBtn}>
 						{
-					        StateEye ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>
+					        StateEye ? <AiOutlineEye/>:<AiOutlineEyeInvisible/> 
 						}
 						</button>
 	</div>
@@ -215,6 +213,7 @@ className={styles.check}
 			</div>
 		</div>
 		</div>
+
 		</>
 	);
 };

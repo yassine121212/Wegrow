@@ -168,7 +168,7 @@ const Login = () => {
 						/>
 						<button className={styles.eye} onClick={ toggleBtn}>
 						{
-					        StateEye ? <AiOutlineEyeInvisible/>: <AiOutlineEye/>
+					        StateEye ? <AiOutlineEye/>: <AiOutlineEyeInvisible/>
 						}
 						</button>
 						</div>

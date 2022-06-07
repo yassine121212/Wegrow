@@ -2,7 +2,7 @@
  h3 {
   font-family: "Times New Roman", Times, serif;
   font-size: 2rem;
-  Color:rgb(8, 140, 26);
+  Color:orange;
   text-align: center;
   font-weight: bold;
 
@@ -22,7 +22,10 @@ h2{
 
 }
 #avis{
-  background: rgb(8, 140, 26);
+  background-image: -webkit-linear-gradient(315deg, orange 0%, orange 100%);
+  background-image: -moz- oldlinear-gradient(315deg, orange 0%, orange 100%);
+  background-image: -o-linear-gradient(315deg, orange 0%, #fd8965 100%);
+  background-image: linear-gradient(135deg, orange 0%, #fd8965 100%);
   color: #fff;
   margin-top: 10px;
   width: 100%;

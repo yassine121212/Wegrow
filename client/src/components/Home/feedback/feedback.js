@@ -17,9 +17,9 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
+    bgcolor: '#f2f3f3',
     boxShadow: 24,
+    outline:'none',
     p: 4,
   };
   
@@ -147,7 +147,7 @@ setTimeout(() => {
     >
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-         <h3>Donner Votre Avis</h3> 
+         <h3>Laisser Votre Avis</h3> 
         <h2>{handleText()}</h2>
               {Array(5)
                 .fill()

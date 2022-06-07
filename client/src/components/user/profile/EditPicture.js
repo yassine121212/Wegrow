@@ -13,6 +13,17 @@ const EditPicture = ({datauser2,setOnEditPicture}) => {
     const fileOnChange = (event) =>{
        setImage(event.target.files[0]);
     }
+    const handleInput = e => {
+      const { name, value } = e.target
+      setUserData({ ...userData, [name]:value })
+  }
+  const initState = {
+    lastName: datauser2.lastName,firstName:datauser2.firstName,userName:datauser2.userName, email: datauser2.email, phone: datauser2.phone, Address: datauser2.Address, city: datauser2.city
+
+}
+
+  const [userData, setUserData] = useState(initState)
+
     const sendImage =async () => {
       try {
       let formData = new FormData();
@@ -22,6 +33,8 @@ const EditPicture = ({datauser2,setOnEditPicture}) => {
                      
                     const url = "http://localhost:8080/api/users/image/";
                     const res = await axios.put(url + username,formData);
+                    const url2 = "http://localhost:8080/api/users/";
+                      const res2 = await axios.put(url2 + username,userData);
                          if(res)
                               console.log("user updated")
                   } catch (error) {
@@ -33,6 +46,8 @@ const EditPicture = ({datauser2,setOnEditPicture}) => {
                         setError(error.response.data.message);
                     }
                   } 
+            
+                
   }
   return (
     <div className="edit_profile">
@@ -42,20 +57,17 @@ const EditPicture = ({datauser2,setOnEditPicture}) => {
             </button>
            <form>
             <div className="info_avatar">
-            <img className='avatar2' src={"http://localhost:8080/static/"+datauser2.profilePicture} alt=""></img>
+            <img  className=' avatar2' src={"http://localhost:8080/static/"+datauser2.profilePicture} alt=""></img>
                        <CameraAltIcon className='avatar' ></CameraAltIcon>
                         <input type="file" id="file_up" name="profilePicture"
                          onChange={ fileOnChange} />
                 </div>
-
+                <label htmlFor="userName">userName</label>
+                <input type="text" className="form-control" id="userName"
+                        name="userName" value={userData.userName} onChange={handleInput} />
                 <button className="btn btn-info w-100" type="submit" onClick={sendImage}>Save</button>
            </form>
-           <img
-          id="avatar"
-          style={{
-            display: "block"
-          }}
-        ></img>
+
             </div>
   )
 }
