@@ -132,6 +132,7 @@ const handleChanges = () => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
 		  type="text"
+		  className={styles.select}
  							name="city"
  							onChange={handleChange}
 							value={data.city}
@@ -197,7 +198,7 @@ className={styles.check}
       /><label >Become a service provider </label>
    </div>
       { checked &&
-         <select type="text" name="categorie" onChange={handleChange} value={data.categorie} required >  
+         <select className={styles.select} type="text" name="categorie" onChange={handleChange} value={data.categorie} required >  
 	     {  cat.map(state => <option value={state} > {state} </option> ) };
 		 
 

@@ -1,8 +1,10 @@
+ 
+
 .message {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-}
+ 
+ }
 
 .messageTop{
     display: flex;
@@ -19,14 +21,16 @@
 .messageText{
     padding: 10px;
     border-radius: 20px;
-    background-color: #1877f2;
+    background-color: #f26f18;
     color: white;
     max-width: 300px;
 }
-
+ 
 .messageBottom{
     font-size: 12px;
-    margin-top: 10px;
+     color:white ;
+     padding: 5px;
+     
 }
 
 .message.own{

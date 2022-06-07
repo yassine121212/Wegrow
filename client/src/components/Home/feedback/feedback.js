@@ -147,7 +147,7 @@ setTimeout(() => {
     >
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-        <h3>Donner Votre Avis</h3>
+         <h3>Donner Votre Avis</h3> 
         <h2>{handleText()}</h2>
               {Array(5)
                 .fill()

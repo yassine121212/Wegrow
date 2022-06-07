@@ -26,6 +26,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
       const res = await axios.get(
         `http://localhost:8080/api/conversations/find/${currentId}/${user._id}`
       );
+      console.log("eee")
       setCurrentChat(res.data);
     } catch (err) {
       console.log(err);
@@ -34,9 +35,9 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
   return (
     <div className="chatOnline">
-      online
+    <span className="onlinetxt">online</span>
       {onlineFriends.map((o) => (
-        <div className="chatOnlineFriend" onClick={() => handleClick(o)}>
+        <div   className="chatOnlineFriend" onClick={() => handleClick(o)}>
           <div className="chatOnlineImgContainer">
             <img
               className="chatOnlineImg"

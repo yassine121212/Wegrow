@@ -14,8 +14,10 @@ const Services = () => {
   const [data, setData] = useState({
     city: "",
     categorie: "",
+  
 
   });
+  const [image,setImage]=useState("renovation");
   const [datauser, setDatauser]=useState([]);
   const style = {
     position: 'absolute',
@@ -33,7 +35,9 @@ const Services = () => {
 
 
   const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
+    setData({ ...data,[input.name]: input.value});
+    if (input.name=="categorie") {
+    setImage(input.value);}
 
     };
     const [error, setError] = useState("");
@@ -69,7 +73,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
            <div class="row">
         <div class="col-lg-6">
          <div class="imag-box">
-           <img src={pic} class="img-fluid" />
+           <img src={require("../images/"+image+".png")} class="img-fluid" />
          </div>
         </div>
         <div class="col-lg-6"> 
@@ -127,7 +131,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
          
                 <div class="card p-0">
                     <div class="card-image" >
-          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+          <img src={"http://localhost:8080/static/"+val.profilePicture} alt="" />
           </div>
            <div class="card-content d-flex flex-column align-items-center" onClick={handleOpenModal}>
                         <h4 class="pt-2"> {val.lastName} {val.firstName}</h4>

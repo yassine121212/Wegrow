@@ -95,10 +95,7 @@ const Navbar = () => {
                           </li>
                           </Link >
                           
-                          <li>
-                            <MdOutlineSettings  className="icon_user"></MdOutlineSettings>
-                             <span>Settings</span>
-                          </li>
+                          
                           <Link className="llink" to="/help" >
                           <li>
                             <BiHelpCircle  className="icon_user"></BiHelpCircle>

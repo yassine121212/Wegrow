@@ -103,7 +103,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
          
                 <div class="card p-0">
                     <div class="card-image">
-          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""/>
+         <img src={"http://localhost:8080/static/"+val.profilePicture} alt="" />
           </div>
            <div class="card-content d-flex flex-column align-items-center">
                         <h4 class="pt-2"> {val.lastName} {val.firstName}</h4>
