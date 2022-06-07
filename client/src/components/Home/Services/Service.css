@@ -32,6 +32,10 @@
     font-size: 0.6cm!important;
 
 }
+.erty span{
+    font-size: 0.6cm!important;
+
+}
 .content{
     color:#fff !important;
     background:rgba(0,0,0,0.8) !important;
@@ -50,13 +54,15 @@
 }
 
 .content p{
-    border-top:2px solid orange6c  !important;
+    border-top:2px solid orange  !important;
     padding:2px  !important;
 }
 .service_img{
-    width: 10cm !important;
-     height: 5cm !important;
     border-radius:0 !important;
+    background-image: cover;
+    width: 8cm;
+    height: 6cm;
+
 }
 .title_services{
 
