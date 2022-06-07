@@ -3,9 +3,9 @@ import "./How.css"
 import { IoAlertCircleOutline } from "react-icons/io5";
 import bal from "../../../images/Come back later.png";
 import ReactPlayer from 'react-player'
-
-const appvideo="https://www.youtube.com/watch?v=SMcztSqSQ18"
+import Appvideo from "../../../video/vid1.mp4"
  const How = ()=>{
+ 
    return (
      <>
          <div className="all1">
@@ -20,9 +20,11 @@ const appvideo="https://www.youtube.com/watch?v=SMcztSqSQ18"
            </div>
             <div className="picdisc">
               <ReactPlayer
-                src={appvideo}
+                url={Appvideo}
                 controls
-                className="vido"
+                playing
+                muted
+                 
 
               />
             </div>
