@@ -12,7 +12,7 @@
     margin-top: 1cm;
     margin-left: 0.5cm;
     width: 16cm;
- }
+   }
 .blo{
     position: absolute;
     width: 18cm;
@@ -23,11 +23,13 @@
  
  .tit2{
      padding-bottom: 0.3cm;
+     border-bottom: 2px solid orange;
  }
  
  .lign{
      padding: 0.25cm;
- }
+      color: wheat;
+   }
  .work_color{
     color:orange !important;
   }
@@ -49,4 +51,12 @@
    }
  .erp{
        color:orange !important;
+ }
+ .par1{
+     color: rgb(255, 255, 255)  ;
+ }
+ .vido{
+     width: 10cm;
+     height: 8cm;
+    
  }
