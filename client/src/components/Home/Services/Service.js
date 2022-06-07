@@ -40,7 +40,7 @@ const Service = () => {
                 <Link to="/Demenagement">
                 <img className='service_img' src={Demenagement} alt='' />
                 <div className='content'>
-                <h2 className="erty">Déménegament</h2>
+                <h2 className="erty"><span>Déménegament</span></h2>
                 <p> démonte, emballe, charge, transporte, déballe et remonte les meubles et objets du foyer.</p>
                 </div>
                 </Link>
