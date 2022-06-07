@@ -31,10 +31,8 @@ const Footer = () => {
                     <FooterLinkItems>
                         <FooterLinkTitle> À propos</FooterLinkTitle>
                             <FooterLink to="/signin"> Comment ça marche? </FooterLink>
-                            <FooterLink to="/signin"> Témoignage </FooterLink>
-                            <FooterLink to="/signin"> Devenir jobber </FooterLink>
-                            <FooterLink to="/signin">Trouver un Job </FooterLink>
-                            <FooterLink to="/signin">Damander un service</FooterLink>
+                            <FooterLink to="/signin"> Devenir prestataire </FooterLink>
+                            <FooterLink to="/signin">Demander un service</FooterLink>
                     </FooterLinkItems>
                     <FooterLinkItems>
                         <FooterLinkTitle> Nos Services</FooterLinkTitle>
@@ -73,7 +71,7 @@ const Footer = () => {
         <SocialMedia>
              <SocialMediaWrap>
                  <WebsiteRights>
-                     dolla © {new Date().getFullYear()} all rights reserved.
+                      © {new Date().getFullYear()} all rights reserved.
                  </WebsiteRights>
                 <SocialIcons>
                     <SocialIconLink href="/" target="_blank" aria-label="Facebook">
