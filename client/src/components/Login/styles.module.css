@@ -32,6 +32,9 @@
 .form_container h1 {
 	font-size: 40px;
 	margin-top: 0;
+	font-family: gresa;
+	color: rgb(102, 6, 6);
+	border-bottom: #9c3c04 2px solid;
 }
 .eye{
 	font-size:1.2rem;
