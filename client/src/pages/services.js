@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import pic from "../images/renovation.png";
 import CloseIcon from '@mui/icons-material/Close';
-import IconButton from "@material-ui/core/IconButton";
+// import IconButton from "@material-ui/core/IconButton";
 const Services = () => {
 
   const [data, setData] = useState({
