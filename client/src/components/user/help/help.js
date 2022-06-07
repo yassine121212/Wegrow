@@ -23,8 +23,25 @@ const Help = () =>{
          return setTages([...tags,value])
         }
     return (
-        <div class="help">  
-            <div class="wrapper">
+          
+
+   <div className="regroup">
+<div className="area" >
+          <ul className="circles">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+          </ul>
+  </div > 
+        <div className="help">  
+            <div className="wrapper">
         <form id="contact" onSubmit={sendEmail}>
         <fieldset>
           <h3>Contact Form</h3>
@@ -43,6 +60,7 @@ const Help = () =>{
           </fieldset>
         </form>
         </div>
+      </div>
       </div>
     );
 }

@@ -34,4 +34,16 @@ h2{
 }
 .aviss{
   width: 3cm;
- }
+  background-color: orange;
+  color: white;
+  font-size: 15px ;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.5s;
+  }
+  .aviss:hover{
+    background-color: rgb(33, 0, 95);
+    color: white;
+  }
