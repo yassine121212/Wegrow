@@ -148,10 +148,10 @@ useEffect(() => {
                             <p className="text-muted">Full Stack Developer</p>
                             <p className="text-muted mb-3">{data.Address}</p>
                             <div className="d-flex ">
-                            <button type="button" class="btn btn-success"> <RiUserFollowLine /> Follow</button>                        <button type="button" class="btn btn-info"> <BiMessageDetail /> Message </button>
+                                        
                                 <div className="info">
                         {
-                            onEditPicture && <EditPicture  setOnEditPicture={setOnEditPicture} />
+                            onEditPicture && <EditPicture datauser2={data} setOnEditPicture={setOnEditPicture} />
                         }
                         </div>
                             </div>

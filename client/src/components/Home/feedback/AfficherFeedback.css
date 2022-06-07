@@ -28,6 +28,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: black;
+	padding-top:2cm;
 
 }
 	.name-review{
@@ -37,7 +38,7 @@
 		margin-left: 1.1cm;
   		text-align: center;
 		width: 6cm;
- 		border-bottom: 2px solid #FF0066;
+ 		border-bottom: 2px solid orange;
  		 transform: translateY(-1.7cm);
  
  

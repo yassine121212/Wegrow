@@ -1,6 +1,8 @@
-.edit_profile .info_avatar .avatar{
+ .avatar2{
     position: absolute;
-  top:95px;
+  top: 20px;
+  height: 4cm;
+  width: 4cm;
   left:32.5rem;
     color: black;
  

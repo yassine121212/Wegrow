@@ -6,7 +6,7 @@ import "./EditPicture.css";
 
 
 
-const EditPicture = ({datauser,setOnEditPicture}) => {
+const EditPicture = ({datauser2,setOnEditPicture}) => {
    
     const [image,setImage] = useState({});
     const [error, setError] = useState(null);
@@ -42,7 +42,7 @@ const EditPicture = ({datauser,setOnEditPicture}) => {
             </button>
            <form>
             <div className="info_avatar">
-                    <Avatar sx={{ width: 120, height: 120 }}/>
+            <img className='avatar2' src={"http://localhost:8080/static/"+datauser2.profilePicture} alt=""></img>
                        <CameraAltIcon className='avatar' ></CameraAltIcon>
                         <input type="file" id="file_up" name="profilePicture"
                          onChange={ fileOnChange} />

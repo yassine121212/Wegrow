@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import AuthContext from "../../store/authcontext";
 import logo from "../../images/logo192.png";
 import logoimg from "../../images/Group 1.png";
- 
+import axios from "axios";
 import { BsChatDots } from "react-icons/bs";
 
 import "./navbar.css";
@@ -29,7 +29,40 @@ import { Link  } from "react-router-dom";
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const context = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const [data2, setData2] = useState({
+  "profilePicture":null
+     
+  });
+  const handleSubmit = async () => {
+
+try {
+    const username=localStorage.getItem("username")
+    const url = "http://localhost:8080/api/users/we/";
+    const  res  = await axios.get(url + username);
+    if(res.status===200)
+    {
+        console.log(res)
+        setData2({"profilePicture":res.data.user.profilePicture
+                 })
+        
+      
+    }
  
+
+
+} catch (error) {
+    if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+    ) {
+        setError(error.response.data.message);
+    }
+}}
+ useEffect(() => {
+  handleSubmit();
+},[]);
   return (
     <Container>
       <Wrapper >
@@ -85,7 +118,7 @@ const Navbar = () => {
               </Link >   
                   <div className="dropdown">
                     <div className="profile">
-                      <img height="75%" src={logo} alt=""></img>
+                      <img height="75%" src={"http://localhost:8080/static/"+data2.profilePicture} alt=""></img>
                       <div className="dropc">
                         <ul>
                           <Link className="llink" to="/profile">
