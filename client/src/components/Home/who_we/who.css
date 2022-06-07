@@ -23,11 +23,13 @@
 
 .tit1{
 font-size: 30px;
-color: black;
+color: orange;
 line-height: 16px;
-text-transform: uppercase;
-text-shadow: -3px 2px 5px rgba(0,0,0,0.5),3px -1px 0 rgba(255,255,255,0.8 );
 padding-left: 3rem;
+font-family: bold;
+text-align: center;
+border-bottom: 2px solid white;
+padding-bottom: 0.5cm;
 }
 .all{
     display: flex;

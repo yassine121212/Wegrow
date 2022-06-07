@@ -37,7 +37,7 @@ const who = ()=>{
            <img className="whoimage" src={Med} alt="" />
            </div>
            <div className="disc">
-              <h1 className="tit1">WeGrow</h1>
+              <h1 className="tit1"><b>WeGrow</b></h1>
                 <p className="par">
                 De nouveaux modèles de consommation ont émergé grâce à l'essor de nouveaux
                 technologies et évolution des modes de vie. Le jobbing permet des dizaines de

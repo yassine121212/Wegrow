@@ -61,11 +61,11 @@
 .title_services{
 
     border:none;
-    padding-bottom:0.5cm ;
     color: white;
     border:none !important;
-    padding-bottom:0.5cm  !important;
+    padding-bottom:0.1cm  !important;
     color: white !important;
+    border-bottom:  2px solid orange !important;
 
 }
 
