@@ -6,7 +6,7 @@
     align-items: center;
      background-color: black;
     color: white;
-    padding-top: 5cm;
+    padding-top: 2cm;
 }
 .disc1{
     margin-top: 1cm;
@@ -26,9 +26,9 @@
      border-bottom: 2px solid orange;
  }
  
- .lign{
+ .lign p{
      padding: 0.25cm;
-      color: wheat;
+      color: #ccc;
    }
  .work_color{
     color:orange !important;
@@ -52,9 +52,7 @@
  .erp{
        color:orange !important;
  }
- .par1{
-     color: rgb(255, 255, 255)  ;
- }
+
  .vido{
      width: 10cm;
      height: 8cm;

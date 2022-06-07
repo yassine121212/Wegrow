@@ -11,7 +11,7 @@ const appvideo="https://www.youtube.com/watch?v=SMcztSqSQ18"
          <div className="all1">
 
            <div className="disc1">
-              <h1 className="tit2">Comment ça marche ?</h1>
+              <h1 className="title_services"><span>Comment </span>ça marche ?</h1>
                 <div className="par1" >
                   <div className="lign"><p>1. Chercher un <span className="erp">prestataire</span> et le <span className="erp">Contacter</span>.</p> </div>
                   <div className="lign"><p>2. Les prestataires <span className="erp">disponibles</span> et <span className="erp">compétents</span> vous proposent leurs <span className="erp"></span>services.</p> </div>

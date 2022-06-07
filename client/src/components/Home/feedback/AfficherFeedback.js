@@ -45,7 +45,7 @@ const AfficherFeedback = () => {
     
     <div className='pmop'>
       <div>
-         <h1 className="tit3">Nos Clients</h1></div> 
+         <h1 className="title_services"><span>Nos</span> Clients</h1></div> 
          <marquee LOOP="0">
           <div className='section'>
            
