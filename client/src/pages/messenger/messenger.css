@@ -19,7 +19,10 @@
 .chatBox {
   flex: 5.5;
 }
-
+.scrovis{ 
+    overflow-y: scroll !important;
+    height: 100%;
+ }
 .chatBoxWrapper {
   display: flex;
   flex-direction: column;

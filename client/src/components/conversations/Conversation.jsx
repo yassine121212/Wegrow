@@ -21,10 +21,10 @@ export default function Conversation({ conversation, currentUser }) {
   }, [currentUser, conversation]);
 
   return (
-    <div className="conversation">
+     <div className="conversation">
                             <img className="conversationImg" src={"http://localhost:8080/static/"+user?.profilePicture} alt=""></img>
 
       <span className="conversationName">{user?.userName}</span>
     </div>
-  );
+   );
 }
