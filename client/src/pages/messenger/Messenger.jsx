@@ -89,7 +89,9 @@ export default function Messenger() {
     const getConversations = async () => {
       try {
         const res = await axios.get("http://localhost:8080/api/conversations/" + user.id);
-        if(res) setConversations(res.data);
+        if(res) 
+        setConversations(res.data);
+ 
       } catch (err) {
         console.log(err);
       }
@@ -148,11 +150,15 @@ export default function Messenger() {
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <input placeholder="Search for friends"/* onChange={changeListFriends}*/  className="chatMenuInput" />
+           <div className="scrovis">
             {conversations.map((c) => (
+
               <div key={c} onClick={() => setCurrentChat(c)}>
+                
                 <Conversation conversation={c} currentUser={user} />
               </div>
             ))}
+            </div>
           </div>
         </div>
         <div className="chatBox">

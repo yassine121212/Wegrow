@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import pic from "../images/renovation.png";
 import CloseIcon from '@mui/icons-material/Close';
+import Goto from "../components/Goto/Goto.js";
 // import IconButton from "@material-ui/core/IconButton";
 const Services = () => {
 
@@ -146,6 +147,7 @@ var cat = new Array("Animaux","Bricolage","Demenagement","Informatique","Jardina
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
           <h2>Bonjour</h2>
+             <Goto id={val._id}/>
           </Typography>
         
     

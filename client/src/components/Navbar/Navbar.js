@@ -22,7 +22,6 @@ import { IconContext } from "react-icons";
 import { FiLogIn } from "react-icons/fi";
 import { CgLogOut } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
-import { MdOutlineSettings } from "react-icons/md";
 import { BiHelpCircle } from "react-icons/bi";
 import { Link  } from "react-router-dom";
   
