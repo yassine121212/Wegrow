@@ -157,9 +157,8 @@ useEffect(() => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 bg-white p-0 px-2 pb-3 mb-3">
-                    <AiOutlineEdit style={{ "margin-left":"11.2cm" }} className='button_edit_details' onClick={handleModifylinks}/>
-                    <div className="row">
+                    <div style={{ "margin-left":"13.2cm", "margin-top":"-12cm" }} className="col-12 bg-white p-0 px-2 pb-3 mb-3">
+                     <div className="row">
                     <div className="col-12 bg-white px-3 mb-3 pb-3">
                         <div className="d-flex align-items-center justify-content-between border-bottom">
                             <p className="py-2"> <SiNamecheap />    Full Name</p>
@@ -181,13 +180,31 @@ useEffect(() => {
                             <p className="py-2"><FaCity  />      city</p>
                             <p className="py-2 text-muted"> {data.city}</p>
                         </div>
+                        
                     </div>
-                     <div className="col-12 bg-white px-3 pb-2">
+                    <div  >
+            <AiOutlineEdit style={{ "margin-left":"16cm", "margin-top":"-18.5cm"  }} className='button_edit_details'   onClick={() => setOnEdit(true)}/>
+            <div className="row" style={{ "margin-top":"-1.5cm"  }}>
+                    <div className="Title">
+                       <br />
+                        <div className='title2'>
+                            <p className="py-1"> <RiMessageFill /> pourquoi choisir {data.firstName} {data.lastName} </p>
+                            <div className='row'>
+                            <p> J'ai travaillé dans le domaine de la maintenance des trains pendant 10 ans. Actuellement formateur , j'ai toujours bricolé. J'aide souvent mes proches à réaliser leurs petits travaux ; le bricolage est un plaisir avant tout ! Il existe toujours une solution à un problème technique, j'aime me confronter à cette réflexion .
+                                J'ai un CAP Mécanicien d'entretien (mécanique, hydraulique et électricité) et un BPT Maintenance. 
+                                Je suis précis et ponctuel lors des RDV, j'aime le contact et je suis relativement disponible et arrangeant. 
+                                Je suis titulaire du diplôme suivant : BEP - Industrie/Maintenance.</p>
+                                </div>
+                        </div>
+                    </div>         
+           </div>
+            </div>
+                     <div >
                          <div className="modify">
                         <h6><i
                                 className="text-info ">assignment </i>Project
                             Status</h6>
-                            <AiOutlineEdit className='button_edit_details' onClick={handleModify}/>
+                            <AiOutlineEdit className='button_edit_details' style={{  "margin-left":"8cm","margin-top":"-0.2cm"  }} onClick={handleModify}/>
                             </div>
                          <AddCompetence
                           dispo_Modif={modify_details} 
@@ -217,60 +234,7 @@ useEffect(() => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-7 ps-md-4">
-            <AiOutlineEdit style={{ "margin-left":"16cm" }} className='button_edit_details'   onClick={() => setOnEdit(true)}/>
-            <div className="row">
-                    <div className="Title">
-                        <div className='title1'>
-                            <p className="py-1"> <GoKey /> Ses univers de Bricolage </p>
-                        </div>
-                        <div className='grid-container'>
-                            <div className='item1'>
-                                <h6 className='item111'> Bricolage Maison</h6>
-                                     <div className='item11'>
-                                    Serrurerie <br />
-                                    pose ou réparation store <br />
-                                    Tapisserie <br />
-                                    Accroche murale <br />
-                                    Détecteur de fumée
-                                    </div>                      
-                           </div>
-                           <div className='item1'>
-                           <h6 className='item112'> Peinture</h6>
-                                     <div className='item11'>
-                                    Peinture de meubles <br />
-                                    Peinture de sol / plafond<br />
-                                    Peinture mur<br />
-                                    Rénovation de sol<br />
-                                    Rénovation mur<br />
-                                    </div>     
-                           </div>
-                           <div className='item1'>
-                           <h6 className='item113'> Jardinage</h6>
-                                     <div className='item11'>
-                                    Portail, grillage et occultation<br />
-                                    Serre, abri et garage<br />
-                                    Sol pour terrasse et jardin<br />
-                                    Entretien jardin<br />
-                                    Aménagement jardin<br />
-                                    Aménagement extérieur<br />
-                                    Remise en état du sol<br />
-                                    Tonte de pelouse
-                                    </div>     
-                           </div>
-                        </div> <br />
-                        <div className='title2'>
-                            <p className="py-1"> <RiMessageFill /> pourquoi choisir XXXX </p>
-                            <div className='row'>
-                            <p> J'ai travaillé dans le domaine de la maintenance des trains pendant 10 ans. Actuellement formateur , j'ai toujours bricolé. J'aide souvent mes proches à réaliser leurs petits travaux ; le bricolage est un plaisir avant tout ! Il existe toujours une solution à un problème technique, j'aime me confronter à cette réflexion .
-                                J'ai un CAP Mécanicien d'entretien (mécanique, hydraulique et électricité) et un BPT Maintenance. 
-                                Je suis précis et ponctuel lors des RDV, j'aime le contact et je suis relativement disponible et arrangeant. 
-                                Je suis titulaire du diplôme suivant : BEP - Industrie/Maintenance.</p>
-                                </div>
-                        </div>
-                    </div>         
-           </div>
-            </div>
+            
            
         </div>
     </div>
