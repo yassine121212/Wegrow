@@ -105,8 +105,8 @@ setTimeout(() => {
       setData({});
       setNumber(0);
       Swal.fire(
-        'Good job!',
-        'You clicked the button!',
+        'Merci pour votre avis!',
+        '',
         'success'
       );
 
